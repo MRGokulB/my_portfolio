@@ -1,5 +1,6 @@
 import Layout from './components/Layout';
 import Scene from './components/canvas/Scene';
+import GalaxyArms from './components/canvas/GalaxyArms';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Skills from './components/sections/Skills';
@@ -13,7 +14,8 @@ function App() {
   return (
     <>
       {/* 3D Background Scene */}
-      <Scene />
+      <Scene /> 
+       {/* <GalaxyArms />*/} 
       
       {/* Main Content */}
       <Layout>
