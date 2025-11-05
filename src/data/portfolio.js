@@ -1,6 +1,6 @@
 export const portfolioData = {
   personal: {
-    name: "Gokul",
+    name: "Gangaprasad Boddawar",
     title: "Full Stack Developer",
     tagline: "Building immersive digital experiences",
     email: "boddawargokul@gmail.com",
