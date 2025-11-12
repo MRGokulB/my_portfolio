@@ -271,16 +271,16 @@ const Scene = () => {
         <directionalLight position={[10, 10, 5]} intensity={0.5} color="#00d4ff" />
         <directionalLight position={[-10, -10, -5]} intensity={0.3} color="#a855f7" />
         
-        {/* Premium orbs with rings 
+        {/* Premium orbs with rings  
         <PremiumOrb position={[-8, 2, -5]} color="#00d4ff" intensity={1.5} />
-        <PremiumOrb position={[8, -3, -7]} color="#ec4899" intensity={1.2} />
+        <PremiumOrb position={[8, -3, -7]} color="#ec4899" intensity={1.2} /> */}
         
         
         {/* Geometric shapes 
         {shapes.map((shape, index) => (
           <GeometricShape key={index} {...shape} />
-        ))}
-          */}
+        ))}  */}
+          
         
         {/* Enhanced particle field */}
         <ParticleField count={2000} />

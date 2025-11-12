@@ -80,18 +80,67 @@ const GalaxyArms = () => {
 // Shooting Stars
 const ShootingStars = () => {
   const starsRef = useRef([]);
+  const lifetimeRef = useRef([]);
+  const directionRef = useRef([]);
 
-  useFrame((state) => {
+  // Initialize on mount
+  useMemo(() => {
+    for (let i = 0; i < 3; i++) {
+      lifetimeRef.current[i] = Math.random() * 100;
+      // Random diagonal directions (realistic meteor paths)
+      const angle = Math.random() * Math.PI * 0.3 - Math.PI * 0.15; // -27° to +27°
+      directionRef.current[i] = {
+        x: Math.cos(angle) * -1,
+        y: Math.sin(angle) * -1 - 0.5, // Slight downward bias
+        z: (Math.random() - 0.5) * 0.2
+      };
+    }
+  }, []);
+
+  useFrame((state, delta) => {
     starsRef.current.forEach((star, i) => {
       if (star) {
-        const speed = 0.2 + (i * 0.1);
-        star.position.x -= speed;
-        star.position.y -= speed * 0.5;
+        lifetimeRef.current[i] += delta * 20;
         
-        if (star.position.x < -20) {
-          star.position.x = 20;
-          star.position.y = Math.random() * 10 - 5;
-          star.position.z = Math.random() * -20 - 5;
+        // Shooting star appears, streaks across, then disappears
+        const lifetime = lifetimeRef.current[i];
+        const duration = 80; // Duration of one shooting star
+        
+        if (lifetime < duration) {
+          // Active phase - move the star
+          const speed = 0.15;
+          const dir = directionRef.current[i];
+          
+          star.position.x += dir.x * speed;
+          star.position.y += dir.y * speed;
+          star.position.z += dir.z * speed;
+          
+          // Fade in/out for realistic appearance
+          const fadeIn = Math.min(lifetime / 5, 1);
+          const fadeOut = Math.max(1 - (lifetime - duration + 10) / 10, 0);
+          const opacity = fadeIn * fadeOut;
+          
+          if (star.material) {
+            star.material.opacity = opacity;
+          }
+        } else {
+          // Reset the shooting star to a new random position
+          lifetimeRef.current[i] = 0;
+          
+          // Random spawn point (off-screen upper area)
+          star.position.set(
+            Math.random() * 30 - 15,
+            Math.random() * 10 + 5,
+            Math.random() * -20 - 5
+          );
+          
+          // New random direction
+          const angle = Math.random() * Math.PI * 0.3 - Math.PI * 0.15;
+          directionRef.current[i] = {
+            x: Math.cos(angle) * -1,
+            y: Math.sin(angle) * -1 - 0.5,
+            z: (Math.random() - 0.5) * 0.2
+          };
         }
       }
     });
@@ -99,24 +148,29 @@ const ShootingStars = () => {
 
   return (
     <group>
-      {[...Array(5)].map((_, i) => (
+      {[...Array(3)].map((_, i) => (
         <Trail
           key={i}
-          width={0.5}
-          length={6}
+          width={0.25}
+          length={10}
           color="#ffffff"
-          attenuation={(t) => t * t}
+          attenuation={(t) => Math.pow(t, 3)}
+          decay={1}
         >
           <mesh
             ref={(el) => (starsRef.current[i] = el)}
             position={[
-              Math.random() * 40 - 20,
-              Math.random() * 10 - 5,
+              Math.random() * 30 - 15,
+              Math.random() * 10 + 5,
               Math.random() * -20 - 5
             ]}
           >
             <sphereGeometry args={[0.05, 8, 8]} />
-            <meshBasicMaterial color="#ffffff" />
+            <meshBasicMaterial 
+              color="#ffffff" 
+              transparent
+              opacity={1}
+            />
           </mesh>
         </Trail>
       ))}
