@@ -15,7 +15,7 @@ function App() {
     <>
       {/* 3D Background Scene */}
       <Scene /> 
-       {/* <GalaxyArms />*/} 
+       {/*   <GalaxyArms /> */}
       
       {/* Main Content */}
       <Layout>
