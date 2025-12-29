@@ -1,240 +1,138 @@
 import { motion } from 'framer-motion';
-import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { portfolioData } from '../../data/portfolio';
+import { GraduationCap, Calendar, BookOpen, Award, Star } from 'lucide-react';
 import Card from '../ui/Card';
-import { GraduationCap, Calendar, MapPin, Award, BookOpen, Trophy } from 'lucide-react';
 
 const Education = () => {
-  const [ref, inView] = useScrollAnimation(0.2);
   const { education } = portfolioData;
 
-  const EducationCard = ({ edu, index }) => {
-    return (
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: index * 0.15 }}
-      >
-        <Card className="h-full relative overflow-hidden group">
-          {/* Degree Badge */}
-          {edu.honors && (
-            <div className="absolute top-4 right-4 bg-gradient-to-r from-accent-blue to-accent-purple px-3 py-1 rounded-full flex items-center gap-1 text-xs font-semibold">
-              <Trophy size={12} fill="currentColor" />
-              {edu.honors}
-            </div>
-          )}
+  return (
+    <section id="education" className="relative py-32 bg-transparent">
+      <div className="container-custom max-w-5xl px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16 text-center"
+        >
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Education</h2>
+          <p className="text-gray-600 dark:text-gray-400">Academic background and qualifications</p>
+        </motion.div>
 
-          {/* Institution Logo/Icon */}
-          <div className="flex items-start gap-4 mb-6">
-            <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-accent-blue/20 to-accent-purple/20 flex items-center justify-center border border-accent-blue/30">
-              {edu.logo ? (
-                <img
-                  src={edu.logo}
-                  alt={edu.institution}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <GraduationCap size={32} className="text-accent-blue" />
-              )}
-            </div>
-            <div className="flex-1">
-              <h3 className="text-xl font-bold text-white mb-1 group-hover:text-accent-blue transition-colors">
-                {edu.degree}
-              </h3>
-              <p className="text-accent-blue font-semibold">{edu.institution}</p>
-            </div>
-          </div>
+        <div className="grid gap-12">
+          {education.degrees.map((edu, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="flex flex-col gap-8 hover:border-accent-blue/50 p-6 md:p-10">
+                {/* Header */}
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 border-b border-gray-200 dark:border-white/10 pb-6">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-xl bg-accent-purple/10 text-accent-purple shrink-0">
+                      <GraduationCap size={32} />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">{edu.degree}</h3>
+                      <div className="flex flex-wrap gap-x-3 gap-y-1 text-accent-blue font-medium items-center">
+                        <span>{edu.institution}</span>
+                        <span className="w-1 h-1 rounded-full bg-gray-400"></span>
+                        <span className="text-gray-500 dark:text-gray-400 text-sm">{edu.location}</span>
+                      </div>
 
-          {/* Details */}
-          <div className="space-y-3 mb-4">
-            <div className="flex items-center gap-3 text-gray-400 text-sm">
-              <Calendar size={16} className="text-accent-purple" />
-              <span>{edu.period}</span>
-            </div>
-            
-            <div className="flex items-center gap-3 text-gray-400 text-sm">
-              <MapPin size={16} className="text-accent-pink" />
-              <span>{edu.location}</span>
-            </div>
+                      <div className="flex items-center gap-4 mt-3 text-sm">
+                        <span className="flex items-center gap-1.5 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-white/5 px-3 py-1 rounded-md">
+                          <BookOpen size={14} />
+                          Major: {edu.major}
+                        </span>
+                        <span className="flex items-center gap-1.5 text-accent-green bg-accent-green/10 px-3 py-1 rounded-md font-mono font-bold">
+                          GPA: {edu.gpa}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
 
-            {edu.gpa && (
-              <div className="flex items-center gap-3 text-gray-400 text-sm">
-                <Award size={16} className="text-accent-blue" />
-                <span>GPA: <span className="text-white font-semibold">{edu.gpa}</span></span>
-              </div>
-            )}
+                  <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 font-mono text-sm bg-gray-100 dark:bg-white/5 px-4 py-2 rounded-lg whitespace-nowrap self-start">
+                    <Calendar size={16} />
+                    <span>{edu.period}</span>
+                  </div>
+                </div>
 
-            {edu.major && (
-              <div className="flex items-center gap-3 text-gray-400 text-sm">
-                <BookOpen size={16} className="text-accent-purple" />
-                <span>Major: <span className="text-white">{edu.major}</span></span>
-              </div>
-            )}
-          </div>
+                {/* Content Grid */}
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Coursework */}
+                  <div>
+                    <h4 className="text-sm font-mono uppercase tracking-widest text-gray-500 mb-4 flex items-center gap-2">
+                      <BookOpen size={16} /> Key Coursework
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {edu.coursework.map(course => (
+                        <span key={course} className="text-xs font-medium px-3 py-1.5 rounded-full border border-gray-400 dark:border-white/10 bg-gray-200 dark:bg-white/5 text-gray-900 dark:text-gray-300 hover:border-accent-purple/50 hover:text-accent-purple transition-colors">
+                          {course}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
 
-          {/* Description */}
-          {edu.description && (
-            <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-              {edu.description}
-            </p>
-          )}
+                  {/* Achievements */}
+                  <div>
+                    <h4 className="text-sm font-mono uppercase tracking-widest text-gray-500 mb-4 flex items-center gap-2">
+                      <Award size={16} /> Achievements
+                    </h4>
+                    <ul className="space-y-3">
+                      {edu.achievements.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+                          <Star size={14} className="mt-1 text-accent-yellow shrink-0 fill-accent-yellow/20" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
 
-          {/* Relevant Coursework */}
-          {edu.coursework && edu.coursework.length > 0 && (
-            <div className="mb-4">
-              <h4 className="text-sm font-semibold text-white mb-2">Relevant Coursework:</h4>
-              <div className="flex flex-wrap gap-2">
-                {edu.coursework.map((course, idx) => (
-                  <span
-                    key={idx}
-                    className="px-3 py-1 bg-dark-300 text-accent-blue text-xs rounded-full border border-accent-blue/20"
-                  >
-                    {course}
-                  </span>
+                <p className="text-gray-500 dark:text-gray-400 text-sm italic border-t border-gray-200 dark:border-white/10 pt-4">
+                  "{edu.description}"
+                </p>
+              </Card>
+            </motion.div>
+          ))}
+
+          {/* Additional Learning */}
+          {userHasAdditionalLearning(education) && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="mt-8"
+            >
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 text-center">Additional Learning</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {education.additionalLearning.map((learn, i) => (
+                  <div key={i} className="flex items-center justify-between p-4 rounded-xl bg-white/50 dark:bg-white/5 border border-gray-200 dark:border-white/10">
+                    <div>
+                      <div className="font-bold text-gray-900 dark:text-white">{learn.title}</div>
+                      <div className="text-sm text-gray-500">{learn.platform}</div>
+                    </div>
+                    <div className="text-xs font-mono text-gray-400 bg-gray-100 dark:bg-white/10 px-2 py-1 rounded">
+                      {learn.year}
+                    </div>
+                  </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           )}
-
-          {/* Achievements */}
-          {edu.achievements && edu.achievements.length > 0 && (
-            <div className="space-y-2 pt-4 border-t border-white/10">
-              <h4 className="text-sm font-semibold text-white mb-2">Achievements:</h4>
-              {edu.achievements.map((achievement, idx) => (
-                <div key={idx} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-accent-blue rounded-full mt-2 flex-shrink-0" />
-                  <span className="text-gray-400 text-sm">{achievement}</span>
-                </div>
-              ))}
-            </div>
-          )}
-        </Card>
-      </motion.div>
-    );
-  };
-
-  return (
-    <section id="education" className="section-padding relative" ref={ref}>
-      <div className="container-custom">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">Education</span> & Learning
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            My academic journey and continuous learning path
-          </p>
-        </motion.div>
-
-        {/* Education Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {education.degrees.map((edu, index) => (
-            <EducationCard key={edu.id} edu={edu} index={index} />
-          ))}
         </div>
-
-        {/* Additional Learning */}
-        {education.additionalLearning && education.additionalLearning.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-16"
-          >
-            <h3 className="text-2xl font-bold mb-6 text-center gradient-text">
-              Additional Learning & Development
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              {education.additionalLearning.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                >
-                  <Card hover={true} className="text-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-accent-blue/20 to-accent-purple/20 rounded-lg flex items-center justify-center mx-auto mb-3 border border-accent-blue/30">
-                      <BookOpen size={24} className="text-accent-blue" />
-                    </div>
-                    <h4 className="text-lg font-semibold text-white mb-2">
-                      {item.title}
-                    </h4>
-                    <p className="text-gray-400 text-sm mb-2">{item.platform}</p>
-                    <span className="text-accent-blue text-xs">{item.year}</span>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        )}
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <Card className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
-                  {education.degrees.length}
-                </div>
-                <div className="text-gray-400 text-sm">Degrees</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
-                  {education.additionalLearning?.length || 0}+
-                </div>
-                <div className="text-gray-400 text-sm">Courses</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
-                  <GraduationCap className="inline" size={36} />
-                </div>
-                <div className="text-gray-400 text-sm">Graduated</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
-                  <BookOpen className="inline" size={36} />
-                </div>
-                <div className="text-gray-400 text-sm">Learning</div>
-              </div>
-            </div>
-          </Card>
-        </motion.div>
-
-        {/* Quote or Additional Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-12 text-center"
-        >
-          <Card className="max-w-3xl mx-auto bg-gradient-to-br from-accent-blue/5 to-accent-purple/5">
-            <div className="flex items-center justify-center mb-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-accent-blue to-accent-purple rounded-full flex items-center justify-center">
-                <GraduationCap size={32} className="text-white" />
-              </div>
-            </div>
-            <p className="text-xl text-gray-300 italic mb-2">
-              "Education is the passport to the future, for tomorrow belongs to those who prepare for it today."
-            </p>
-            <p className="text-accent-blue text-sm">- Malcolm X</p>
-          </Card>
-        </motion.div>
       </div>
-
-      {/* Background Decoration */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-accent-purple/5 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent-blue/5 rounded-full blur-3xl -z-10" />
     </section>
   );
+};
+
+// Helper to check for additional learning safely
+const userHasAdditionalLearning = (edu) => {
+  return edu.additionalLearning && edu.additionalLearning.length > 0;
 };
 
 export default Education;

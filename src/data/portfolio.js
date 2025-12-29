@@ -17,105 +17,129 @@ export const portfolioData = {
   },
 
   skills: [
-  {
-    category: "Frontend",
-    items: [
-      { name: "React.js", level: 93, icon: "⚛️" },
-      { name: "Redux Toolkit", level: 90, icon: "🌀" },
-      { name: "Tailwind CSS", level: 92, icon: "🎨" },
-      { name: "JavaScript (ES6+)", level: 88, icon: "📘" },
-      { name: "HTML5", level: 90, icon: "🌐" },
-      { name: "CSS3", level: 88, icon: "💅" }
-    ]
-  },
-  {
-    category: "Backend",
-    items: [
-      { name: "Node.js", level: 90, icon: "🟢" },
-      { name: "Express.js", level: 88, icon: "🚂" },
-      { name: "FastAPI", level: 82, icon: "⚡" },
-      { name: "MongoDB", level: 85, icon: "🍃" },
-      { name: "Prisma ORM", level: 84, icon: "🔗" },
-      { name: "REST APIs", level: 90, icon: "🔌" }
-    ]
-  },
-  {
-    category: "Tools & Others",
-    items: [
-      { name: "Git & GitHub", level: 92, icon: "🔀" },
-      { name: "VS Code", level: 90, icon: "💻" },
-      { name: "AWS (Lambda, S3)", level: 82, icon: "☁️" },
-      { name: "Socket.io", level: 85, icon: "🔁" },
-      { name: "Firebase", level: 80, icon: "🔥" },
-      { name: "Responsive Design & Accessibility", level: 87, icon: "📱" }
-    ]
-  }
-]
-,
+    {
+      category: "Frontend",
+      items: [
+        { name: "React.js", level: 95, icon: "⚛️" },
+        { name: "Three.js (R3F)", level: 85, icon: "🧊" },
+        { name: "Tailwind CSS", level: 95, icon: "🎨" },
+        { name: "Framer Motion", level: 90, icon: "🎭" },
+        { name: "JavaScript (ES6+)", level: 90, icon: "📘" },
+        { name: "Redux Toolkit", level: 88, icon: "🌀" }
+      ]
+    },
+    {
+      category: "Backend",
+      items: [
+        { name: "Node.js", level: 90, icon: "🟢" },
+        { name: "Express.js", level: 88, icon: "🚂" },
+        { name: "Firebase", level: 85, icon: "🔥" },
+        { name: "MongoDB", level: 85, icon: "🍃" },
+        { name: "FastAPI", level: 80, icon: "⚡" },
+        { name: "Prisma ORM", level: 82, icon: "🔗" }
+      ]
+    },
+    {
+      category: "Tools & Others",
+      items: [
+        { name: "Git & GitHub", level: 92, icon: "🔀" },
+        { name: "AWS (Lambda, S3)", level: 82, icon: "☁️" },
+        { name: "Internationalization (i18n)", level: 85, icon: "🌐" },
+        { name: "Google Analytics 4", level: 80, icon: "📈" },
+        { name: "QR Code Tech", level: 85, icon: "📱" },
+        { name: "Socket.io", level: 85, icon: "🔁" }
+      ]
+    }
+  ],
+
 
   projects: [
-  {
-    id: 1,
-    title: "Advertisement Compliance Management System",
-    description:
-      "A task management and compliance tracking platform with multi-role access, real-time collaboration, and enterprise-grade security.",
-    image:
-      "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?w=800&h=600&fit=crop",
-    tags: ["React.js", "Redux Toolkit", "Node.js", "Express.js", "MongoDB", "Prisma", "Socket.io", "AWS S3"],
-    liveUrl: "",
-    githubUrl: "https://github.com/MRGokulB", // Replace with actual repo if available
-    featured: true
-  },
-  {
-    id: 2,
-    title: "GPS Management System",
-    description:
-      "An AI-powered tender and GPS management system with smart document processing, keyword extraction, and candidate matching.",
-    image:
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop",
-    tags: ["React.js", "FastAPI", "MongoDB", "OpenAI API", "AWS Lambda", "Vercel"],
-    liveUrl: "",
-    githubUrl: "https://github.com/MRGokulB",
-    featured: true
-  },
-  {
-    id: 3,
-    title: "Gym Buddy (Social Fitness App)",
-    description:
-      "A social fitness web app for connecting gym enthusiasts, sharing workouts, and tracking progress in real time.",
-    image:
-      "https://images.unsplash.com/photo-1554284126-aa88f22d8b74?w=800&h=600&fit=crop",
-    tags: ["React.js", "Redux Toolkit", "Node.js", "Express.js", "Firebase", "JWT Auth"],
-    liveUrl: "",
-    githubUrl: "https://github.com/MRGokulB",
-    featured: true
-  },
-  {
-    id: 4,
-    title: "AI Podcastr (AI Podcast Platform)",
-    description:
-      "A creative platform for generating and managing podcasts using OpenAI’s TTS and DALL·E APIs with secure user authentication and cloud storage.",
-    image:
-      "https://images.unsplash.com/photo-1525186402429-b4ff38bedbec?w=800&h=600&fit=crop",
-    tags: ["React.js", "Node.js", "Express.js", "Firebase", "OpenAI TTS", "DALL·E API"],
-    liveUrl: "",
-    githubUrl: "https://github.com/MRGokulB",
-    featured: false
-  },
-  {
-    id: 5,
-    title: "Herbs Magic (E-commerce Frontend)",
-    description:
-      "A modern e-commerce interface designed to improve engagement and performance using React.js and Tailwind CSS.",
-    image:
-      "https://images.unsplash.com/photo-1581093588401-22b9a9e98d1e?w=800&h=600&fit=crop",
-    tags: ["React.js", "Tailwind CSS", "REST API", "React Router", "UI Optimization"],
-    liveUrl: "",
-    githubUrl: "https://github.com/MRGokulB",
-    featured: false
-  }
-]
-,
+    {
+      id: 1,
+      title: "IntraIntel.ai (Enterprise AI Platform)",
+      description:
+        "A secure, multi-cloud AI intelligence platform deploying specialized agents for regulatory compliance, clinical workflows, and data insights.",
+      image:
+        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
+      tags: ["React.js", "Tailwind CSS", "Framer Motion", "Multi-Cloud", "Enterprise Security"],
+      liveUrl: "",
+      githubUrl: "https://github.com/MRGokulB",
+      featured: true
+    },
+    {
+      id: 2,
+      title: "Advertisement Compliance Management System",
+      description:
+        "A task management and compliance tracking platform with multi-role access, real-time collaboration, and enterprise-grade security.",
+      image:
+        "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?w=800&h=600&fit=crop",
+      tags: ["React.js", "Redux Toolkit", "Node.js", "Express.js", "MongoDB", "Prisma", "Socket.io", "AWS S3"],
+      liveUrl: "",
+      githubUrl: "https://github.com/MRGokulB", // Replace with actual repo if available
+      featured: true
+    },
+    {
+      id: 3,
+      title: "GPS Management System",
+      description:
+        "An AI-powered tender and GPS management system with smart document processing, keyword extraction, and candidate matching.",
+      image:
+        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop",
+      tags: ["React.js", "FastAPI", "MongoDB", "OpenAI API", "AWS Lambda", "Vercel"],
+      liveUrl: "",
+      githubUrl: "https://github.com/MRGokulB",
+      featured: true
+    },
+    {
+      id: 4,
+      title: "Gym Buddy (Social Fitness App)",
+      description:
+        "A social fitness web app for connecting gym enthusiasts, sharing workouts, and tracking progress in real time.",
+      image:
+        "https://images.unsplash.com/photo-1554284126-aa88f22d8b74?w=800&h=600&fit=crop",
+      tags: ["React.js", "Redux Toolkit", "Node.js", "Express.js", "Firebase", "JWT Auth"],
+      liveUrl: "",
+      githubUrl: "https://github.com/MRGokulB",
+      featured: true
+    },
+    {
+      id: 5,
+      title: "AI Podcastr (AI Podcast Platform)",
+      description:
+        "A creative platform for generating and managing podcasts using OpenAI’s TTS and DALL·E APIs with secure user authentication and cloud storage.",
+      image:
+        "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&h=600&fit=crop",
+      tags: ["React.js", "Node.js", "Express.js", "Firebase", "OpenAI TTS", "DALL·E API"],
+      liveUrl: "",
+      githubUrl: "https://github.com/MRGokulB",
+      featured: false
+    },
+    {
+      id: 6,
+      title: "Herbs Magic (E-commerce Frontend)",
+      description:
+        "A modern e-commerce interface designed to improve engagement and performance using React.js and Tailwind CSS.",
+      image:
+        "https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=800&h=600&fit=crop",
+      tags: ["React.js", "Tailwind CSS", "REST API", "React Router", "UI Optimization"],
+      liveUrl: "",
+      githubUrl: "https://github.com/MRGokulB",
+      featured: false
+    },
+    {
+      id: 7,
+      title: "Mane Mess (Smart Tiffin Service)",
+      description:
+        "A complete digital ecosystem for a tiffin service, featuring user/admin portals, subscription management, and QR-based daily tracking.",
+      image:
+        "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop",
+      tags: ["React.js", "Firebase", "Tailwind CSS", "Framer Motion", "i18next"],
+      liveUrl: "",
+      githubUrl: "https://github.com/MRGokulB",
+      featured: true
+    }
+  ]
+  ,
 
   certifications: [
     {
@@ -175,122 +199,152 @@ export const portfolioData = {
   ],
 
   experience: [
-  {
-    id: 1,
-    company: "LionelAgency Innovations",
-    position: "Full Stack Developer",
-    period: "March 2025 - Present",
-    description:
-      "Developed and deployed an Advertisement Compliance Management System — a robust task management platform with secure, real-time collaboration and role-based access control.",
-    achievements: [
-      "Architected the system using React.js, Redux Toolkit, Node.js, Express.js, and MongoDB with Prisma ORM.",
-      "Implemented RBAC with 6+ roles and 50+ fine-grained permissions.",
-      "Integrated real-time collaboration using WebSockets (Socket.io) for instant task updates and notifications.",
-      "Enabled secure file versioning via AWS S3, improving coordination efficiency by 40%.",
-      "Developed JWT-based authentication, CSRF protection, and session management for enterprise-grade security."
-    ]
-  },
-  {
-    id: 2,
-    company: "Individual Project",
-    position: "Full Stack Developer",
-    period: "Sep 2025 – Aug 2025",
-    description:
-      "Created a GPS Management System — a full-stack platform with AI-powered PDF processing and smart candidate matching.",
-    achievements: [
-      "Built the system using React.js (frontend) and FastAPI (backend) with MongoDB.",
-      "Integrated OpenAI APIs for keyword extraction from Marathi tenders with 85%+ accuracy.",
-      "Reduced manual screening time by 70% through AI-powered automation.",
-      "Implemented secure JWT authentication, RBAC, and file uploads.",
-      "Deployed using AWS Lambda and Vercel for scalable cloud performance."
-    ]
-  },
-  {
-    id: 3,
-    company: "Herbs Magic",
-    position: "Frontend Developer Intern",
-    period: "Dec 2024 – Feb 2025",
-    description:
-      "Contributed to UI development for an e-commerce platform, focusing on performance and responsive design.",
-    achievements: [
-      "Developed responsive interfaces using React.js and Tailwind CSS, improving engagement by 30%.",
-      "Integrated REST APIs and React Router to optimize page transitions and data flow.",
-      "Enhanced cross-device performance and accessibility.",
-      "Participated in Agile sprints, coordinated standups, and collaborated with designers and backend developers."
-    ]
-  }
-]
-,
-
-  education: {
-  degrees: [
     {
       id: 1,
-      degree: "Master of Computer Applications (MCA)",
-      institution: "M.E. Society’s Institute of Management & Career Courses (IMCC)",
-      location: "Pune, Maharashtra, India",
-      period: "2023 - 2025",
-      gpa: "7.98 / 10",
-      major: "Computer Applications",
-      honors: "",
-      logo: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=100&h=100&fit=crop",
+      company: "LionelAgency Innovations",
+      position: "Full Stack Developer",
+      period: "March 2025 - Present",
       description:
-        "Focused on advanced full-stack development, cloud computing, and system architecture. Built scalable web applications and real-time data-driven platforms during coursework.",
-      coursework: [
-        "Advanced Web Development",
-        "Database Management Systems",
-        "Cloud Computing",
-        "Software Engineering",
-        "System Design",
-        "AI Fundamentals"
-      ],
+        "Developed and deployed an Advertisement Compliance Management System — a robust task management platform with secure, real-time collaboration and role-based access control.",
       achievements: [
-        "Developed multiple full-stack projects including GPS Management and AI Podcast platforms",
-        "Maintained consistent academic performance with CGPA 7.98",
-        "Participated in coding competitions and hackathons",
-        "Completed practical internships and live projects"
+        "Architected the system using React.js, Redux Toolkit, Node.js, Express.js, and MongoDB with Prisma ORM.",
+        "Implemented RBAC with 6+ roles and 50+ fine-grained permissions.",
+        "Integrated real-time collaboration using WebSockets (Socket.io) for instant task updates and notifications.",
+        "Enabled secure file versioning via AWS S3, improving coordination efficiency by 40%.",
+        "Developed JWT-based authentication, CSRF protection, and session management for enterprise-grade security."
       ]
     },
     {
       id: 2,
-      degree: "Bachelor of Computer Applications (BCA)",
-      institution: "S.S.B.E’s Institute of Technology & Management",
-      location: "Nanded, Maharashtra, India",
-      period: "2020 - 2023",
-      gpa: "9.51 / 10",
-      major: "Computer Applications",
-      honors: "",
-      logo: "https://images.unsplash.com/photo-1562774053-701939374585?w=100&h=100&fit=crop",
+      company: "Individual Project",
+      position: "Full Stack Developer",
+      period: "Sep 2025 – Aug 2025",
       description:
-        "Built a strong foundation in programming, database management, and UI development. Gained hands-on experience in frontend and backend web technologies.",
-      coursework: [
-        "C / C++ Programming",
-        "Web Development",
-        "Database Systems",
-        "Operating Systems",
-        "Computer Networks",
-        "Software Project Management"
-      ],
+        "Created a GPS Management System — a full-stack platform with AI-powered PDF processing and smart candidate matching.",
       achievements: [
-        "Graduated with distinction (CGPA 9.51)",
-        "Led a team for final-year web development project",
-        "Participated in technical symposiums and workshops",
-        "Received recognition for academic excellence"
+        "Built the system using React.js (frontend) and FastAPI (backend) with MongoDB.",
+        "Integrated OpenAI APIs for keyword extraction from Marathi tenders with 85%+ accuracy.",
+        "Reduced manual screening time by 70% through AI-powered automation.",
+        "Implemented secure JWT authentication, RBAC, and file uploads.",
+        "Deployed using AWS Lambda and Vercel for scalable cloud performance."
       ]
-    }
-  ],
-  additionalLearning: [
-    {
-      title: "Artificial Intelligence Fundamentals",
-      platform: "IBM SkillsBuild",
-      year: "2024"
     },
     {
-      title: "Fundamentals of Full Stack Development",
-      platform: "ExcelR",
-      year: "2024"
-    } 
+      id: 3,
+      company: "Herbs Magic",
+      position: "Frontend Developer Intern",
+      period: "Dec 2024 – Feb 2025",
+      description:
+        "Contributed to UI development for an e-commerce platform, focusing on performance and responsive design.",
+      achievements: [
+        "Developed responsive interfaces using React.js and Tailwind CSS, improving engagement by 30%.",
+        "Integrated REST APIs and React Router to optimize page transitions and data flow.",
+        "Enhanced cross-device performance and accessibility.",
+        "Participated in Agile sprints, coordinated standups, and collaborated with designers and backend developers."
+      ]
+    },
+    {
+      id: 4,
+      company: "Mane Mess",
+      position: "Full Stack Developer",
+      period: "Feb 2025 - Present",
+      description:
+        "Built a comprehensive digital solution for a homemade tiffin service ('Mane Mess') to streamline operations and enhance customer experience.",
+      achievements: [
+        "Developed a modern, responsive landing page and user portal using React.js and Tailwind CSS.",
+        "Implemented a secure admin dashboard for menu management, order tracking, and user oversight.",
+        "Integrated Firebase for real-time database capabilities and secure authentication.",
+        "Created a QR-code based daily attendance/tiffin tracking system for efficiency.",
+        "Added multi-language support (i18next) to cater to a diverse local customer base."
+      ]
+    },
+    {
+      id: 5,
+      company: "IntraIntel.ai",
+      position: "Frontend Developer",
+      period: "Jan 2024 - Dec 2024",
+      description:
+        "Contributed to the development of IntraIntel.ai, an enterprise-grade AI platform focused on secure data intelligence and clinical workflow automation.",
+      achievements: [
+        "Architected a privacy-first UI for a multi-cloud platform integrating AWS, Azure, and GCP.",
+        "Developed complex data visualization components for clinical risk calculators and trial simulations.",
+        "Implemented smooth, professional animations using Framer Motion to enhance user engagement.",
+        "Optimized the platform for handling large-scale unstructured data analytics in real-time.",
+        "Collaborated with cross-functional teams to ensure HIPAA and SOC2 compliance in frontend implementations."
+      ]
+    }
   ]
-}
+  ,
+
+  education: {
+    degrees: [
+      {
+        id: 1,
+        degree: "Master of Computer Applications (MCA)",
+        institution: "M.E. Society’s Institute of Management & Career Courses (IMCC)",
+        location: "Pune, Maharashtra, India",
+        period: "2023 - 2025",
+        gpa: "7.98 / 10",
+        major: "Computer Applications",
+        honors: "",
+        logo: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=100&h=100&fit=crop",
+        description:
+          "Focused on advanced full-stack development, cloud computing, and system architecture. Built scalable web applications and real-time data-driven platforms during coursework.",
+        coursework: [
+          "Advanced Web Development",
+          "Database Management Systems",
+          "Cloud Computing",
+          "Software Engineering",
+          "System Design",
+          "AI Fundamentals"
+        ],
+        achievements: [
+          "Developed multiple full-stack projects including GPS Management and AI Podcast platforms",
+          "Maintained consistent academic performance with CGPA 7.98",
+          "Participated in coding competitions and hackathons",
+          "Completed practical internships and live projects"
+        ]
+      },
+      {
+        id: 2,
+        degree: "Bachelor of Computer Applications (BCA)",
+        institution: "S.S.B.E’s Institute of Technology & Management",
+        location: "Nanded, Maharashtra, India",
+        period: "2020 - 2023",
+        gpa: "9.51 / 10",
+        major: "Computer Applications",
+        honors: "",
+        logo: "https://images.unsplash.com/photo-1562774053-701939374585?w=100&h=100&fit=crop",
+        description:
+          "Built a strong foundation in programming, database management, and UI development. Gained hands-on experience in frontend and backend web technologies.",
+        coursework: [
+          "C / C++ Programming",
+          "Web Development",
+          "Database Systems",
+          "Operating Systems",
+          "Computer Networks",
+          "Software Project Management"
+        ],
+        achievements: [
+          "Graduated with distinction (CGPA 9.51)",
+          "Led a team for final-year web development project",
+          "Participated in technical symposiums and workshops",
+          "Received recognition for academic excellence"
+        ]
+      }
+    ],
+    additionalLearning: [
+      {
+        title: "Artificial Intelligence Fundamentals",
+        platform: "IBM SkillsBuild",
+        year: "2024"
+      },
+      {
+        title: "Fundamentals of Full Stack Development",
+        platform: "ExcelR",
+        year: "2024"
+      }
+    ]
+  }
 
 };

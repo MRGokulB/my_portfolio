@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 
-const Button = ({ 
-  children, 
-  variant = 'primary', 
-  size = 'md', 
-  onClick, 
+const Button = ({
+  children,
+  variant = 'primary',
+  size = 'md',
+  onClick,
   className = '',
   icon,
   href,
@@ -12,11 +12,11 @@ const Button = ({
   disabled = false
 }) => {
   const baseStyles = "inline-flex items-center justify-center gap-2 font-medium rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed";
-  
+
   const variants = {
     primary: "bg-gradient-to-r from-accent-blue to-accent-purple text-white hover:shadow-lg hover:shadow-accent-blue/50 hover:scale-105",
-    secondary: "glass-effect text-white hover:bg-white/10 border border-white/20",
-    outline: "border-2 border-accent-blue text-accent-blue hover:bg-accent-blue hover:text-dark-100",
+    secondary: "glass-effect text-gray-900 dark:text-white hover:bg-black/5 dark:hover:bg-white/10 border border-black/10 dark:border-white/20",
+    outline: "border-2 border-accent-blue text-accent-blue hover:bg-accent-blue hover:text-white",
     ghost: "text-accent-blue hover:bg-accent-blue/10"
   };
 

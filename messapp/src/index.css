@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    @apply antialiased text-dark-900 bg-dark-50;
+  }
+
+  body {
+    @apply relative overflow-x-hidden min-h-screen font-sans selection:bg-primary-200 selection:text-primary-900;
+  }
+
+  /* Typography Defaults */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight text-dark-900;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply text-primary-600;
+    /* Simplification for readability */
+  }
+
+  .mask-linear-fade {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+}
+
+@layer components {
+
+  /* Premium Light Glass Effect */
+  .glass-panel {
+    @apply bg-glass-100 backdrop-blur-md border border-white/50 shadow-xl;
+  }
+
+  /* This was dark, now mapping to a light card style for compatibility */
+  .glass-panel-dark {
+    @apply bg-white/80 backdrop-blur-md border border-dark-200/50 shadow-lg text-dark-900;
+  }
+
+  /* Interactive Cards */
+  .glass-card {
+    @apply relative overflow-hidden rounded-2xl transition-all duration-500 bg-white border border-dark-100 hover:border-primary-400/50 hover:shadow-glow hover:-translate-y-1;
+  }
+
+  /* Noise Overlay - Keeping it subtle for texture */
+  .bg-noise-overlay {
+    @apply fixed inset-0 w-full h-full pointer-events-none opacity-[0.02] z-[9999] bg-repeat bg-noise mix-blend-multiply;
+  }
+
+  /* Scrollbar Customization */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-dark-200/60 hover:bg-dark-300 rounded-full transition-colors border-2 border-transparent bg-clip-content;
+  }
+}

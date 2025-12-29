@@ -71,12 +71,7 @@ const GalaxyArms = () => {
     </points>
   );
 };
-
  
-
- 
- 
-
 // Shooting Stars
 const ShootingStars = () => {
   const starsRef = useRef([]);
@@ -193,8 +188,6 @@ const CreativeScene = () => {
       >
         <Suspense fallback={null}>
            
-        
-          
           {/* Shooting stars effect */}
           <ShootingStars />
           

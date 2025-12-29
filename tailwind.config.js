@@ -4,42 +4,39 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class', // Enable class-based dark mode
   theme: {
     extend: {
-      colors: {
-        'dark-950': '#101522',
-        'dark-900': '#181b2d',
-        'dark-700': '#232946',
-        'accent-blue': '#00d4ff',
-        'accent-purple': '#a855f7',
-        'accent-pink': '#ec4899',
-        dark: {
-          100: '#1a1a2e',
-          200: '#16213e',
-          300: '#0f3460',
-        },
-        accent: {
-          blue: '#00d4ff',
-          purple: '#a855f7',
-          pink: '#ec4899',
-        },
-        
+      fontFamily: {
+        display: ['Space Grotesk', 'sans-serif'],
+        body: ['Outfit', 'sans-serif'],
       },
-      borderColor: {
-        border: '#1a1a2e', 
+      colors: {
+        'dark-950': '#0a0a0f', // Deeper black/blue
+        'dark-900': '#12121a',
+        'dark-800': '#1c1c2e',
+        'accent-blue': '#3b82f6',
+        'accent-purple': '#8b5cf6',
+        'accent-cyan': '#06b6d4',
+        glass: {
+          100: 'rgba(255, 255, 255, 0.03)',
+          200: 'rgba(255, 255, 255, 0.05)',
+          300: 'rgba(255, 255, 255, 0.1)',
+        }
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
-        'glow': 'glow 2s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'spin-slow': 'spin 12s linear infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
-        },
-        glow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(0, 212, 255, 0.5)' },
-          '50%': { boxShadow: '0 0 30px rgba(0, 212, 255, 0.8)' },
         }
       }
     },
