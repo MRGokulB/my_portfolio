@@ -62,7 +62,7 @@ export const portfolioData = {
       image:
         "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
       tags: ["React.js", "Tailwind CSS", "Framer Motion", "Multi-Cloud", "Enterprise Security"],
-      liveUrl: "",
+      liveUrl: "https://intraintel.ai",
       githubUrl: "https://github.com/MRGokulB",
       featured: true
     },
@@ -122,7 +122,7 @@ export const portfolioData = {
       image:
         "https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=800&h=600&fit=crop",
       tags: ["React.js", "Tailwind CSS", "REST API", "React Router", "UI Optimization"],
-      liveUrl: "",
+      liveUrl: "https://www.theherbsmagic.com/",
       githubUrl: "https://github.com/MRGokulB",
       featured: false
     },
@@ -135,6 +135,18 @@ export const portfolioData = {
         "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop",
       tags: ["React.js", "Firebase", "Tailwind CSS", "Framer Motion", "i18next"],
       liveUrl: "",
+      githubUrl: "https://github.com/MRGokulB",
+      featured: true
+    },
+    {
+      id: 8,
+      title: "GCON Nanded (Government College Website)",
+      description:
+        "Designed, developed, and hosted the official website for Government College of Nursing, Nanded, ensuring an accessible and modern user experience.",
+      image:
+        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800&auto=format&fit=crop",
+      tags: ["React.js", "Tailwind CSS", "Node.js", "Full Stack Development", "Responsive Design"],
+      liveUrl: "https://gconnanded.in",
       githubUrl: "https://github.com/MRGokulB",
       featured: true
     }
@@ -201,6 +213,22 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
+      company: "IntraIntel.ai",
+      url: "https://intraintel.ai",
+      position: "Frontend Developer",
+      period: "Nov 2025 - Dec 2025",
+      description:
+        "Contributed to the development of IntraIntel.ai, an enterprise-grade AI platform focused on secure data intelligence and clinical workflow automation.",
+      achievements: [
+        "Architected a privacy-first UI for a multi-cloud platform integrating AWS, Azure, and GCP.",
+        "Developed complex data visualization components for clinical risk calculators and trial simulations.",
+        "Implemented smooth, professional animations using Framer Motion to enhance user engagement.",
+        "Optimized the platform for handling large-scale unstructured data analytics in real-time.",
+        "Collaborated with cross-functional teams to ensure HIPAA and SOC2 compliance in frontend implementations."
+      ]
+    },
+    {
+      id: 2,
       company: "LionelAgency Innovations",
       position: "Full Stack Developer",
       period: "March 2025 - Present",
@@ -215,23 +243,24 @@ export const portfolioData = {
       ]
     },
     {
-      id: 2,
-      company: "Individual Project",
+      id: 3,
+      company: "GCON Nanded",
+      url: "https://gconnanded.in",
       position: "Full Stack Developer",
-      period: "Sep 2025 – Aug 2025",
+      period: "Aug 2025 – Oct 2025",
       description:
-        "Created a GPS Management System — a full-stack platform with AI-powered PDF processing and smart candidate matching.",
+        "Created and hosted the official website for Government College of Nursing, Nanded. Delivered a full-stack platform with a modern UI and robust backend.",
       achievements: [
-        "Built the system using React.js (frontend) and FastAPI (backend) with MongoDB.",
-        "Integrated OpenAI APIs for keyword extraction from Marathi tenders with 85%+ accuracy.",
-        "Reduced manual screening time by 70% through AI-powered automation.",
-        "Implemented secure JWT authentication, RBAC, and file uploads.",
-        "Deployed using AWS Lambda and Vercel for scalable cloud performance."
+        "Architected and built the official college website from scratch, focusing on high performance, accessibility, and modern UI/UX.",
+        "Implemented secure content delivery and file upload capabilities for administrative notices and student updates.",
+        "Ensured standard industry practices and optimized responsive design across all devices.",
+        "Deployed and maintained the web hosting infrastructure to ensure reliable uptime for the college community."
       ]
     },
     {
-      id: 3,
+      id: 4,
       company: "Herbs Magic",
+      url: "https://www.theherbsmagic.com/",
       position: "Frontend Developer Intern",
       period: "Dec 2024 – Feb 2025",
       description:
@@ -244,7 +273,7 @@ export const portfolioData = {
       ]
     },
     {
-      id: 4,
+      id: 5,
       company: "Mane Mess",
       position: "Full Stack Developer",
       period: "Feb 2025 - Present",
@@ -258,21 +287,7 @@ export const portfolioData = {
         "Added multi-language support (i18next) to cater to a diverse local customer base."
       ]
     },
-    {
-      id: 5,
-      company: "IntraIntel.ai",
-      position: "Frontend Developer",
-      period: "Jan 2024 - Dec 2024",
-      description:
-        "Contributed to the development of IntraIntel.ai, an enterprise-grade AI platform focused on secure data intelligence and clinical workflow automation.",
-      achievements: [
-        "Architected a privacy-first UI for a multi-cloud platform integrating AWS, Azure, and GCP.",
-        "Developed complex data visualization components for clinical risk calculators and trial simulations.",
-        "Implemented smooth, professional animations using Framer Motion to enhance user engagement.",
-        "Optimized the platform for handling large-scale unstructured data analytics in real-time.",
-        "Collaborated with cross-functional teams to ensure HIPAA and SOC2 compliance in frontend implementations."
-      ]
-    }
+
   ]
   ,
 

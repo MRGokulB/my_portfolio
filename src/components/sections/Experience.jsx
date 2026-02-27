@@ -46,7 +46,15 @@ const Experience = () => {
                                             {job.position}
                                             {index === 0 && <span className="px-2 py-0.5 rounded-full bg-accent-green/10 dark:bg-accent-green/20 text-accent-green text-xs font-mono border border-accent-green/30">Latest</span>}
                                         </h3>
-                                        <div className="text-accent-blue font-mono mt-1">@ {job.company}</div>
+                                        <div className="text-accent-blue font-mono mt-1">
+                                            @ {job.url ? (
+                                                <a href={job.url} target="_blank" rel="noreferrer" className="hover:underline transition-colors">
+                                                    {job.company}
+                                                </a>
+                                            ) : (
+                                                job.company
+                                            )}
+                                        </div>
                                     </div>
                                     <div className="font-mono text-sm text-gray-800 dark:text-gray-400 bg-gray-200 dark:bg-white/5 px-3 py-1 rounded-md border border-gray-400 dark:border-white/5 whitespace-nowrap">
                                         {job.period}

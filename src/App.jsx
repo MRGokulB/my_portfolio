@@ -13,7 +13,7 @@ import Experience from './components/sections/Experience';
 import './styles/globals.css';
 
 function App() {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   // Handle Theme Side Effects
   useEffect(() => {
@@ -39,7 +39,7 @@ function App() {
         <Experience />
         <Skills />
         <Education />
-        <Certifications />
+        {/*<Certifications />*/}
         <Contact />
       </Layout>
     </>
