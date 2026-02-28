@@ -2,13 +2,14 @@ import { motion } from 'framer-motion';
 import { portfolioData } from '../../data/portfolio';
 import { ArrowUpRight, Github } from 'lucide-react';
 
-const SwissGridItem = ({ children, className = "", delay = 0 }) => (
+const SwissGridItem = ({ children, className = "", delay = 0, ...props }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay }}
     viewport={{ once: true }}
     className={`border-b border-black p-8 relative group overflow-hidden ${className}`}
+    {...props}
   >
     {children}
   </motion.div>
@@ -33,8 +34,8 @@ const Projects = () => {
 
       {/* Asymmetrical Grid of Projects */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => {
-          // Create an asymmetrical layout based on index index
+        {projects.filter(p => p.featured).slice(0, 4).map((project, index) => {
+          // Create an asymmetrical layout based on index
           const isLarge = index === 0 || index === 3;
           const colSpanClass = isLarge ? "md:col-span-2 lg:col-span-2" : "md:col-span-1 lg:col-span-1";
 
@@ -91,15 +92,18 @@ const Projects = () => {
 
       {/* Divider / Interstitial */}
       <div className="grid grid-cols-1 md:grid-cols-3">
-        <SwissGridItem className="md:col-span-1 border-r border-black aspect-square flex items-center justify-center bg-accent text-white group cursor-default">
-          <h2 className="text-6xl font-black -rotate-90 group-hover:rotate-0 transition-transform duration-500">
-            Code
+        <a href="/works" className="block md:col-span-1 border-r border-b md:border-b-0 border-black aspect-square flex items-center justify-center bg-accent text-white group cursor-pointer hover:bg-black transition-colors duration-500">
+          <h2 className="text-4xl md:text-6xl font-black md:-rotate-90 group-hover:rotate-0 transition-transform duration-500">
+            All Works
           </h2>
-        </SwissGridItem>
+        </a>
         <div className="md:col-span-2 p-8 md:p-12 flex flex-col justify-center items-center text-center">
-          <h3 className="text-3xl font-serif max-w-lg italic">
+          <h3 className="text-2xl md:text-3xl font-serif max-w-lg italic mb-8">
             "We strip away the non-essential to reveal the core truth of the platform."
           </h3>
+          <a href="/works" className="font-mono text-sm uppercase tracking-widest border border-black px-8 py-3 hover:bg-black hover:text-white transition-colors duration-300">
+            Explore Directory
+          </a>
         </div>
       </div>
     </section>
