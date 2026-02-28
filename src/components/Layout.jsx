@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
+import { Outlet } from 'react-router-dom';
 import Navbar from './ui/Navbar';
-import { portfolioData } from '../data/portfolio';
-import { Heart, ArrowUp } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { ArrowUp } from 'lucide-react';
 
-const Layout = ({ children, isDark, toggleTheme }) => {
+const Layout = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -21,9 +21,13 @@ const Layout = ({ children, isDark, toggleTheme }) => {
   };
 
   return (
-    <div className="relative min-h-screen">
-      <Navbar isDark={isDark} toggleTheme={toggleTheme} />
-      <main>{children}</main>
+    <div className="relative min-h-screen bg-background text-primary border-x border-border-color max-w-[1920px] mx-auto w-full flex flex-col pt-16 md:pt-20">
+      <Navbar />
+
+      {/* Route Outlet */}
+      <main className="flex-1 flex flex-col relative w-full">
+        <Outlet />
+      </main>
 
       {/* Scroll to Top Button */}
       {showScrollTop && (
@@ -32,12 +36,11 @@ const Layout = ({ children, isDark, toggleTheme }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 w-14 h-14 rounded-full glass-effect flex items-center justify-center text-gray-900 dark:text-white border-2 border-transparent hover:border-accent-blue/50 shadow-lg hover:shadow-accent-blue/20 transition-all z-50 group"
-          whileHover={{ scale: 1.1, rotate: 360 }}
+          className="fixed bottom-8 right-8 w-14 h-14 bg-black text-space rounded-full flex items-center justify-center hover:bg-accent text-white transition-colors z-50 group border border-black shadow-lg"
+          whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <ArrowUp size={24} className="group-hover:text-accent-blue transition-colors" />
-          <div className="absolute inset-0 rounded-full bg-accent-blue/10 dark:bg-accent-blue/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+          <ArrowUp size={24} />
         </motion.button>
       )}
     </div>

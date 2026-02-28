@@ -1,84 +1,78 @@
 import { motion } from 'framer-motion';
 import { portfolioData } from '../../data/portfolio';
-import { GitCommit, GitBranch } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const Experience = () => {
     const { experience } = portfolioData;
 
     return (
-        <section id="experience" className="relative py-32 bg-transparent">
-            <div className="container-custom max-w-5xl px-6 mx-auto relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mb-20 flex items-center gap-4"
-                >
-                    <div className="p-3 rounded-lg bg-accent-blue/10 text-accent-blue">
-                        <GitBranch size={28} />
-                    </div>
-                    <div>
-                        <span className="text-accent-blue font-mono uppercase tracking-widest text-sm block">03. The Path</span>
-                        <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">Commit History</h2>
-                    </div>
-                </motion.div>
-
-                <div className="relative ml-4 md:ml-12 border-l-2 border-dashed border-gray-300 dark:border-gray-800 space-y-12">
-                    {experience.map((job, index) => (
-                        <motion.div
-                            key={job.id}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="relative pl-8 md:pl-16 group"
-                        >
-                            {/* Timeline Dot (Commit Node) */}
-                            <div className="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-white dark:bg-dark-950 border-4 border-gray-400 dark:border-gray-700 group-hover:border-accent-blue group-hover:scale-110 transition-all duration-300 z-10" />
-
-                            {/* Content Card */}
-                            <div className="p-6 md:p-8 rounded-2xl bg-white dark:bg-[#0f0f15]/60 backdrop-blur-md border border-gray-200 dark:border-white/5 hover:border-accent-blue/50 transition-all duration-300 shadow-xl shadow-gray-100/50 dark:shadow-none">
-
-                                {/* Header: Position & Company */}
-                                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
-                                    <div>
-                                        <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-3">
-                                            {job.position}
-                                            {index === 0 && <span className="px-2 py-0.5 rounded-full bg-accent-green/10 dark:bg-accent-green/20 text-accent-green text-xs font-mono border border-accent-green/30">Latest</span>}
-                                        </h3>
-                                        <div className="text-accent-blue font-mono mt-1">
-                                            @ {job.url ? (
-                                                <a href={job.url} target="_blank" rel="noreferrer" className="hover:underline transition-colors">
-                                                    {job.company}
-                                                </a>
-                                            ) : (
-                                                job.company
-                                            )}
-                                        </div>
-                                    </div>
-                                    <div className="font-mono text-sm text-gray-800 dark:text-gray-400 bg-gray-200 dark:bg-white/5 px-3 py-1 rounded-md border border-gray-400 dark:border-white/5 whitespace-nowrap">
-                                        {job.period}
-                                    </div>
-                                </div>
-
-                                {/* Description */}
-                                <p className="text-gray-700 dark:text-gray-400 leading-relaxed mb-6 font-light">
-                                    {job.description}
-                                </p>
-
-                                {/* Tech & Achievements (Commit Messages) */}
-                                <div className="space-y-3">
-                                    {job.achievements.map((ach, i) => (
-                                        <div key={i} className="flex items-start gap-3 text-sm text-gray-500 dark:text-gray-400 font-mono group/item hover:text-gray-900 dark:hover:text-gray-300 transition-colors">
-                                            <GitCommit size={16} className="mt-1 text-gray-400 dark:text-gray-600 group-hover/item:text-accent-purple transition-colors shrink-0" />
-                                            <span>{ach}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+        <section id="experience" className="w-full bg-white border-b border-black">
+            {/* Header */}
+            <div className="p-8 md:p-12 border-b border-black grid grid-cols-1 md:grid-cols-2 gap-8 items-end bg-surface">
+                <div>
+                    <span className="label-category !mb-4">03. The Path</span>
+                    <h2 className="heading-display !mb-0 text-5xl md:text-7xl">
+                        Commit <br className="hidden md:block" />History
+                    </h2>
                 </div>
+                <div className="text-xl font-medium text-secondary max-w-md">
+                    Professional journey structured as a rigorous timeline of contributions & architectural decisions.
+                </div>
+            </div>
+
+            {/* Tabular Experience Grid */}
+            <div className="flex flex-col">
+                {experience.map((job, index) => (
+                    <motion.div
+                        key={job.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="grid grid-cols-1 md:grid-cols-12 border-b border-black last:border-b-0 group hover:bg-black hover:text-white transition-colors duration-500"
+                    >
+                        {/* Meta: Dates & Company */}
+                        <div className="md:col-span-3 p-8 border-b md:border-b-0 md:border-r border-black flex flex-col justify-between">
+                            <span className="font-mono text-sm uppercase tracking-widest">{job.period}</span>
+                            <div className="mt-8 md:mt-0 font-serif text-2xl group-hover:text-white transition-colors">
+                                {job.url ? (
+                                    <a href={job.url} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors w-fit">
+                                        {job.company} <ArrowUpRight strokeWidth={1.5} size={20} className="hidden group-hover:block" />
+                                    </a>
+                                ) : (
+                                    job.company
+                                )}
+                            </div>
+                        </div>
+
+                        {/* Details: Role & Impact */}
+                        <div className="md:col-span-9 p-8 md:p-12 flex flex-col">
+                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                                <h3 className="font-display text-3xl font-black uppercase tracking-tight">
+                                    {job.position}
+                                </h3>
+                                {index === 0 && (
+                                    <span className="px-3 py-1 bg-accent text-white font-mono text-xs uppercase tracking-widest self-start md:self-auto">
+                                        Current
+                                    </span>
+                                )}
+                            </div>
+
+                            <p className="text-lg leading-relaxed mb-8 max-w-3xl text-secondary group-hover:text-gray-300 transition-colors">
+                                {job.description}
+                            </p>
+
+                            <ul className="space-y-4 font-mono text-sm max-w-3xl border-t border-black group-hover:border-white/20 pt-6 transition-colors">
+                                {job.achievements.map((ach, i) => (
+                                    <li key={i} className="flex items-start gap-4">
+                                        <span className="text-accent shrink-0 mt-0.5">■</span>
+                                        <span className="group-hover:text-gray-200 transition-colors">{ach}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </motion.div>
+                ))}
             </div>
         </section>
     );

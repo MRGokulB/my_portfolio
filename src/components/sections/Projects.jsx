@@ -1,126 +1,106 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { portfolioData } from '../../data/portfolio';
-import { ArrowUpRight, Github, Code2 } from 'lucide-react';
+import { ArrowUpRight, Github } from 'lucide-react';
+
+const SwissGridItem = ({ children, className = "", delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay }}
+    viewport={{ once: true }}
+    className={`border-b border-black p-8 relative group overflow-hidden ${className}`}
+  >
+    {children}
+  </motion.div>
+);
 
 const Projects = () => {
   const { projects } = portfolioData;
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: targetRef });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
   return (
-    <section ref={targetRef} id="projects" className="relative md:h-[300vh] h-auto py-20 md:py-0">
-      {/* Mobile View: Vertical Stack */}
-      <div className="md:hidden container-custom px-6 flex flex-col gap-12">
-        <div className="mb-8">
-          <span className="text-accent-blue font-mono uppercase tracking-widest text-sm mb-4 block">02. Selected Works</span>
-          <h2 className="font-display text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Built<br />
-            <span className="text-gray-500 dark:text-gray-700">From Scratch.</span>
-          </h2>
-        </div>
-
-        {projects.map((project) => (
-          <div key={project.id} className="relative w-full aspect-[4/5] bg-gray-100 dark:bg-[#0a0a0f] border border-gray-200 dark:border-white/10 rounded-2xl overflow-hidden shadow-lg">
-            <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-            <div className="absolute bottom-0 left-0 p-6 w-full z-10 text-white">
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.slice(0, 3).map(tag => (
-                  <span key={tag} className="text-[10px] font-mono font-medium bg-white/20 backdrop-blur-md px-2 py-1 rounded-full border border-white/10">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <h3 className="font-display text-2xl font-bold mb-2 leading-tight">{project.title}</h3>
-              <div className="flex gap-3 mt-4">
-                <a href={project.githubUrl} target="_blank" rel="noreferrer" className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/20 hover:bg-white hover:text-black transition-colors">
-                  <Github size={20} />
-                </a>
-                {project.liveUrl && (
-                  <a href={project.liveUrl} target="_blank" rel="noreferrer" className="p-3 rounded-full bg-white text-black hover:bg-accent-blue hover:text-white transition-colors">
-                    <ArrowUpRight size={20} />
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        ))}
+    <section id="projects" className="w-full bg-white border-b border-black">
+      {/* Header Area */}
+      <div className="p-8 md:p-12 border-b border-black bg-surface">
+        <span className="label-category !mb-4">02. Selected Works</span>
+        <h2 className="heading-display !mb-0 text-4xl md:text-7xl">
+          Built From <br />
+          <span className="text-white bg-accent px-4 ml-0 md:ml-12">Scratch</span>
+        </h2>
+        <p className="mt-8 text-xl font-medium max-w-2xl text-secondary">
+          A showcase of technical depth. From database architecture to pixel-perfect interactions.
+        </p>
       </div>
 
-      {/* Desktop View: Horizontal Scroll */}
-      <div className="hidden md:flex sticky top-0 h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-16 px-16">
-          {/* Header Card */}
-          <div className="flex-shrink-0 w-[400px] h-[60vh] flex flex-col justify-center glass-effect p-12 rounded-3xl">
-            <span className="label-category">02. Selected Works</span>
-            <h2 className="heading-display">
-              Built<br />
-              <span className="text-gray-500 dark:text-gray-700">From Scratch.</span>
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-lg max-w-sm">
-              A showcase of technical depth. From database architecture to pixel-perfect interactions.
-            </p>
-            <div className="flex items-center gap-4 mt-8">
-              <Code2 className="text-gray-400 dark:text-gray-600" />
-              <div className="h-[1px] w-24 bg-gray-300 dark:bg-gray-800"></div>
-            </div>
-          </div>
+      {/* Asymmetrical Grid of Projects */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project, index) => {
+          // Create an asymmetrical layout based on index index
+          const isLarge = index === 0 || index === 3;
+          const colSpanClass = isLarge ? "md:col-span-2 lg:col-span-2" : "md:col-span-1 lg:col-span-1";
 
-          {/* Project Cards */}
-          {projects.map((project) => (
-            <div key={project.id} className="group relative flex-shrink-0 w-[60vw] h-[70vh] bg-gray-100 dark:bg-[#0a0a0f] border border-gray-200 dark:border-white/10 rounded-2xl overflow-hidden hover:border-accent-blue/50 dark:hover:border-white/20 transition-all duration-500 shadow-2xl">
-              {/* Background Image */}
-              <div className="absolute inset-0">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover opacity-80 dark:opacity-50 group-hover:opacity-60 dark:group-hover:opacity-30 group-hover:scale-105 transition-all duration-700 grayscale group-hover:grayscale-0" />
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent dark:from-[#0a0a0f] dark:via-[#0a0a0f]/80 dark:to-transparent" />
-              </div>
-
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full z-10">
-                <div className="flex justify-between items-end mb-8">
-                  <div className="max-w-3xl">
-                    {/* Tech Stack Pills */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tags.slice(0, 4).map(tag => (
-                        <span key={tag} className="text-xs font-mono font-medium tracking-wide text-gray-900 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-gray-400 dark:border-white/20 shadow-sm">
-                          {tag}
-                        </span>
-                      ))}
-                      {project.tags.length > 4 && (
-                        <span className="text-xs font-mono font-medium tracking-wide text-gray-900 dark:text-white bg-white/50 dark:bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-                          +{project.tags.length - 4}
-                        </span>
-                      )}
-                    </div>
-
-                    <h3 className="font-display text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
-                      {project.title}
-                    </h3>
-
-                    <p className="text-gray-800 dark:text-gray-300 text-lg font-light leading-relaxed line-clamp-2 md:line-clamp-none max-w-2xl">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex gap-4">
-                    <a href={project.githubUrl} target="_blank" rel="noreferrer" className="p-4 rounded-full bg-white/20 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10 text-gray-900 dark:text-white hover:bg-white hover:text-black transition-all">
-                      <Github size={24} />
+          return (
+            <SwissGridItem
+              key={project.id}
+              delay={index * 0.1}
+              className={`${colSpanClass} md:border-r border-black flex flex-col justify-between min-h-[500px] hover:bg-black hover:text-white transition-colors duration-500`}
+            >
+              <div className="relative z-10 flex flex-col h-full z-20">
+                <div className="flex justify-between items-start mb-8">
+                  <span className="font-mono text-xs uppercase tracking-widest border border-current px-2 py-1">
+                    Proj. 0{index + 1}
+                  </span>
+                  <div className="flex gap-3">
+                    <a href={project.githubUrl} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">
+                      <Github strokeWidth={1.5} size={20} />
                     </a>
                     {project.liveUrl && (
-                      <a href={project.liveUrl} target="_blank" rel="noreferrer" className="p-4 rounded-full bg-white text-black hover:bg-accent-blue hover:text-white transition-all shadow-lg">
-                        <ArrowUpRight size={24} />
+                      <a href={project.liveUrl} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">
+                        <ArrowUpRight strokeWidth={1.5} size={20} />
                       </a>
                     )}
                   </div>
                 </div>
+
+                <div className="mt-auto">
+                  <h3 className="font-serif text-3xl md:text-5xl font-bold mb-4 leading-tight group-hover:text-white transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-secondary group-hover:text-gray-400 mb-6 max-w-xl transition-colors">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.slice(0, 4).map(tag => (
+                      <span key={tag} className="text-[10px] font-mono font-medium border border-current px-2 py-1 uppercase group-hover:border-white/30 transition-colors">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
-        </motion.div>
+
+              {/* Hover Image Background */}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-30 mix-blend-luminosity filter grayscale transition-opacity duration-500 z-0"
+              />
+            </SwissGridItem>
+          );
+        })}
+      </div>
+
+      {/* Divider / Interstitial */}
+      <div className="grid grid-cols-1 md:grid-cols-3">
+        <SwissGridItem className="md:col-span-1 border-r border-black aspect-square flex items-center justify-center bg-accent text-white group cursor-default">
+          <h2 className="text-6xl font-black -rotate-90 group-hover:rotate-0 transition-transform duration-500">
+            Code
+          </h2>
+        </SwissGridItem>
+        <div className="md:col-span-2 p-8 md:p-12 flex flex-col justify-center items-center text-center">
+          <h3 className="text-3xl font-serif max-w-lg italic">
+            "We strip away the non-essential to reveal the core truth of the platform."
+          </h3>
+        </div>
       </div>
     </section>
   );

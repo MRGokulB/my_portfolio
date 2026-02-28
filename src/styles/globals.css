@@ -4,43 +4,24 @@
 
 @layer base {
   :root {
-    font-family: 'Outfit', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     line-height: 1.5;
     font-weight: 400;
 
-    /* Theme Variables - Light Mode Default (Minimal & Crisp) */
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --glass-border: rgba(0, 0, 0, 0.08);
-    /* Darker border for visibility */
-    /* Less transparent for legibility */
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05);
-    --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.05);
+    /* Theme Variables - Strict Light Mode for Swiss Design */
+    --bg-primary: #fcfcfc;
+    --text-primary: #111111;
+    --border-color: #111111;
+    --accent-color: #d4af37;
 
-    color-scheme: light dark;
+    color-scheme: light;
     scroll-behavior: smooth;
-  }
-
-  /* Dark Mode Overrides */
-  .dark {
-    --bg-primary: #0a0a0f;
-    --bg-secondary: #13131a;
-    --text-primary: rgba(255, 255, 255, 0.9);
-    --text-secondary: #9ca3af;
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-bg: rgba(10, 10, 15, 0.6);
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5);
   }
 
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    @apply antialiased min-w-[320px] min-h-screen overflow-x-hidden;
+    @apply antialiased min-w-[320px] min-h-screen overflow-x-hidden tabular-nums tracking-tight;
   }
 
   h1,
@@ -49,63 +30,48 @@
   h4,
   h5,
   h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Playfair Display', serif;
   }
 
   ::selection {
-    @apply bg-accent-blue text-white;
+    background-color: #d4af37;
+    color: #111111;
   }
 }
 
 @layer components {
 
-  /* Glass Effect Utility */
-  .glass-effect {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--shadow-sm);
+  /* Swiss Grid Style Utility (Reference UI style) */
+  .swiss-grid-item {
+    @apply border-b border-black p-8 relative overflow-hidden;
   }
 
-  /* Centralized Typography */
   .label-category {
-    @apply text-accent-blue font-mono uppercase tracking-widest text-sm mb-6 block;
+    @apply text-black font-mono uppercase tracking-widest text-xs mb-6 block border border-black px-2 py-1 inline-block;
   }
 
   .heading-display {
-    @apply font-display text-6xl md:text-8xl font-bold text-gray-900 dark:text-white mb-8 leading-tight;
-  }
-
-  /* Text Gradient */
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-blue to-accent-purple;
+    @apply font-serif text-6xl md:text-8xl font-black text-black mb-8 leading-[0.9] tracking-tighter uppercase;
   }
 
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply w-full max-w-none;
   }
 
   .section-padding {
-    @apply py-20 px-6 md:px-12 lg:px-24;
+    @apply py-0 px-0;
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Minimalist */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 1px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--text-secondary);
-  border-radius: 4px;
-  opacity: 0.5;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-primary);
+  background: #000000;
 }
