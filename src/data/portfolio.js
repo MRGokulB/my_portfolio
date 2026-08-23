@@ -56,13 +56,13 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "IntraIntel.ai (Enterprise AI Platform)",
+      title: "Enclavia.ai (Enterprise AI Platform)",
       description:
         "A secure, multi-cloud AI intelligence platform deploying specialized agents for regulatory compliance, clinical workflows, and data insights.",
       image:
         "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
       tags: ["React.js", "Tailwind CSS", "Framer Motion", "Multi-Cloud", "Enterprise Security"],
-      liveUrl: "https://intraintel.ai",
+      liveUrl: "https://Enclavia.ai",
       githubUrl: "https://github.com/MRGokulB",
       featured: true
     },
@@ -123,7 +123,7 @@ export const portfolioData = {
       image:
         "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop",
       tags: ["React.js", "Firebase", "Tailwind CSS", "Framer Motion", "i18next"],
-      liveUrl: "",
+      liveUrl: "https://manemess.in",
       githubUrl: "https://github.com/MRGokulB",
       featured: true
     },
@@ -202,12 +202,12 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
-      company: "IntraIntel.ai",
-      url: "https://intraintel.ai",
+      company: "Enclavia.ai",
+      url: "https://Enclavia.ai",
       position: "Full Stack Developer (AI Product Engineering)",
       period: "Nov 2025 - Present",
       description:
-        "Leading the development of IntraIntel.ai, an enterprise-grade AI platform focused on secure data intelligence, clinical workflow automation, and multi-agent compliance systems.",
+        "Leading the development of Enclavia.ai, an enterprise-grade AI platform focused on secure data intelligence, clinical workflow automation, and multi-agent compliance systems.",
       achievements: [
         "Architected a privacy-first, full-stack application using Next.js, TypeScript, and Node.js for a multi-cloud environment.",
         "Built robust backend services with PostgreSQL and Supabase, implementing row-level security (RLS) policies for strict access control.",
@@ -220,7 +220,7 @@ export const portfolioData = {
       id: 2,
       company: "Freelance",
       position: "Full Stack Developer",
-      period: "March 2025 - Present",
+      period: "March 2025 - May 2025",
       description:
         "Developed and deployed an Advertisement Compliance Management System — a robust task management platform with secure, real-time collaboration and role-based access control.",
       achievements: [
