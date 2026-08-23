@@ -34,7 +34,7 @@ const Hero = () => {
         {/* Right: Image */}
         <div className="md:col-span-4 h-full relative group min-h-[50vh]">
           <img
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2864&auto=format&fit=crop"
+            src={`${import.meta.env.BASE_URL}profile.jpg`}
             alt="Portrait"
             className="w-full h-full object-cover absolute inset-0 filter grayscale group-hover:grayscale-0 transition-all duration-500"
           />

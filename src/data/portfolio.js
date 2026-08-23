@@ -102,18 +102,7 @@ export const portfolioData = {
       githubUrl: "https://github.com/MRGokulB",
       featured: true
     },
-    {
-      id: 5,
-      title: "AI Podcastr (AI Podcast Platform)",
-      description:
-        "A creative platform for generating and managing podcasts using OpenAI’s TTS and DALL·E APIs with secure user authentication and cloud storage.",
-      image:
-        "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&h=600&fit=crop",
-      tags: ["React.js", "Node.js", "Express.js", "Firebase", "OpenAI TTS", "DALL·E API"],
-      liveUrl: "",
-      githubUrl: "https://github.com/MRGokulB",
-      featured: false
-    },
+
     {
       id: 6,
       title: "Herbs Magic (E-commerce Frontend)",
@@ -229,7 +218,7 @@ export const portfolioData = {
     },
     {
       id: 2,
-      company: "LionelAgency Innovations",
+      company: "Freelance",
       position: "Full Stack Developer",
       period: "March 2025 - Present",
       description:
