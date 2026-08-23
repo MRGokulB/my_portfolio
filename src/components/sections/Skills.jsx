@@ -1,110 +1,92 @@
 import { motion } from 'framer-motion';
-import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { portfolioData } from '../../data/portfolio';
-import Card from '../ui/Card';
 
 const Skills = () => {
-  const [ref, inView] = useScrollAnimation(0.2);
   const { skills } = portfolioData;
 
   const SkillBar = ({ skill, index }) => {
     return (
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="mb-6"
+        viewport={{ once: true }}
+        className="flex items-center group py-4 border-b border-black last:border-b-0 hover:bg-black hover:text-white transition-colors duration-300 px-4 -mx-4"
       >
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl">{skill.icon}</span>
-            <span className="text-white font-medium">{skill.name}</span>
-          </div>
-          <span className="text-accent-blue font-semibold">{skill.level}%</span>
+        <div className="flex-1 font-mono uppercase tracking-wide flex items-center gap-4 text-secondary group-hover:text-white transition-colors">
+          <span className="text-2xl grayscale group-hover:grayscale-0 transition-all font-mono">
+            {skill.icon}
+          </span>
+          {skill.name}
         </div>
-        
-        <div className="w-full h-3 bg-dark-300 rounded-full overflow-hidden">
-          <motion.div
-            initial={{ width: 0 }}
-            animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
-            transition={{ duration: 1, delay: index * 0.1, ease: "easeOut" }}
-            className="h-full bg-gradient-to-r from-accent-blue to-accent-purple rounded-full relative"
-          >
-            <div className="absolute inset-0 bg-white/20 animate-pulse" />
-          </motion.div>
+        <div className="w-1/3 md:w-1/2 flex items-center gap-4">
+          <div className="w-full h-[2px] bg-secondary/30 group-hover:bg-white/30 transition-colors overflow-hidden">
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: `${skill.level}%` }}
+              transition={{ duration: 1, delay: index * 0.1, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="h-full bg-accent group-hover:bg-white transition-colors"
+            />
+          </div>
+          <span className="font-mono text-sm font-bold w-12 text-right group-hover:text-white transition-colors">
+            {skill.level}%
+          </span>
         </div>
       </motion.div>
     );
   };
 
   return (
-    <section id="skills" className="section-padding relative" ref={ref}>
-      <div className="container-custom">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            My <span className="gradient-text">Skills</span>
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Technologies and tools I work with
-          </p>
-        </motion.div>
-
-        {/* Skills Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {skills.map((category, categoryIndex) => (
-            <motion.div
-              key={category.category}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
-            >
-              <Card hover={false} className="h-full">
-                <h3 className="text-2xl font-bold mb-6 gradient-text">
-                  {category.category}
-                </h3>
-                
-                <div>
-                  {category.items.map((skill, skillIndex) => (
-                    <SkillBar
-                      key={skill.name}
-                      skill={skill}
-                      index={skillIndex}
-                    />
-                  ))}
-                </div>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Additional Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 text-center"
-        >
-          <Card className="max-w-3xl mx-auto">
-            <h3 className="text-xl font-semibold mb-4 text-white">
-              Always Learning 📚
-            </h3>
-            <p className="text-gray-400">
-              I'm constantly expanding my skillset and staying up-to-date with the latest technologies. 
-              Currently exploring WebGL shaders, AI/ML integration, and advanced animation techniques.
-            </p>
-          </Card>
-        </motion.div>
+    <section id="skills" className="w-full bg-white border-b border-black">
+      {/* Header */}
+      <div className="p-8 md:p-12 border-b border-black bg-surface">
+        <span className="font-mono text-xs font-bold uppercase tracking-widest text-secondary mb-6 block">05. Toolkit</span>
+        <h2 className="heading-display !mb-0 text-5xl md:text-7xl text-black uppercase">
+          Systems & <br />
+          <span className="text-accent">Architecture</span>
+        </h2>
       </div>
 
-      {/* Background Decoration */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-accent-blue/5 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent-pink/5 rounded-full blur-3xl -z-10" />
+      {/* Skills Grid Columns */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 w-full">
+        {skills.map((category, categoryIndex) => (
+          <div
+            key={category.category}
+            className="border-b lg:border-b-0 lg:border-r border-black last:border-r-0 flex flex-col"
+          >
+            <div className="bg-surface text-primary p-6 border-b border-black">
+              <h3 className="text-2xl font-serif italic tracking-wide text-black">
+                {category.category}
+              </h3>
+            </div>
+            <div className="p-8 flex-1 bg-white">
+              {category.items.map((skill, skillIndex) => (
+                <SkillBar
+                  key={skill.name}
+                  skill={skill}
+                  index={skillIndex}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Footer / Info Block */}
+      <div className="grid grid-cols-1 md:grid-cols-2 border-t border-black bg-surface">
+        <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-black flex items-center justify-center">
+          <span className="font-display font-black text-4xl md:text-6xl uppercase tracking-tighter text-primary">
+            Always<br />Learning.
+          </span>
+        </div>
+        <div className="p-8 md:p-12 flex flex-col justify-center text-secondary text-lg font-medium leading-relaxed group">
+          <p className="group-hover:text-black transition-colors">
+            I'm constantly expanding my skillset and staying up-to-date with the latest technologies.
+            Currently exploring WebGL shaders, AI/ML integration, and advanced animation techniques.
+          </p>
+        </div>
+      </div>
     </section>
   );
 };

@@ -1,26 +1,22 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sun, Moon, ArrowUpRight, Download } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Download } from 'lucide-react';
 import { portfolioData } from '../../data/portfolio';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 
-const Navbar = ({ isDark, toggleTheme }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
 
-  // Handle Scroll
+  // Scroll to top on route change
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Theme logic moved to App.jsx for global control
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   const navLinks = [
-    { name: 'Philosophy', href: '#about' },
-    { name: 'Works', href: '#projects' },
-    { name: 'Journey', href: '#experience' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Philosophy', path: '/about' },
+    { name: 'Works', path: '/works' },
+    { name: 'Contact', path: '/contact' }
   ];
 
   return (
@@ -28,41 +24,32 @@ const Navbar = ({ isDark, toggleTheme }) => {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-4' : 'py-8'}`}
+        className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/5 w-full"
       >
-        <div className="container-custom px-6 flex justify-between items-center">
+        <div className="flex justify-between items-center w-full h-16 md:h-20 max-w-7xl mx-auto">
           {/* Logo */}
-          <a href="#home" className="relative z-50 group">
-            <span className="font-display font-bold text-xl tracking-tighter text-gray-900 dark:text-white">
-              Gangaprasad
-              <span className="text-gray-500 group-hover:text-accent-blue transition-colors">.dev</span>
+          <Link to="/" className="h-full flex items-center px-6 md:px-8 hover:text-accent transition-colors">
+            <span className="font-serif font-bold text-xl tracking-tighter uppercase text-primary">
+              Gangaprasad<span className="text-accent italic">.dev</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
-          <div className={`hidden md:flex items-center gap-4 p-1.5 rounded-full border border-gray-200 dark:border-white/5 bg-white/50 dark:bg-white/5 backdrop-blur-md transition-all duration-300 ${scrolled ? 'shadow-lg dark:shadow-none' : ''}`}>
-            <nav className="flex items-center gap-2">
+          <div className="hidden md:flex h-full items-center gap-2">
+            <nav className="flex items-center h-full mr-4">
               {navLinks.map((link) => (
-                <a
+                <NavLink
                   key={link.name}
-                  href={link.href}
-                  className="px-5 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all"
+                  to={link.path}
+                  className={({ isActive }) =>
+                    `h-full flex items-center px-6 text-sm font-mono font-medium transition-colors uppercase tracking-widest ${isActive ? 'text-accent' : 'text-secondary hover:text-primary'
+                    }`
+                  }
                 >
                   {link.name}
-                </a>
+                </NavLink>
               ))}
             </nav>
-
-            <div className="w-[1px] h-6 bg-gray-300 dark:bg-white/10" />
-
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
-              aria-label="Toggle Theme"
-            >
-              {isDark ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
 
             {/* Resume CTA */}
             <a
@@ -70,27 +57,20 @@ const Navbar = ({ isDark, toggleTheme }) => {
               download="Gangaprasad_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-2 px-5 py-2 rounded-full bg-gray-900 dark:bg-white text-white dark:text-black text-sm font-medium hover:bg-accent-blue hover:text-white dark:hover:bg-accent-blue dark:hover:text-white transition-all shadow-lg hover:shadow-accent-blue/20 flex items-center gap-2"
+              className="px-6 py-2.5 bg-white/5 hover:bg-accent text-primary hover:text-black border border-white/10 rounded-full text-sm font-mono font-medium transition-all flex items-center gap-2 uppercase tracking-widest mr-6 md:mr-8"
             >
               <span>Resume</span>
-              <ArrowUpRight size={16} />
+              <ArrowUpRight strokeWidth={1.5} size={16} />
             </a>
           </div>
 
           {/* Mobile Actions */}
-          <div className="md:hidden flex items-center gap-4 z-50 relative">
+          <div className="md:hidden flex items-center h-full">
             <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full bg-white/10 backdrop-blur-md text-gray-900 dark:text-white"
-            >
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-
-            <button
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md text-gray-900 dark:text-white"
+              className="w-16 h-full flex items-center justify-center text-primary hover:text-accent transition-colors"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
+              {isOpen ? <X strokeWidth={1.5} size={24} /> : <Menu strokeWidth={1.5} size={24} />}
             </button>
           </div>
         </div>
@@ -103,21 +83,34 @@ const Navbar = ({ isDark, toggleTheme }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-white/95 dark:bg-black/95 backdrop-blur-xl flex items-center justify-center"
+            className="fixed inset-0 z-40 bg-background flex flex-col pt-24"
           >
-            <nav className="flex flex-col items-center gap-8">
+            <nav className="flex flex-col border-t border-white/10 mt-2">
+              <NavLink
+                to="/"
+                onClick={() => setIsOpen(false)}
+                className="font-serif text-4xl text-primary font-black uppercase tracking-tighter hover:text-accent transition-colors border-b border-white/10 p-6 w-full text-center"
+              >
+                Home
+              </NavLink>
               {navLinks.map((link, i) => (
-                <motion.a
+                <NavLink
                   key={link.name}
-                  href={link.href}
+                  to={link.path}
                   onClick={() => setIsOpen(false)}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.1 }}
-                  className="font-display text-4xl text-gray-900 dark:text-white font-bold tracking-tight hover:text-accent-blue transition-colors"
+                  className={({ isActive }) =>
+                    `font-serif text-4xl font-black uppercase tracking-tighter transition-colors border-b border-white/10 p-6 w-full text-center ${isActive ? 'text-accent' : 'text-secondary hover:text-primary'
+                    }`
+                  }
                 >
-                  {link.name}
-                </motion.a>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + i * 0.1 }}
+                  >
+                    {link.name}
+                  </motion.div>
+                </NavLink>
               ))}
               <motion.a
                 initial={{ opacity: 0, y: 20 }}
@@ -127,9 +120,9 @@ const Navbar = ({ isDark, toggleTheme }) => {
                 download="Gangaprasad_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 px-8 py-3 bg-gray-900 dark:bg-white text-white dark:text-black rounded-full font-medium flex items-center gap-3"
+                className="p-6 bg-accent text-black font-mono uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-white transition-colors w-full text-center mt-auto"
               >
-                <Download size={20} />
+                <Download strokeWidth={1.5} size={20} />
                 Download Resume
               </motion.a>
             </nav>

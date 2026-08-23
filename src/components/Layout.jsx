@@ -1,45 +1,70 @@
 import { motion } from 'framer-motion';
-import Navbar from './ui/Navbar';
+import React from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 import { portfolioData } from '../data/portfolio';
-import { Heart, ArrowUp } from 'lucide-react';
-import { useState, useEffect } from 'react';
 
-const Layout = ({ children, isDark, toggleTheme }) => {
-  const [showScrollTop, setShowScrollTop] = useState(false);
+const Layout = () => {
+  const { personal } = portfolioData;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 500);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  // Split name logically for the logo e.g. "GOKUL.B"
+  const firstName = personal.name.split(' ')[0].toUpperCase();
+  const lastName = personal.name.split(' ').slice(1).join(' ').toUpperCase();
 
   return (
-    <div className="relative min-h-screen">
-      <Navbar isDark={isDark} toggleTheme={toggleTheme} />
-      <main>{children}</main>
+    <div className="min-h-screen bg-background text-primary flex">
+      {/* Fixed Sidebar */}
+      <aside className="hidden md:flex w-64 fixed top-0 left-0 h-screen border-r border-black bg-white z-50 flex-col justify-between p-8">
+        <div>
+          <h1 className="text-4xl font-black tracking-tighter mb-12 uppercase leading-[0.8]">
+            {firstName}<span className="text-accent">.</span><br />
+            {lastName}
+          </h1>
 
-      {/* Scroll to Top Button */}
-      {showScrollTop && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 w-14 h-14 rounded-full glass-effect flex items-center justify-center text-gray-900 dark:text-white border-2 border-transparent hover:border-accent-blue/50 shadow-lg hover:shadow-accent-blue/20 transition-all z-50 group"
-          whileHover={{ scale: 1.1, rotate: 360 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <ArrowUp size={24} className="group-hover:text-accent-blue transition-colors" />
-          <div className="absolute inset-0 rounded-full bg-accent-blue/10 dark:bg-accent-blue/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
-        </motion.button>
-      )}
+          <nav className="flex flex-col gap-4">
+            {[
+              { name: 'Index', path: '/' },
+              { name: 'Works', path: '/works' },
+              { name: 'About', path: '/about' },
+              { name: 'Contact', path: '/contact' }
+            ].map((item) => (
+              <NavLink
+                key={item.name}
+                to={item.path}
+                className={({ isActive }) =>
+                  `text-lg font-bold uppercase tracking-wide hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`
+                }
+              >
+                {item.name}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
+
+        <div className="text-xs font-mono text-secondary uppercase">
+          <p>© {new Date().getFullYear()}</p>
+          <p>{personal.location.split('|')[0]}</p>
+        </div>
+      </aside>
+
+      {/* Main Content Area */}
+      <main className="w-full md:ml-64 min-h-screen relative">
+        {/* Top Bar for Meta Info */}
+        <header className="h-16 border-b border-black md:flex hidden items-center justify-between px-8 bg-white sticky top-0 z-40">
+          <span className="font-mono text-xs uppercase tracking-widest">Available for Commission</span>
+          <span className="font-mono text-xs uppercase tracking-widest">{new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+        </header>
+
+        {/* Mobile Header (Temporary simple fallback) */}
+        <header className="h-16 md:hidden border-b border-black flex items-center justify-center bg-white sticky top-0 z-40">
+          <h1 className="text-xl font-black tracking-tighter uppercase">
+            {firstName}<span className="text-accent">.</span>{lastName}
+          </h1>
+        </header>
+
+        <div className="p-0">
+          <Outlet />
+        </div>
+      </main>
     </div>
   );
 };

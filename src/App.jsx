@@ -1,48 +1,23 @@
-import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-import ConstellationScene from './components/canvas/ConstellationScene';
-import GalaxyArms from './components/canvas/GalaxyArms';
-import Hero from './components/sections/Hero';
-import About from './components/sections/About';
-import Skills from './components/sections/Skills';
-import Projects from './components/sections/Projects';
-import Education from './components/sections/Education';
-import Certifications from './components/sections/Certifications';
-import Contact from './components/sections/Contact';
-import Experience from './components/sections/Experience';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import WorksPage from './pages/WorksPage';
+import ContactPage from './pages/ContactPage';
 import './styles/globals.css';
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
-
-  // Handle Theme Side Effects
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDark]);
-
-  const toggleTheme = () => setIsDark(!isDark);
-
   return (
-    <>
-      {/* 3D Background Scene - Theme Aware */}
-      <ConstellationScene isDark={isDark} />
-
-      {/* Main Content */}
-      <Layout isDark={isDark} toggleTheme={toggleTheme}>
-        <Hero />
-        <About />
-        <Projects />
-        <Experience />
-        <Skills />
-        <Education />
-        {/*<Certifications />*/}
-        <Contact />
-      </Layout>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="works" element={<WorksPage />} />
+          <Route path="contact" element={<ContactPage />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
