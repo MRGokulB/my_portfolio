@@ -1,18 +1,18 @@
 export const portfolioData = {
   personal: {
     name: "Gangaprasad Boddawar",
-    title: "Full Stack Developer",
-    tagline: "Building immersive digital experiences",
+    title: "Full Stack Developer | AI Product Engineering",
+    tagline: "Building immersive, intelligent digital experiences",
     email: "boddawargokul@gmail.com",
     phone: "9307902794",
-    location: "Nanded, Maharashtra, India | Willing to relocate to Pune / Bangalore / Remote",
-    bio: "Passionate developer with 10+ Months of experience creating cutting-edge web applications. I specialize in React, Three.js, and modern web technologies. I love transforming ideas into beautiful, functional products that users love.",
+    location: "Nanded, Maharashtra, India | Remote (US Eastern Time Overlap)",
+    bio: "Passionate Full Stack Developer with extensive professional experience creating scalable web applications and intelligent systems. I specialize in React, Next.js, TypeScript, Node.js, PostgreSQL, and AI/ML integrations (LLMs, RAG). I excel at owning features end-to-end—from crafting intuitive UI/UX to designing robust data models and APIs.",
     resume: "/resume.pdf",
     social: {
       github: "https://github.com/MRGokulB",
-      linkedin: "https://linkedin.com/in/johndev",
-      twitter: "https://twitter.com/johndev",
-      portfolio: "https://johndev.com"
+      linkedin: "https://linkedin.com/in/gangaprasadboddawar",
+      twitter: "https://twitter.com/MRGokulB",
+      portfolio: "https://github.com/MRGokulB"
     }
   },
 
@@ -20,33 +20,33 @@ export const portfolioData = {
     {
       category: "Frontend",
       items: [
-        { name: "React.js", level: 95, icon: "⚛️" },
-        { name: "Three.js (R3F)", level: 85, icon: "🧊" },
+        { name: "React.js & Next.js", level: 95, icon: "⚛️" },
+        { name: "TypeScript / JavaScript", level: 90, icon: "📘" },
         { name: "Tailwind CSS", level: 95, icon: "🎨" },
         { name: "Framer Motion", level: 90, icon: "🎭" },
-        { name: "JavaScript (ES6+)", level: 90, icon: "📘" },
-        { name: "Redux Toolkit", level: 88, icon: "🌀" }
+        { name: "Redux & State Mgmt", level: 88, icon: "🌀" },
+        { name: "Three.js (R3F)", level: 85, icon: "🧊" }
       ]
     },
     {
       category: "Backend",
       items: [
-        { name: "Node.js", level: 90, icon: "🟢" },
-        { name: "Express.js", level: 88, icon: "🚂" },
-        { name: "Firebase", level: 85, icon: "🔥" },
-        { name: "MongoDB", level: 85, icon: "🍃" },
-        { name: "FastAPI", level: 80, icon: "⚡" },
-        { name: "Prisma ORM", level: 82, icon: "🔗" }
+        { name: "Node.js & Express", level: 90, icon: "🟢" },
+        { name: "PostgreSQL", level: 88, icon: "🐘" },
+        { name: "Supabase & Firebase", level: 85, icon: "⚡" },
+        { name: "Python", level: 80, icon: "🐍" },
+        { name: "REST APIs & GraphQL", level: 85, icon: "🔗" },
+        { name: "MongoDB & Prisma", level: 85, icon: "🍃" }
       ]
     },
     {
       category: "Tools & Others",
       items: [
-        { name: "Git & GitHub", level: 92, icon: "🔀" },
+        { name: "AI/ML (LLMs, RAG, Prompts)", level: 90, icon: "🤖" },
+        { name: "Git, GitHub & CI/CD", level: 92, icon: "🔀" },
         { name: "AWS (Lambda, S3)", level: 82, icon: "☁️" },
-        { name: "Internationalization (i18n)", level: 85, icon: "🌐" },
-        { name: "Google Analytics 4", level: 80, icon: "📈" },
-        { name: "QR Code Tech", level: 85, icon: "📱" },
+        { name: "Payment Auth & Stripe", level: 85, icon: "💳" },
+        { name: "Vercel Deployments", level: 90, icon: "🚀" },
         { name: "Socket.io", level: 85, icon: "🔁" }
       ]
     }
@@ -215,16 +215,16 @@ export const portfolioData = {
       id: 1,
       company: "IntraIntel.ai",
       url: "https://intraintel.ai",
-      position: "Frontend Developer",
-      period: "Nov 2025 - Dec 2025",
+      position: "Full Stack Developer (AI Product Engineering)",
+      period: "Nov 2025 - Present",
       description:
-        "Contributed to the development of IntraIntel.ai, an enterprise-grade AI platform focused on secure data intelligence and clinical workflow automation.",
+        "Leading the development of IntraIntel.ai, an enterprise-grade AI platform focused on secure data intelligence, clinical workflow automation, and multi-agent compliance systems.",
       achievements: [
-        "Architected a privacy-first UI for a multi-cloud platform integrating AWS, Azure, and GCP.",
-        "Developed complex data visualization components for clinical risk calculators and trial simulations.",
-        "Implemented smooth, professional animations using Framer Motion to enhance user engagement.",
-        "Optimized the platform for handling large-scale unstructured data analytics in real-time.",
-        "Collaborated with cross-functional teams to ensure HIPAA and SOC2 compliance in frontend implementations."
+        "Architected a privacy-first, full-stack application using Next.js, TypeScript, and Node.js for a multi-cloud environment.",
+        "Built robust backend services with PostgreSQL and Supabase, implementing row-level security (RLS) policies for strict access control.",
+        "Integrated LLM APIs and trained AI capabilities including retrieval-augmented generation (RAG) and anomaly detection.",
+        "Designed RESTful APIs and webhook-driven automations to handle complex data models and continuous integrations.",
+        "Collaborated with cross-functional teams to ensure high security (HIPAA compliance), optimizing both UI/UX and database queries."
       ]
     },
     {
