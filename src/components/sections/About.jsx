@@ -11,16 +11,16 @@ const About = () => {
 
         {/* Left: Section Header & Image placeholder/Typography block */}
         <div className="md:col-span-5 border-b md:border-b-0 md:border-r border-black flex flex-col justify-between">
-          <div className="p-8 md:p-12 bg-surface flex-1">
-            <span className="label-category !mb-4">04. The Core</span>
-            <h2 className="heading-display !mb-0 text-5xl md:text-6xl">
+          <div className="p-8 md:p-12 bg-surface flex-1 border-b border-black">
+            <span className="font-mono text-xs font-bold uppercase tracking-widest text-secondary mb-6 block">04. The Core</span>
+            <h2 className="heading-display !mb-0 text-5xl md:text-6xl text-black">
               Building <br />
-              The <span className="italic font-serif font-light lowercase">Digital</span> <br />
+              The <span className="italic font-serif font-light lowercase text-accent">Digital</span> <br />
               Future.
             </h2>
           </div>
 
-          <div className="h-64 bg-black text-white p-8 md:p-12 flex items-end">
+          <div className="h-64 bg-accent text-white p-8 md:p-12 flex items-end">
             <div className="text-3xl font-serif">
               "Obsessed with<br />the details."
             </div>
@@ -55,27 +55,27 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
                 viewport={{ once: true }}
-                className="p-8 border-b sm:border-r border-black hover:bg-black hover:text-white transition-colors duration-500 group flex flex-col justify-between aspect-[3/2]"
+                className="p-8 border-b sm:border-r sm:last:border-r-0 sm:[&:nth-child(2n)]:border-r-0 border-black hover:bg-black hover:text-white transition-colors duration-500 group flex flex-col justify-between aspect-[3/2] bg-white"
               >
                 <div className="flex justify-between items-start mb-4">
                   <div className="text-3xl grayscale group-hover:grayscale-0 transition-all font-mono">
                     {skill.icon}
                   </div>
-                  <span className="font-mono text-xs uppercase tracking-widest text-muted group-hover:text-gray-400">
+                  <span className="font-mono text-xs uppercase tracking-widest text-secondary opacity-50 font-bold group-hover:text-white">
                     Index 0{idx + 1}
                   </span>
                 </div>
 
                 <div>
-                  <div className="font-bold text-xl uppercase tracking-tight font-sans mb-1">
+                  <div className="font-bold text-xl uppercase tracking-tight font-sans mb-1 text-black group-hover:text-white transition-colors">
                     {skill.name}
                   </div>
                   {/* Minimalist Progress Line */}
                   <div className="flex items-center gap-4 mt-4">
-                    <div className="h-[2px] w-full bg-gray-200 group-hover:bg-gray-800 transition-colors">
-                      <div className="h-full bg-black group-hover:bg-white transition-all duration-1000" style={{ width: `${skill.level}%` }} />
+                    <div className="h-[2px] w-full bg-secondary/30 group-hover:bg-white/30 transition-colors overflow-hidden">
+                      <div className="h-full bg-accent group-hover:bg-white transition-all duration-1000" style={{ width: `${skill.level}%` }} />
                     </div>
-                    <span className="font-mono text-xs font-bold">{skill.level}%</span>
+                    <span className="font-mono text-xs font-bold w-8 text-right group-hover:text-white transition-colors">{skill.level}%</span>
                   </div>
                 </div>
               </motion.div>

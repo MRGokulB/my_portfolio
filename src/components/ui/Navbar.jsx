@@ -24,25 +24,25 @@ const Navbar = () => {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-surface border-b border-black md:mx-auto max-w-[1920px] w-full"
+        className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/5 w-full"
       >
-        <div className="flex justify-between items-center w-full h-16 md:h-20">
+        <div className="flex justify-between items-center w-full h-16 md:h-20 max-w-7xl mx-auto">
           {/* Logo */}
-          <Link to="/" className="h-full flex items-center px-6 md:px-8 border-r border-black hover:bg-black hover:text-white transition-colors">
-            <span className="font-serif font-bold text-xl tracking-tighter uppercase">
+          <Link to="/" className="h-full flex items-center px-6 md:px-8 hover:text-accent transition-colors">
+            <span className="font-serif font-bold text-xl tracking-tighter uppercase text-primary">
               Gangaprasad<span className="text-accent italic">.dev</span>
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex h-full items-center">
-            <nav className="flex items-center h-full">
+          <div className="hidden md:flex h-full items-center gap-2">
+            <nav className="flex items-center h-full mr-4">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.name}
                   to={link.path}
                   className={({ isActive }) =>
-                    `h-full flex items-center px-8 border-l border-black text-sm font-mono font-medium transition-colors uppercase tracking-widest ${isActive ? 'bg-black text-white' : 'text-black hover:bg-black hover:text-white'
+                    `h-full flex items-center px-6 text-sm font-mono font-medium transition-colors uppercase tracking-widest ${isActive ? 'text-accent' : 'text-secondary hover:text-primary'
                     }`
                   }
                 >
@@ -57,7 +57,7 @@ const Navbar = () => {
               download="Gangaprasad_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="h-full flex items-center px-8 border-l border-black bg-black text-white text-sm font-mono font-medium hover:bg-accent transition-colors flex items-center gap-2 uppercase tracking-widest"
+              className="px-6 py-2.5 bg-white/5 hover:bg-accent text-primary hover:text-black border border-white/10 rounded-full text-sm font-mono font-medium transition-all flex items-center gap-2 uppercase tracking-widest mr-6 md:mr-8"
             >
               <span>Resume</span>
               <ArrowUpRight strokeWidth={1.5} size={16} />
@@ -65,9 +65,9 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Actions */}
-          <div className="md:hidden flex items-center h-full border-l border-black">
+          <div className="md:hidden flex items-center h-full">
             <button
-              className="w-16 h-full flex items-center justify-center text-black hover:bg-black hover:text-white transition-colors"
+              className="w-16 h-full flex items-center justify-center text-primary hover:text-accent transition-colors"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X strokeWidth={1.5} size={24} /> : <Menu strokeWidth={1.5} size={24} />}
@@ -83,13 +83,13 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-surface flex flex-col pt-24"
+            className="fixed inset-0 z-40 bg-background flex flex-col pt-24"
           >
-            <nav className="flex flex-col border-t border-black">
+            <nav className="flex flex-col border-t border-white/10 mt-2">
               <NavLink
                 to="/"
                 onClick={() => setIsOpen(false)}
-                className="font-serif text-4xl text-black font-black uppercase tracking-tighter hover:text-accent hover:bg-black transition-colors border-b border-black p-6 w-full text-center"
+                className="font-serif text-4xl text-primary font-black uppercase tracking-tighter hover:text-accent transition-colors border-b border-white/10 p-6 w-full text-center"
               >
                 Home
               </NavLink>
@@ -99,7 +99,7 @@ const Navbar = () => {
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `font-serif text-4xl font-black uppercase tracking-tighter transition-colors border-b border-black p-6 w-full text-center ${isActive ? 'bg-black text-white' : 'text-black hover:bg-black hover:text-white'
+                    `font-serif text-4xl font-black uppercase tracking-tighter transition-colors border-b border-white/10 p-6 w-full text-center ${isActive ? 'text-accent' : 'text-secondary hover:text-primary'
                     }`
                   }
                 >
@@ -120,7 +120,7 @@ const Navbar = () => {
                 download="Gangaprasad_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-6 bg-black text-white font-mono uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-accent w-full text-center"
+                className="p-6 bg-accent text-black font-mono uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-white transition-colors w-full text-center mt-auto"
               >
                 <Download strokeWidth={1.5} size={20} />
                 Download Resume

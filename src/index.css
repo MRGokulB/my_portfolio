@@ -3,57 +3,27 @@
 @tailwind utilities;
 
 :root {
-  font-family: 'Outfit', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  /* Theme Variables - Light Mode Default */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f3f4f6;
-  --text-primary: #111827;
-  --text-secondary: #4b5563;
-  --accent-glow: 255, 255, 255;
-  /* RGB for glass effect */
-  --glass-border: rgba(0, 0, 0, 0.1);
-  --glass-bg: rgba(255, 255, 255, 0.7);
-
-  color-scheme: light dark;
+  color-scheme: light;
   scroll-behavior: smooth;
-}
-
-/* Dark Mode Overrides */
-.dark {
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #13131a;
-  --text-primary: rgba(255, 255, 255, 0.9);
-  --text-secondary: #9ca3af;
-  --accent-glow: 0, 0, 0;
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-bg: rgba(10, 10, 15, 0.6);
-  /* More transparent for dark mode */
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  overflow-x: hidden;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #ffffff;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Glass Effect Utility */
-.glass-effect {
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-}
-
-/* Custom Scrollbar */
+/* Minimalist Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -81,4 +51,18 @@ h6 {
 
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500;
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+.animate-scroll-down {
+  animation: scroll-down 2s infinite ease-in-out;
 }

@@ -8,12 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#fcfcfc', // Premium Off-White
-        surface: '#ffffff',    // True White
-        primary: '#111111',    // Rich Charcoal/Black
-        secondary: '#444444',  // Muted Dark
+        background: '#ffffff', // True White
+        surface: '#f5f5f5',    // Light Gray
+        primary: '#000000',    // True Black
+        secondary: '#333333',  // Dark Gray
         muted: '#999999',
-        accent: '#d4af37',     // Premium Gold
+        accent: '#ff3b30',     // International Orange
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
