@@ -1,17 +1,15 @@
 import { motion } from 'framer-motion';
 import { portfolioData } from '../../data/portfolio';
-import { GraduationCap, ArrowUpRight } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 
 const Education = () => {
   const { education } = portfolioData;
 
   return (
     <section id="education" className="w-full bg-white border-b border-black">
-      {/* Header */}
       <div className="p-8 md:p-12 border-b border-black grid grid-cols-1 md:grid-cols-2 gap-8 items-end bg-surface">
         <div>
-          <span className="font-mono text-xs font-bold uppercase tracking-widest text-secondary mb-6 block">04. Foundation</span>
-          <h2 className="heading-display !mb-0 text-5xl md:text-7xl text-black">
+          <h2 className="heading-display !mb-0 text-5xl md:text-7xl uppercase text-black">
             Academic <br className="hidden md:block" />Theory
           </h2>
         </div>
@@ -20,7 +18,6 @@ const Education = () => {
         </div>
       </div>
 
-      {/* Tabular Education Grid */}
       <div className="flex flex-col">
         {education.degrees.map((edu, index) => (
           <motion.div
@@ -31,9 +28,8 @@ const Education = () => {
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-12 border-b border-black last:border-b-0 group hover:bg-black hover:text-white transition-colors duration-500"
           >
-            {/* Meta: Dates & Institution */}
             <div className="md:col-span-3 p-8 border-b md:border-b-0 md:border-r border-black flex flex-col justify-between group-hover:border-white transition-colors">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest">{edu.period}</span>
+              <span className="font-mono text-xs text-secondary group-hover:text-white/80">{edu.period}</span>
               <div className="mt-8 md:mt-0 font-serif text-2xl font-bold">
                 {edu.institution}
                 <div className="text-sm font-sans font-normal opacity-80 mt-2">
@@ -42,7 +38,6 @@ const Education = () => {
               </div>
             </div>
 
-            {/* Details: Degree & Coursework */}
             <div className="md:col-span-9 p-8 md:p-12 flex flex-col">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                 <h3 className="font-display text-3xl font-black uppercase tracking-tight flex items-center gap-4">
@@ -50,8 +45,8 @@ const Education = () => {
                   {edu.degree}
                 </h3>
                 <div className="flex gap-4">
-                  <span className="px-3 py-1 border border-black group-hover:border-white font-mono text-xs uppercase tracking-widest transition-colors font-bold">
-                    GPA: {edu.gpa}
+                  <span className="px-2.5 py-0.5 border border-current text-xs font-medium self-start">
+                    GPA <span className="font-mono">{edu.gpa}</span>
                   </span>
                 </div>
               </div>
@@ -63,12 +58,12 @@ const Education = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-black group-hover:border-white pt-6 transition-colors">
                 <div>
-                  <h4 className="font-mono text-xs uppercase tracking-widest opacity-70 mb-4 font-bold">
-                    Key Coursework
+                  <h4 className="text-xs font-medium text-secondary group-hover:text-white/80 mb-4">
+                    Key coursework
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {edu.coursework.map(course => (
-                      <span key={course} className="text-[10px] font-mono font-bold border border-black px-2 py-1 uppercase transition-colors group-hover:border-white">
+                      <span key={course} className="text-xs font-mono border border-current px-2.5 py-1">
                         {course}
                       </span>
                     ))}
@@ -76,7 +71,7 @@ const Education = () => {
                 </div>
 
                 <div>
-                  <h4 className="font-mono text-xs uppercase tracking-widest opacity-70 mb-4 font-bold">
+                  <h4 className="text-xs font-medium text-secondary group-hover:text-white/80 mb-4">
                     Achievements
                   </h4>
                   <ul className="space-y-2 font-mono text-sm">
@@ -94,7 +89,6 @@ const Education = () => {
         ))}
       </div>
 
-      {/* Additional Learning */}
       {education.additionalLearning && education.additionalLearning.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-3 border-t border-black bg-surface">
           <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-black flex items-center">
@@ -107,9 +101,9 @@ const Education = () => {
               {education.additionalLearning.map((learn, i) => (
                 <div key={i} className="flex flex-col border-b border-black pb-4 last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0">
                   <span className="font-bold text-lg text-black">{learn.title}</span>
-                  <div className="flex justify-between items-center mt-2 font-mono text-xs uppercase font-bold opacity-70">
+                  <div className="flex justify-between items-center mt-2 text-xs text-secondary font-medium">
                     <span>{learn.platform}</span>
-                    <span className="text-black">{learn.year}</span>
+                    <span className="text-black font-mono">{learn.year}</span>
                   </div>
                 </div>
               ))}
