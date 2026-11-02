@@ -93,8 +93,7 @@ export const portfolioData = {
       title: "Autonomous Proposal Capture & Compliance Engine",
       description:
         "A high-reliability proposal capture system orchestrating solicitation interpretation, pgvector semantic search, async durable job queues, and deterministic WeasyPrint PDF compilation.",
-      image:
-        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+      image: `${import.meta.env.BASE_URL}assets/proposal-compliance-engine.jpg`,
       tags: ["FastAPI", "Python", "pgvector", "PostgreSQL", "Cloud Run", "WeasyPrint"],
       liveUrl: "",
       githubUrl: "https://github.com/MRGokulB",
