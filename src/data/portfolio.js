@@ -122,18 +122,6 @@ export const portfolioData = {
       featured: true
     },
     {
-      id: 4,
-      title: "Gym Buddy (Social Fitness App)",
-      description:
-        "A social fitness web app for connecting gym enthusiasts, sharing workouts, and tracking progress in real time.",
-      image:
-        "https://images.unsplash.com/photo-1554284126-aa88f22d8b74?w=800&h=600&fit=crop",
-      tags: ["React.js", "Redux Toolkit", "Node.js", "Express.js", "Firebase", "JWT Auth"],
-      liveUrl: "",
-      githubUrl: "https://github.com/MRGokulB",
-      featured: true
-    },
-    {
       id: 6,
       title: "Herbs Magic (E-commerce Frontend)",
       description:
