@@ -1,12 +1,12 @@
 export const portfolioData = {
   personal: {
     name: "Gangaprasad Boddawar",
-    title: "Full Stack Developer | AI Product Engineering",
-    tagline: "Building immersive, intelligent digital experiences",
+    title: "Full Stack Systems Architect & AI Engineer",
+    tagline: "Building resilient web architectures, autonomous AI pipelines, and high-concurrency cloud backends.",
     email: "boddawargokul@gmail.com",
     phone: "9307902794",
     location: "Nanded, Maharashtra, India | Remote (US Eastern Time Overlap)",
-    bio: "Passionate Full Stack Developer with extensive professional experience creating scalable web applications and intelligent systems. I specialize in React, Next.js, TypeScript, Node.js, PostgreSQL, and AI/ML integrations (LLMs, RAG). I excel at owning features end-to-end—from crafting intuitive UI/UX to designing robust data models and APIs.",
+    bio: "Software engineer with 2+ years of production experience building high-performance web applications, distributed APIs, and autonomous AI systems. Shipped enterprise platforms using React 19, Next.js, TypeScript, Python (FastAPI), Node.js, and PostgreSQL (pgvector). Proven track record designing durable asynchronous pipelines, containerized Cloud Run microservices, and compliance-ready AI workflows.",
     resume: "/resume.pdf",
     social: {
       github: "https://github.com/MRGokulB",
@@ -21,48 +21,46 @@ export const portfolioData = {
       category: "Frontend",
       items: [
         { name: "React.js & Next.js", level: 95, icon: "⚛️" },
-        { name: "TypeScript / JavaScript", level: 90, icon: "📘" },
+        { name: "TypeScript / JavaScript", level: 92, icon: "📘" },
         { name: "Tailwind CSS", level: 95, icon: "🎨" },
-        { name: "Framer Motion", level: 90, icon: "🎭" },
+        { name: "Framer Motion & GSAP", level: 90, icon: "🎭" },
         { name: "Redux & State Mgmt", level: 88, icon: "🌀" },
-        { name: "Three.js (R3F)", level: 85, icon: "🧊" }
+        { name: "Three.js & UI Architecture", level: 85, icon: "🧊" }
       ]
     },
     {
-      category: "Backend",
+      category: "Backend & Cloud",
       items: [
+        { name: "Python & FastAPI", level: 92, icon: "🐍" },
         { name: "Node.js & Express", level: 90, icon: "🟢" },
-        { name: "PostgreSQL", level: 88, icon: "🐘" },
-        { name: "Supabase & Firebase", level: 85, icon: "⚡" },
-        { name: "Python", level: 80, icon: "🐍" },
-        { name: "REST APIs & GraphQL", level: 85, icon: "🔗" },
-        { name: "MongoDB & Prisma", level: 85, icon: "🍃" }
+        { name: "PostgreSQL & pgvector", level: 90, icon: "🐘" },
+        { name: "Google Cloud (Cloud Run, Build)", level: 88, icon: "☁️" },
+        { name: "Docker & Nginx (Brotli)", level: 88, icon: "🐳" },
+        { name: "Prisma, MongoDB & SQLAlchemy", level: 85, icon: "🍃" }
       ]
     },
     {
-      category: "Tools & Others",
+      category: "Tools & AI Systems",
       items: [
-        { name: "AI/ML (LLMs, RAG, Prompts)", level: 90, icon: "🤖" },
-        { name: "Git, GitHub & CI/CD", level: 92, icon: "🔀" },
-        { name: "AWS (Lambda, S3)", level: 82, icon: "☁️" },
-        { name: "Payment Auth & Stripe", level: 85, icon: "💳" },
-        { name: "Vercel Deployments", level: 90, icon: "🚀" },
-        { name: "Socket.io", level: 85, icon: "🔁" }
+        { name: "LLM Pipelines & RAG", level: 92, icon: "🤖" },
+        { name: "Asynchronous Job Queues", level: 90, icon: "🔁" },
+        { name: "Git, CI/CD & Secret Manager", level: 92, icon: "🔀" },
+        { name: "REST APIs & WebSockets", level: 90, icon: "🔗" },
+        { name: "WeasyPrint & PDF Pipelines", level: 88, icon: "📄" },
+        { name: "Vercel & Cloud Deployments", level: 90, icon: "🚀" }
       ]
     }
   ],
-
 
   projects: [
     {
       id: 1,
       title: "Enclavia.ai (Enterprise AI Platform)",
       description:
-        "A secure, multi-cloud AI intelligence platform deploying specialized agents for regulatory compliance, clinical workflows, and data insights.",
-      image:
-        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
-      tags: ["React.js", "Tailwind CSS", "Framer Motion", "Multi-Cloud", "Enterprise Security"],
-      liveUrl: "https://Enclavia.ai",
+        "An enterprise AI platform and digital infrastructure featuring build-time prerendered SEO/AEO architectures, containerized Brotli Nginx deployments on Cloud Run, and modular AI product suites.",
+      image: `${import.meta.env.BASE_URL}assets/architecture-topology.jpg`,
+      tags: ["React 19", "Python (FastAPI)", "PostgreSQL (pgvector)", "Cloud Run", "Docker", "GCP"],
+      liveUrl: "https://enclavia.ai",
       githubUrl: "https://github.com/MRGokulB",
       featured: true
     },
@@ -86,6 +84,17 @@ export const portfolioData = {
       tags: ["Next.js", "TypeScript", "GSAP Animations", "Tailwind CSS", "Data Structures", "Micro-Frontends"],
       liveUrl: "https://home-two-rust.vercel.app",
       githubUrl: "https://github.com/MRGokulB/dsa-universe",
+      featured: true
+    },
+    {
+      id: 11,
+      title: "Autonomous Proposal Capture & Compliance Engine",
+      description:
+        "A high-reliability proposal capture system orchestrating solicitation interpretation, pgvector semantic search, async durable job queues, and deterministic WeasyPrint PDF compilation.",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+      tags: ["FastAPI", "Python", "pgvector", "PostgreSQL", "Cloud Run", "WeasyPrint"],
+      liveUrl: "",
+      githubUrl: "https://github.com/MRGokulB",
       featured: true
     },
     {
@@ -124,7 +133,6 @@ export const portfolioData = {
       githubUrl: "https://github.com/MRGokulB",
       featured: true
     },
-
     {
       id: 6,
       title: "Herbs Magic (E-commerce Frontend)",
@@ -161,8 +169,7 @@ export const portfolioData = {
       githubUrl: "https://github.com/MRGokulB",
       featured: true
     }
-  ]
-  ,
+  ],
 
   certifications: [
     {
@@ -224,25 +231,25 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
-      company: "Enclavia.ai",
-      url: "https://Enclavia.ai",
-      position: "Full Stack Developer (AI Product Engineering)",
-      period: "Nov 2025 - Present",
+      company: "Enclavia (IntraIntel)",
+      url: "https://enclavia.ai",
+      position: "Full Stack Software Engineer (AI Product Engineering)",
+      period: "Nov 2025 – Oct 2026",
       description:
-        "Leading the development of Enclavia.ai, an enterprise-grade AI platform focused on secure data intelligence, clinical workflow automation, and multi-agent compliance systems.",
+        "Shipped production full-stack web applications, AI agent pipelines, and containerized microservices across multi-cloud Google Cloud environments.",
       achievements: [
-        "Architected a privacy-first, full-stack application using Next.js, TypeScript, and Node.js for a multi-cloud environment.",
-        "Built robust backend services with PostgreSQL and Supabase, implementing row-level security (RLS) policies for strict access control.",
-        "Integrated LLM APIs and trained AI capabilities including retrieval-augmented generation (RAG) and anomaly detection.",
-        "Designed RESTful APIs and webhook-driven automations to handle complex data models and continuous integrations.",
-        "Collaborated with cross-functional teams to ensure high security (HIPAA compliance), optimizing both UI/UX and database queries."
+        "Architected an enterprise capture desk v2 with FastAPI, PostgreSQL (pgvector), and durable job queues to handle solicitation extraction, compliance checks, and deterministic WeasyPrint PDF generation.",
+        "Containerized React frontends using custom Brotli-enabled Nginx configurations deployed to Google Cloud Run with automated Cloud Build CI/CD.",
+        "Built an autonomous lead intelligence agent in Node.js and Prisma utilizing Claude tool-calling, background cron scheduling, and GCP Secret Manager for credential isolation.",
+        "Implemented an LLM gateway with schema-forced structured outputs, multi-tiered model routing, and per-task token cost accounting.",
+        "Authored four comprehensive engineering documentation packs (PLTFMG-48 to 52) and managed GitHub organization permissions for engineering onboarding."
       ]
     },
     {
       id: 2,
       company: "Freelance",
       position: "Full Stack Developer",
-      period: "March 2025 - May 2025",
+      period: "March 2025 – May 2025",
       description:
         "Developed and deployed an Advertisement Compliance Management System — a robust task management platform with secure, real-time collaboration and role-based access control.",
       achievements: [
@@ -272,22 +279,22 @@ export const portfolioData = {
       id: 4,
       company: "Herbs Magic",
       url: "https://www.theherbsmagic.com/",
-      position: "Frontend Developer Intern",
-      period: "Dec 2024 – Feb 2025",
+      position: "Frontend / Full Stack Developer",
+      period: "Jul 2024 – Sep 2025",
       description:
-        "Contributed to UI development for an e-commerce platform, focusing on performance and responsive design.",
+        "Engineered responsive user interfaces and client-side data flows for a production e-commerce platform.",
       achievements: [
-        "Developed responsive interfaces using React.js and Tailwind CSS, improving engagement by 30%.",
-        "Integrated REST APIs and React Router to optimize page transitions and data flow.",
-        "Enhanced cross-device performance and accessibility.",
-        "Participated in Agile sprints, coordinated standups, and collaborated with designers and backend developers."
+        "Developed responsive component architectures with React.js and Tailwind CSS, increasing page interaction speed and mobile engagement.",
+        "Integrated REST APIs with centralized client state caching to eliminate redundant network payloads and accelerate route transitions.",
+        "Standardized cross-browser rendering, image asset compression, and mobile viewport performance across checkout funnels.",
+        "Participated in Agile sprints, managed production releases, and collaborated with design and backend teams."
       ]
     },
     {
       id: 5,
       company: "Mane Mess",
       position: "Full Stack Developer",
-      period: "Feb 2025 - Present",
+      period: "Feb 2025 – Present",
       description:
         "Built a comprehensive digital solution for a homemade tiffin service ('Mane Mess') to streamline operations and enhance customer experience.",
       achievements: [
@@ -297,10 +304,8 @@ export const portfolioData = {
         "Created a QR-code based daily attendance/tiffin tracking system for efficiency.",
         "Added multi-language support (i18next) to cater to a diverse local customer base."
       ]
-    },
-
-  ]
-  ,
+    }
+  ],
 
   education: {
     degrees: [
@@ -372,5 +377,4 @@ export const portfolioData = {
       }
     ]
   }
-
 };
