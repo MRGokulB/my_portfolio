@@ -1,22 +1,19 @@
+/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
+  darkMode: 'class', // Keeping class just in case, but forcing light mode
   theme: {
     extend: {
       colors: {
-        background: '#faf9f6',
-        surface: '#f4f3ef',
-        primary: '#18181b',
-        secondary: '#52525b',
-        muted: '#a1a1aa',
-        accent: '#e11d48',
-      },
-      borderColor: {
-        black: 'rgba(24, 24, 27, 0.12)',
-        subtle: 'rgba(24, 24, 27, 0.06)',
+        background: '#ffffff', // True White
+        surface: '#f5f5f5',    // Light Gray
+        primary: '#000000',    // True Black
+        secondary: '#333333',  // Dark Gray
+        muted: '#999999',
+        accent: '#ff3b30',     // International Orange
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

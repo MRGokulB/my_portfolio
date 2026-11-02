@@ -1,3 +1,4 @@
+/* Hallmark · theme: modern-minimal · posture: editorial · scope: website */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,15 +9,15 @@
     --font-display: 'Playfair Display', Georgia, serif;
     --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 
-    --bg-primary: #faf9f6;
-    --bg-surface: #f4f3ef;
-    --text-primary: #18181b;
-    --text-secondary: #52525b;
-    --text-muted: #a1a1aa;
-    --border: rgba(24, 24, 27, 0.12);
-    --border-subtle: rgba(24, 24, 27, 0.06);
-    --accent: #e11d48;
-    --accent-contrast: #ffffff;
+    --bg-primary: #fafaf9;
+    --bg-surface: #f3f3f2;
+    --text-primary: #121316;
+    --text-secondary: #4b515d;
+    --text-muted: #8b93a0;
+    --border: #121316;
+    --border-subtle: #e2e4e8;
+    --accent: #ff3b30;
+    --accent-contrast: #fffefb;
 
     font-family: var(--font-sans);
     line-height: 1.5;
@@ -64,17 +65,17 @@
 
 @layer components {
   .swiss-grid-item {
-    @apply border-b border-black p-8 relative overflow-hidden transition-colors duration-300;
+    @apply border-b border-black p-8 relative overflow-hidden;
   }
 
   .heading-display {
-    @apply font-serif text-5xl md:text-7xl font-bold text-primary mb-6 leading-[1.05] tracking-tight;
+    @apply font-serif text-5xl md:text-7xl lg:text-8xl font-black text-black mb-8 leading-[0.9] tracking-tighter uppercase;
     text-wrap: balance;
   }
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 2px;
 }
 
 ::-webkit-scrollbar-track {
@@ -82,8 +83,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(24, 24, 27, 0.2);
-  border-radius: 9999px;
+  background: var(--border);
 }
 
 @media (prefers-reduced-motion: reduce) {

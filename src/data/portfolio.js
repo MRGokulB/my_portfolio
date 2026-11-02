@@ -71,8 +71,7 @@ export const portfolioData = {
       title: "JavaScript Universe (V8 Engine & Memory Visualizer)",
       description:
         "An engine-level, hardware-conscious interactive learning platform modeling V8 runtime internals, execution context stacks, heap memory allocations, and closures with cinematic scroll storytelling.",
-      image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+      image: `${import.meta.env.BASE_URL}assets/javascript-v8.jpg`,
       tags: ["Next.js", "TypeScript", "GSAP ScrollTrigger", "Tailwind CSS", "V8 Internals", "Micro-Frontends"],
       liveUrl: "https://hub-bay-six-16.vercel.app/",
       githubUrl: "https://github.com/MRGokulB/js-mastery",
@@ -83,8 +82,7 @@ export const portfolioData = {
       title: "DSA Universe (Hardware-Level Algorithm Visualizer)",
       description:
         "A decoupled micro-frontend monorepo presenting algorithmic mechanics through reactive animations, silicon-level contiguous memory allocation, pointer arithmetic, and cycle detection.",
-      image:
-        "https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=800&auto=format&fit=crop",
+      image: `${import.meta.env.BASE_URL}assets/dsa-visualization.jpg`,
       tags: ["Next.js", "TypeScript", "GSAP Animations", "Tailwind CSS", "Data Structures", "Micro-Frontends"],
       liveUrl: "https://home-two-rust.vercel.app",
       githubUrl: "https://github.com/MRGokulB/dsa-universe",
