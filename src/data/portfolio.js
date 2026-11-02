@@ -69,7 +69,8 @@ export const portfolioData = {
       title: "JavaScript Universe (V8 Engine & Memory Visualizer)",
       description:
         "An engine-level, hardware-conscious interactive learning platform modeling V8 runtime internals, execution context stacks, heap memory allocations, and closures with cinematic scroll storytelling.",
-      image: `${import.meta.env.BASE_URL}assets/javascript-v8.jpg`,
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop",
       tags: ["Next.js", "TypeScript", "GSAP ScrollTrigger", "Tailwind CSS", "V8 Internals", "Micro-Frontends"],
       liveUrl: "https://hub-bay-six-16.vercel.app/",
       githubUrl: "https://github.com/MRGokulB/js-mastery",
@@ -80,7 +81,8 @@ export const portfolioData = {
       title: "DSA Universe (Hardware-Level Algorithm Visualizer)",
       description:
         "A decoupled micro-frontend monorepo presenting algorithmic mechanics through reactive animations, silicon-level contiguous memory allocation, pointer arithmetic, and cycle detection.",
-      image: `${import.meta.env.BASE_URL}assets/dsa-visualization.jpg`,
+      image:
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
       tags: ["Next.js", "TypeScript", "GSAP Animations", "Tailwind CSS", "Data Structures", "Micro-Frontends"],
       liveUrl: "https://home-two-rust.vercel.app",
       githubUrl: "https://github.com/MRGokulB/dsa-universe",
@@ -91,7 +93,8 @@ export const portfolioData = {
       title: "Autonomous Proposal Capture & Compliance Engine",
       description:
         "A high-reliability proposal capture system orchestrating solicitation interpretation, pgvector semantic search, async durable job queues, and deterministic WeasyPrint PDF compilation.",
-      image: `${import.meta.env.BASE_URL}assets/proposal-compliance-engine.jpg`,
+      image:
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
       tags: ["FastAPI", "Python", "pgvector", "PostgreSQL", "Cloud Run", "WeasyPrint"],
       liveUrl: "",
       githubUrl: "https://github.com/MRGokulB",
