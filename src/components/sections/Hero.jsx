@@ -35,7 +35,7 @@ const Hero = () => {
 
         <div className="md:col-span-4 h-full relative group min-h-[50vh]">
           <img
-            src={`${import.meta.env.BASE_URL}profile.jpg`}
+            src={`${import.meta.env.BASE_URL}profile.jpg?v=20261102b`}
             alt="Portrait"
             className="w-full h-full object-cover absolute inset-0 filter grayscale group-hover:grayscale-0 transition-[filter] duration-500"
           />

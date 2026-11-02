@@ -30,19 +30,20 @@ const Experience = () => {
           >
             <div className="md:col-span-3 p-8 border-b md:border-b-0 md:border-r border-black flex flex-col justify-between group-hover:border-white transition-colors">
               <span className="font-mono text-xs text-secondary group-hover:text-white/80">{job.period}</span>
-              <div className="mt-8 md:mt-0 font-serif text-2xl font-bold">
-                {job.url ? (
+              <div className="mt-8 md:mt-0">
+                <div className="font-serif text-2xl font-bold mb-3">
+                  {job.company}
+                </div>
+                {job.url && (
                   <a
                     href={job.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2 w-fit focus-visible:outline-2 focus-visible:outline-accent active:scale-95"
+                    className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-accent group-hover:text-white underline underline-offset-4 decoration-accent group-hover:decoration-white transition-colors focus-visible:outline-2 focus-visible:outline-accent active:scale-95"
                   >
-                    <span>{job.company}</span>
-                    <ArrowUpRight strokeWidth={1.5} size={20} className="hidden group-hover:block motion-safe:transition-transform motion-reduce:transition-none group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    <span>Visit Website</span>
+                    <ArrowUpRight strokeWidth={1.5} size={14} className="motion-safe:transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
-                ) : (
-                  job.company
                 )}
               </div>
             </div>

@@ -58,7 +58,7 @@ export const portfolioData = {
       title: "Enclavia.ai (Enterprise AI Platform)",
       description:
         "An enterprise AI platform and digital infrastructure featuring build-time prerendered SEO/AEO architectures, containerized Brotli Nginx deployments on Cloud Run, and modular AI product suites.",
-      image: `${import.meta.env.BASE_URL}assets/architecture-topology.jpg`,
+      image: `${import.meta.env.BASE_URL}assets/enclavia-showcase.jpg`,
       tags: ["React 19", "Python (FastAPI)", "PostgreSQL (pgvector)", "Cloud Run", "Docker", "GCP"],
       liveUrl: "https://enclavia.ai",
       githubUrl: "https://github.com/MRGokulB",
@@ -91,7 +91,7 @@ export const portfolioData = {
       title: "Autonomous Proposal Capture & Compliance Engine",
       description:
         "A high-reliability proposal capture system orchestrating solicitation interpretation, pgvector semantic search, async durable job queues, and deterministic WeasyPrint PDF compilation.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
+      image: `${import.meta.env.BASE_URL}assets/proposal-compliance-engine.jpg`,
       tags: ["FastAPI", "Python", "pgvector", "PostgreSQL", "Cloud Run", "WeasyPrint"],
       liveUrl: "",
       githubUrl: "https://github.com/MRGokulB",
@@ -281,6 +281,7 @@ export const portfolioData = {
     {
       id: 5,
       company: "Mane Mess",
+      url: "https://manemess.in",
       position: "Full Stack Developer",
       period: "Feb 2025 – Present",
       description:
