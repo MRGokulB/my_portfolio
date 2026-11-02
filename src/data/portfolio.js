@@ -67,6 +67,30 @@ export const portfolioData = {
       featured: true
     },
     {
+      id: 9,
+      title: "JavaScript Universe (V8 Engine & Memory Visualizer)",
+      description:
+        "An engine-level, hardware-conscious interactive learning platform modeling V8 runtime internals, execution context stacks, heap memory allocations, and closures with cinematic scroll storytelling.",
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+      tags: ["Next.js", "TypeScript", "GSAP ScrollTrigger", "Tailwind CSS", "V8 Internals", "Micro-Frontends"],
+      liveUrl: "https://hub-bay-six-16.vercel.app/",
+      githubUrl: "https://github.com/MRGokulB/js-mastery",
+      featured: true
+    },
+    {
+      id: 10,
+      title: "DSA Universe (Hardware-Level Algorithm Visualizer)",
+      description:
+        "A decoupled micro-frontend monorepo presenting algorithmic mechanics through reactive animations, silicon-level contiguous memory allocation, pointer arithmetic, and cycle detection.",
+      image:
+        "https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=800&auto=format&fit=crop",
+      tags: ["Next.js", "TypeScript", "GSAP Animations", "Tailwind CSS", "Data Structures", "Micro-Frontends"],
+      liveUrl: "https://home-two-rust.vercel.app",
+      githubUrl: "https://github.com/MRGokulB/dsa-universe",
+      featured: true
+    },
+    {
       id: 2,
       title: "Advertisement Compliance Management System",
       description:
@@ -75,7 +99,7 @@ export const portfolioData = {
         "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?w=800&h=600&fit=crop",
       tags: ["React.js", "Redux Toolkit", "Node.js", "Express.js", "MongoDB", "Prisma", "Socket.io", "AWS S3"],
       liveUrl: "",
-      githubUrl: "https://github.com/MRGokulB", // Replace with actual repo if available
+      githubUrl: "https://github.com/MRGokulB",
       featured: true
     },
     {
