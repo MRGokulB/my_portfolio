@@ -40,64 +40,42 @@ const Projects = () => {
             <SwissGridItem
               key={project.id}
               delay={index * 0.1}
-              className={`${colSpanClass} flex flex-col justify-between !border-t-0 !border-l-0 !border-b-0`}
+              className={`${colSpanClass} flex flex-col justify-between min-h-[500px] md:min-h-[600px] !border-t-0 !border-l-0 !border-b-0`}
             >
               <div className="relative z-10 flex flex-col h-full justify-between">
-                <div>
-                  <div className="flex justify-between items-center mb-6">
-                    <span className="font-mono text-xs border border-current px-2.5 py-1">
-                      0{index + 1}
-                    </span>
-                    <div className="flex items-center gap-3">
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          aria-label="Visit live application"
-                          className="inline-flex items-center gap-1 text-xs font-mono border border-current px-2.5 py-1 hover:bg-accent hover:border-accent hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-accent active:scale-95"
-                        >
-                          <span>Visit Website</span>
-                          <ArrowUpRight strokeWidth={1.5} size={14} />
-                        </a>
-                      )}
+                <div className="flex justify-between items-start mb-8">
+                  <span className="font-mono text-xs border border-current px-2.5 py-1">
+                    0{index + 1}
+                  </span>
+                  <div className="flex gap-4 items-center">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="View source on GitHub"
+                      className="hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-accent active:scale-95"
+                    >
+                      <Github strokeWidth={1.5} size={20} />
+                    </a>
+                    {project.liveUrl && (
                       <a
-                        href={project.githubUrl}
+                        href={project.liveUrl}
                         target="_blank"
                         rel="noreferrer"
-                        aria-label="View source on GitHub"
-                        className="p-1 hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-accent active:scale-95"
+                        aria-label="Visit live application"
+                        className="hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-accent active:scale-95"
                       >
-                        <Github strokeWidth={1.5} size={18} />
+                        <ArrowUpRight strokeWidth={1.5} size={22} />
                       </a>
-                    </div>
-                  </div>
-
-                  <div className="mb-6 w-full rounded border border-black/20 group-hover:border-white/30 overflow-hidden bg-neutral-100 transition-all duration-500">
-                    <div className="h-6 px-3 bg-neutral-200/80 group-hover:bg-neutral-800 flex items-center gap-1.5 border-b border-black/10 group-hover:border-white/20 transition-colors">
-                      <span className="w-2 h-2 rounded-full bg-red-400" />
-                      <span className="w-2 h-2 rounded-full bg-amber-400" />
-                      <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                      <span className="ml-2 font-mono text-[10px] text-neutral-500 group-hover:text-neutral-400 truncate">
-                        {project.liveUrl || 'production // architecture'}
-                      </span>
-                    </div>
-                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-black/5">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover object-top transition-transform duration-700 motion-safe:group-hover:scale-105"
-                        loading="lazy"
-                      />
-                    </div>
+                    )}
                   </div>
                 </div>
 
-                <div className="mt-2">
-                  <h3 className="font-serif text-2xl md:text-4xl font-bold mb-3 leading-tight">
+                <div className="mt-auto">
+                  <h3 className="font-serif text-3xl md:text-5xl font-bold mb-4 leading-tight">
                     {project.title}
                   </h3>
-                  <p className="mb-5 max-w-xl text-sm md:text-base leading-relaxed group-hover:text-white/80 transition-colors">
+                  <p className="mb-6 max-w-xl group-hover:text-white/80 transition-colors">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -108,6 +86,16 @@ const Projects = () => {
                     ))}
                   </div>
                 </div>
+              </div>
+
+              <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover opacity-10 group-hover:opacity-30 filter grayscale contrast-125 transition-all duration-700 motion-safe:group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent group-hover:from-black/60 transition-colors duration-500" />
               </div>
             </SwissGridItem>
           );
