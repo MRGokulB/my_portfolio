@@ -1,76 +1,104 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { portfolioData } from '../../data/portfolio';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 const Experience = () => {
   const { experience } = portfolioData;
 
   return (
-    <section id="experience" className="w-full bg-white border-b border-black">
-      <div className="p-8 md:p-12 border-b border-black grid grid-cols-1 md:grid-cols-2 gap-8 items-end bg-surface">
-        <div>
-          <h2 className="heading-display !mb-0 text-5xl md:text-7xl uppercase text-black">
-            Commit <br className="hidden md:block" />History
-          </h2>
+    <section id="experience" className="w-full bg-background border-b border-black/10">
+      {/* Section Header: Shruti Eyebrow + Multi-Style Display */}
+      <div className="p-8 md:p-14 lg:p-16 border-b border-black/10 bg-white">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="w-6 h-0.5 bg-accent" />
+          <span className="text-xs font-mono uppercase tracking-[0.2em] text-accent font-semibold">
+            Track Record & Proven Execution
+          </span>
         </div>
-        <div className="text-xl font-medium text-secondary max-w-md">
-          Professional journey structured as a rigorous timeline of contributions and architectural decisions.
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+          <div className="md:col-span-7">
+            <h2 className="font-serif font-black text-4xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight uppercase text-primary">
+              Commit <span className="text-accent italic font-normal">History.</span>
+            </h2>
+          </div>
+          <div className="md:col-span-5 text-base md:text-lg font-medium text-secondary leading-relaxed">
+            A chronological timeline of production contributions, system scaling, and high-stakes architecture decisions.
+          </div>
         </div>
       </div>
 
-      <div className="flex flex-col">
+      {/* Experience Timeline Rows */}
+      <div className="flex flex-col bg-white">
         {experience.map((job, index) => (
           <motion.div
             key={job.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
+            transition={{ delay: index * 0.08, duration: 0.5 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-12 border-b border-black last:border-b-0 group hover:bg-black hover:text-white transition-colors duration-500"
+            className="grid grid-cols-1 lg:grid-cols-12 border-b border-black/10 last:border-b-0 hover:bg-surface/50 transition-colors duration-300"
           >
-            <div className="md:col-span-3 p-8 border-b md:border-b-0 md:border-r border-black flex flex-col justify-between group-hover:border-white transition-colors">
-              <span className="font-mono text-xs text-secondary group-hover:text-white/80">{job.period}</span>
-              <div className="mt-8 md:mt-0 font-serif text-2xl font-bold">
-                {job.url ? (
-                  <a
-                    href={job.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 group/link hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-accent active:scale-95"
-                  >
+            {/* Left Column: Period & Company */}
+            <div className="lg:col-span-4 p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-black/10 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2.5 mb-4">
+                  <span className="font-mono text-xs font-semibold px-3 py-1 rounded-full bg-surface border border-black/10 text-secondary">
+                    {job.period}
+                  </span>
+                  {index === 0 && (
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      Current
+                    </span>
+                  )}
+                </div>
+
+                <div className="font-serif text-2xl md:text-3xl font-bold text-primary mt-2">
+                  {job.url ? (
+                    <a
+                      href={job.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-primary hover:text-accent transition-colors focus-visible:outline-2 focus-visible:outline-accent active:scale-95 group/link"
+                    >
+                      <span>{job.company}</span>
+                      <ArrowUpRight size={18} strokeWidth={2.5} className="transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 text-accent" />
+                    </a>
+                  ) : (
                     <span>{job.company}</span>
-                    <ArrowUpRight strokeWidth={1.5} size={20} className="motion-safe:transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
-                  </a>
-                ) : (
-                  job.company
-                )}
+                  )}
+                </div>
+              </div>
+
+              <div className="mt-8 text-xs font-mono text-muted uppercase tracking-wider">
+                Role Index 0{index + 1}
               </div>
             </div>
 
-            <div className="md:col-span-9 p-8 md:p-12 flex flex-col">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                <h3 className="font-display text-3xl font-black uppercase tracking-tight">
+            {/* Right Column: Position, Summary, and Achievements */}
+            <div className="lg:col-span-8 p-8 md:p-12 flex flex-col justify-between">
+              <div>
+                <h3 className="font-sans text-2xl md:text-3xl font-bold uppercase tracking-tight text-primary mb-4">
                   {job.position}
                 </h3>
-                {index === 0 && (
-                  <span className="px-2.5 py-0.5 border border-current text-xs font-medium self-start md:self-auto transition-colors">
-                    Current
-                  </span>
-                )}
+
+                <p className="text-base md:text-lg leading-relaxed mb-8 max-w-3xl text-secondary">
+                  {job.description}
+                </p>
               </div>
 
-              <p className="text-lg leading-relaxed mb-8 max-w-3xl text-secondary group-hover:text-white/80 transition-colors">
-                {job.description}
-              </p>
-
-              <ul className="space-y-4 font-mono text-sm max-w-3xl border-t border-black group-hover:border-white pt-6 transition-colors">
-                {job.achievements.map((ach, i) => (
-                  <li key={i} className="flex items-start gap-4">
-                    <span className="shrink-0 mt-0.5">■</span>
-                    <span className="text-secondary group-hover:text-white transition-colors">{ach}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Achievements with Custom Stylized Accent Bullets */}
+              <div className="pt-6 border-t border-black/5">
+                <ul className="space-y-3.5 max-w-3xl">
+                  {job.achievements.map((ach, i) => (
+                    <li key={i} className="flex items-start gap-3.5 text-sm md:text-base text-secondary leading-normal">
+                      <span className="text-accent mt-1 shrink-0 font-bold">→</span>
+                      <span>{ach}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </motion.div>
         ))}
