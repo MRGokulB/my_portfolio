@@ -1,0 +1,19 @@
+{
+  "mode": "implement",
+  "objective": "Redesign the portfolio on feat/immersive-portfolio with Framer Motion and Three.js",
+  "planning": "compact",
+  "context_depth": "dependency",
+  "verification_depth": "impact",
+  "delegation": "none",
+  "reason_codes": ["multiple-files", "visual-redesign", "interactive-3d"],
+  "allowed_write_scope": ["src/", "public/favicon.svg", "index.html", "README.md", ".gravitas/", ".gitignore", "eslint.config.js"],
+  "acceptance_criteria": [
+    "Local feature branch preserves prior work",
+    "All four routes use the new responsive design and existing portfolio content",
+    "Framer Motion and lazy Three.js hero support reduced motion and WebGL fallback",
+    "Navigation, project filters, resume and contact actions work",
+    "Production build, lint, desktop and mobile browser checks pass"
+  ],
+  "non_goals": ["Deployment", "Paid services", "Invented achievements"],
+  "verification": "Build to an untracked directory; lint; browser smoke and accessibility checks"
+}

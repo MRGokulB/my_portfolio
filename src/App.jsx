@@ -5,19 +5,23 @@ import AboutPage from './pages/AboutPage';
 import WorksPage from './pages/WorksPage';
 import ContactPage from './pages/ContactPage';
 import './styles/globals.css';
+import { MotionConfig } from 'framer-motion';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="works" element={<WorksPage />} />
-          <Route path="contact" element={<ContactPage />} />
-        </Route>
-      </Routes>
-    </Router>
+    <MotionConfig reducedMotion="user">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="works" element={<WorksPage />} />
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="*" element={<HomePage />} />
+          </Route>
+        </Routes>
+      </Router>
+    </MotionConfig>
   );
 }
 

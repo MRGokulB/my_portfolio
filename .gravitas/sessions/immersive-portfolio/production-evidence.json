@@ -1,0 +1,12 @@
+{
+  "results": [
+    "Production Three.js chunk loads; mobile pause control clears navigation and works",
+    "Production route home renders without overflow",
+    "Production route #/works renders without overflow",
+    "Production route #/about renders without overflow",
+    "Production route #/contact renders without overflow",
+    "No production browser errors"
+  ],
+  "errors": [],
+  "verdict": "PASS"
+}

@@ -1,89 +1,139 @@
-import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { ArrowUpRight, Check, Copy, Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import { portfolioData } from '../../data/portfolio';
-import { Mail, ArrowUpRight } from 'lucide-react';
 
-const Contact = () => {
+export default function Contact() {
   const { personal } = portfolioData;
-
+  const [copyStatus, setCopyStatus] = useState('');
+  const timer = useRef();
+  useEffect(() => () => window.clearTimeout(timer.current), []);
+  async function copyEmail() {
+    window.clearTimeout(timer.current);
+    try {
+      await navigator.clipboard.writeText(personal.email);
+      setCopyStatus('Email address copied.');
+    } catch {
+      setCopyStatus('Copy unavailable. Select the email address, or use the email link.');
+    }
+    timer.current = window.setTimeout(() => setCopyStatus(''), 5000);
+  }
+  function composeEmail(event) {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const subject = `Portfolio enquiry: ${data.get('projectType')}`;
+    const body = `Hi Gangaprasad,\n\n${data.get('message')}\n\nFrom: ${data.get('name')}\nReply to: ${data.get('email')}`;
+    window.location.href = `mailto:${personal.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
   return (
-    <section id="contact" className="w-full bg-white text-black selection:bg-accent selection:text-black">
-      <div className="p-8 md:p-12 border-b border-black">
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="font-serif text-[15vw] leading-[0.8] font-black uppercase tracking-tighter"
-        >
-          Let’s<br />
-          <span className="text-accent">Build</span><br />
-          Next.
-        </motion.h2>
+    <section className="contact-page section container">
+      <div className="page-heading">
+        <p className="eyebrow">Let’s make something worthwhile</p>
+        <h1>
+          Your next idea.
+          <br />
+          Our next conversation.
+        </h1>
+        <p>
+          A project, a role, or just a good question.
+          <br />
+          I’d love to hear what you’re thinking.
+        </p>
       </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 border-b border-black">
-        <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-black flex flex-col justify-between min-h-[40vh] bg-surface">
-          <div className="text-xs font-medium text-secondary mb-12">
-            Direct connection
-          </div>
-
-          <div>
-            <a
-              href={`mailto:${personal.email}`}
-              className="group flex items-center gap-4 text-3xl md:text-5xl font-display hover:text-white hover:bg-black transition-colors mb-8 text-black px-4 py-2 -ml-4 w-fit focus-visible:outline-2 focus-visible:outline-accent active:scale-95"
-            >
-              <Mail
-                strokeWidth={1.5}
-                size={40}
-                className="motion-safe:group-hover:rotate-12 motion-safe:transition-transform motion-reduce:transition-none duration-300"
-              />
-              <span className="underline decoration-1 underline-offset-8 decoration-black group-hover:decoration-transparent transition-colors">
-                {personal.email}
-              </span>
+      <div className="contact-grid">
+        <div className="contact-information">
+          <span className="availability">
+            <span className="status-dot" /> Open to projects & opportunities
+          </span>
+          <div className="direct-email">
+            <span>Drop me a line</span>
+            <a href={`mailto:${personal.email}`}>
+              {personal.email}
+              <ArrowUpRight size={21} aria-hidden="true" />
             </a>
-
-            <div className="flex gap-8 mt-12 border-t border-black pt-8">
-              {Object.entries(personal.social).map(([platform, url]) => (
-                <a
-                  key={platform}
-                  href={url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-secondary hover:text-black text-xs font-medium transition-colors flex items-center gap-1 group focus-visible:outline-2 focus-visible:outline-accent active:scale-95"
-                >
-                  <span className="capitalize">{platform}</span>
-                  <ArrowUpRight
-                    strokeWidth={1.5}
-                    size={14}
-                    className="opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-opacity motion-safe:transition-transform motion-reduce:transition-none duration-300"
-                  />
-                </a>
-              ))}
+            <button type="button" className="text-link copy-email" onClick={copyEmail}>
+              {copyStatus === 'Email address copied.' ? (
+                <Check size={15} aria-hidden="true" />
+              ) : (
+                <Copy size={15} aria-hidden="true" />
+              )}{' '}
+              Copy email address
+            </button>
+            <p className="copy-status" role="status">
+              {copyStatus}
+            </p>
+          </div>
+          <div className="contact-location">
+            <MapPin size={19} aria-hidden="true" />
+            <div>
+              <strong>Nanded, Maharashtra, India</strong>
+              <span>Working remotely, with US Eastern overlap.</span>
             </div>
+          </div>
+          <div className="contact-socials">
+            <a href={personal.social.github} target="_blank" rel="noreferrer">
+              <Github size={19} aria-hidden="true" />
+              GitHub
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+            <a href={personal.social.linkedin} target="_blank" rel="noreferrer">
+              <Linkedin size={19} aria-hidden="true" />
+              LinkedIn
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
           </div>
         </div>
-
-        <div className="p-8 md:p-12 flex flex-col justify-between items-start md:items-end text-left md:text-right text-xs font-medium text-secondary bg-surface">
-          <div className="space-y-4">
-            <div>
-              Based in <span className="text-black block mt-1">{personal.location.split('|')[0]}</span>
-            </div>
-            <div>
-              Status <span className="text-black block mt-1">Available for work</span>
-            </div>
+        <form className="contact-form" onSubmit={composeEmail}>
+          <h2>A little about your idea.</h2>
+          <div className="form-row">
+            <label>
+              Your name
+              <input
+                name="name"
+                placeholder="Alex Morgan"
+                autoComplete="name"
+                required
+                maxLength={100}
+              />
+            </label>
+            <label>
+              Email address
+              <input
+                type="email"
+                name="email"
+                placeholder="alex@company.com"
+                autoComplete="email"
+                required
+                maxLength={200}
+              />
+            </label>
           </div>
-
-          <div className="mt-20 md:mt-0 space-y-2">
-            <div>© {new Date().getFullYear()}</div>
-            <div className="text-black">{personal.name}</div>
-            <div className="text-[10px] border border-black bg-white text-black px-2 py-1 w-fit md:ml-auto font-medium">
-              Swiss Architecture
-            </div>
-          </div>
-        </div>
+          <label>
+            What brings you here?
+            <select name="projectType" defaultValue="A new project">
+              <option>A new project</option>
+              <option>A role or collaboration</option>
+              <option>A technical conversation</option>
+              <option>Just saying hello</option>
+            </select>
+          </label>
+          <label>
+            What do you have in mind?
+            <textarea
+              name="message"
+              rows={5}
+              placeholder="A little context, what you’re working on, and how I could help…"
+              required
+              maxLength={2000}
+            />
+          </label>
+          <button type="submit" className="button button-primary">
+            Compose email <Mail size={17} aria-hidden="true" />
+          </button>
+          <p className="form-note">
+            Opens a draft in your email app. You can review it before sending.
+          </p>
+        </form>
       </div>
     </section>
   );
-};
-
-export default Contact;
+}

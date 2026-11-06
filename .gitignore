@@ -1,3 +1,6 @@
 node_modules/
 referenceUI/
 .vercel
+.gravitas/sessions/*/build/
+.gravitas/sessions/*/screenshots/
+.gravitas/sessions/*/*.log

@@ -1,15 +1,17 @@
 import Hero from '../components/sections/Hero';
 import Projects from '../components/sections/Projects';
+import Skills from '../components/sections/Skills';
 import Experience from '../components/sections/Experience';
+import ContactBanner from '../components/ContactBanner';
 
-const HomePage = () => {
+export default function HomePage() {
   return (
-    <div className="flex flex-col w-full">
+    <>
       <Hero />
       <Projects />
+      <Skills />
       <Experience />
-    </div>
+      <ContactBanner />
+    </>
   );
-};
-
-export default HomePage;
+}

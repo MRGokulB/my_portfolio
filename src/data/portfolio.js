@@ -7,7 +7,7 @@ export const portfolioData = {
     phone: "9307902794",
     location: "Nanded, Maharashtra, India | Remote (US Eastern Time Overlap)",
     bio: "Software engineer with 2+ years of production experience building high-performance web applications, distributed APIs, and autonomous AI systems. Shipped enterprise platforms using React 19, Next.js, TypeScript, Python (FastAPI), Node.js, and PostgreSQL (pgvector). Proven track record designing durable asynchronous pipelines, containerized Cloud Run microservices, and compliance-ready AI workflows.",
-    resume: "/resume.pdf",
+    resume: `${import.meta.env.BASE_URL}resume.pdf`,
     social: {
       github: "https://github.com/MRGokulB",
       linkedin: "https://linkedin.com/in/gangaprasadboddawar",
