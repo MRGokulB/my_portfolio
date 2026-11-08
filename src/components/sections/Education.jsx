@@ -7,7 +7,9 @@ export default function Education() {
       <div className="section-heading">
         <div>
           <p className="eyebrow">Foundations & fresh perspectives</p>
-          <h2>Always a student.</h2>
+          <h2>
+            Never done <em>learning.</em>
+          </h2>
         </div>
         <GraduationCap size={32} strokeWidth={1.2} aria-hidden="true" />
       </div>

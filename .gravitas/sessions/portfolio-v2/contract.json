@@ -1,0 +1,51 @@
+{
+  "mode": "implement",
+  "objective": "Preserve v1 and build a distinct end-to-end v2 portfolio with restrained scroll-driven 3D",
+  "planning": "compact",
+  "context_depth": "dependency",
+  "verification_depth": "impact",
+  "delegation": "none",
+  "reason_codes": [
+    "four-route-redesign",
+    "scroll-driven-3d",
+    "responsive-layout"
+  ],
+  "baseline": "b68ba47",
+  "snapshot_branch": "snapshot/portfolio-v1-2026-11-08",
+  "implementation_branch": "feat/portfolio-v2-spatial",
+  "allowed_write_scope": [
+    "src/",
+    "index.html",
+    "public/favicon.svg",
+    "README.md",
+    ".gravitas/sessions/portfolio-v2/"
+  ],
+  "acceptance_criteria": [
+    "v1 snapshot points to b68ba47 with no lost changes",
+    "All four pages redesigned with existing real content",
+    "Demand-rendered scroll and pointer reactive Three.js plus reduced-motion and no-WebGL fallbacks",
+    "Framer Motion scroll effects preserve native scrolling and keyboard access",
+    "All project filters links resume and contact interactions work",
+    "Desktop tablet and mobile layouts pass visual and executable checks",
+    "Lint production build and production browser checks pass"
+  ],
+  "non_goals": [
+    "Remote deployment or push",
+    "Paid services",
+    "Invented accomplishments",
+    "Global skill installation"
+  ],
+  "design": {
+    "palette": {
+      "canvas": "#f2f2ed",
+      "ink": "#252a27",
+      "muted": "#626a63",
+      "dark": "#202624",
+      "accent": "#6854b6",
+      "lilac": "#c6b9ee"
+    },
+    "type": "Manrope for UI; Space Grotesk for display; DM Serif Display for brief editorial contrast",
+    "layout": "Asymmetric light hero → short editorial introduction → dark oversized project spreads → portrait-led about teaser → experience → oversized contact invitation",
+    "motion": "Input-driven ribbon; small project parallax and one-time section reveals; no scroll hijacking"
+  }
+}

@@ -1,6 +1,7 @@
 import { Braces, Database, Workflow, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { portfolioData } from '../../data/portfolio';
+import Reveal from '../motion/Reveal';
 
 const icons = [Braces, Database, Workflow];
 const descriptions = [
@@ -15,7 +16,11 @@ export default function Skills({ showAboutLink = true }) {
       <div className="section-heading">
         <div>
           <p className="eyebrow">What I bring to the table</p>
-          <h2>From interface to infrastructure.</h2>
+          <h2>
+            Thoughtful on the outside.
+            <br />
+            <em>Solid underneath.</em>
+          </h2>
         </div>
         {showAboutLink && (
           <Link className="text-link" to="/about">
@@ -27,7 +32,7 @@ export default function Skills({ showAboutLink = true }) {
         {portfolioData.skills.map((category, index) => {
           const Icon = icons[index];
           return (
-            <article key={category.category} className="capability">
+            <Reveal key={category.category} className="capability" delay={index * 0.08}>
               <Icon size={26} strokeWidth={1.4} aria-hidden="true" />
               <h3>{category.category}</h3>
               <p>{descriptions[index]}</p>
@@ -36,7 +41,7 @@ export default function Skills({ showAboutLink = true }) {
                   <li key={skill.name}>{skill.name}</li>
                 ))}
               </ul>
-            </article>
+            </Reveal>
           );
         })}
       </div>

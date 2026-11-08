@@ -1,20 +1,20 @@
 import { ArrowUpRight, MapPin } from 'lucide-react';
 import { portfolioData } from '../../data/portfolio';
+import PageHeading from '../PageHeading';
+import Reveal from '../motion/Reveal';
 
 export default function About() {
   const { personal } = portfolioData;
   return (
     <section className="about-section section container">
-      <div className="page-heading">
-        <p className="eyebrow">The person behind the pixels</p>
-        <h1>
-          Curious by nature.
-          <br />
-          Engineer by craft.
-        </h1>
-      </div>
+      <PageHeading
+        label="A bit about me"
+        title="A builder’s mind."
+        accent="A human perspective."
+        aside="Gangaprasad Boddawar / Nanded, India"
+      />
       <div className="about-grid">
-        <div className="portrait-frame">
+        <Reveal className="portrait-frame">
           <img
             src={`${import.meta.env.BASE_URL}profile.jpg`}
             alt="Gangaprasad Boddawar"
@@ -24,8 +24,8 @@ export default function About() {
           <span className="portrait-caption">
             <MapPin size={14} aria-hidden="true" /> Nanded, India
           </span>
-        </div>
-        <div className="about-copy">
+        </Reveal>
+        <Reveal className="about-copy">
           <p className="about-lead">
             I’m Gangaprasad, a full stack engineer who cares as much about how a product feels as
             how it works.
@@ -62,7 +62,7 @@ export default function About() {
           >
             View my résumé <ArrowUpRight size={18} aria-hidden="true" />
           </a>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

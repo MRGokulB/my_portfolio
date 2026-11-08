@@ -1,0 +1,57 @@
+{
+  "baseURL": "http://127.0.0.1:4174/my_portfolio/",
+  "results": [
+    {
+      "name": "Idle scene draws no new frames",
+      "details": "0 draw calls during 750 ms idle window; 43 initialization calls",
+      "passed": true
+    },
+    {
+      "name": "Pointer input renders then settles back to idle",
+      "details": "",
+      "passed": true
+    },
+    {
+      "name": "Native scroll rotates sculpture and settles back to idle",
+      "details": "",
+      "passed": true
+    },
+    {
+      "name": "Pause control prevents scroll-driven WebGL work",
+      "details": "",
+      "passed": true
+    },
+    {
+      "name": "Offscreen scene suspends drawing while document scrolls",
+      "details": "",
+      "passed": true
+    },
+    {
+      "name": "Context loss releases WebGL and shows the CSS fallback",
+      "details": "",
+      "passed": true
+    },
+    {
+      "name": "Mobile GPU pixel density stays at 1 on a 3× device",
+      "details": "",
+      "passed": true
+    },
+    {
+      "name": "Native touch scrolling works across the 3D canvas",
+      "details": "",
+      "passed": true
+    },
+    {
+      "name": "Mobile dock clears controls and footer on all four routes; list view fits",
+      "details": "",
+      "passed": true
+    },
+    {
+      "name": "No browser exceptions during scene, context-loss, or touch checks",
+      "details": "",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "verdict": "PASS"
+}

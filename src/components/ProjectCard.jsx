@@ -1,4 +1,6 @@
 import { ArrowUpRight, Github, Workflow, Braces, Layers } from 'lucide-react';
+import { useRef } from 'react';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 
 import { projectGroups } from '../data/projectGroups';
@@ -93,15 +95,26 @@ function ProjectArtwork({ project }) {
   );
 }
 
-export default function ProjectCard({ project, featured = false }) {
+export default function ProjectCard({ project, featured = false, index = 0 }) {
+  const card = useRef(null);
+  const reduced = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: card, offset: ['start end', 'end start'] });
+  const artY = useTransform(scrollYProgress, [0, 1], [16, -16]);
   const title = project.title.split('(')[0].trim();
   const hasRepository =
     project.githubUrl && project.githubUrl !== portfolioData.personal.social.github;
   return (
-    <article className={`project-card${featured ? ' project-featured' : ''}`}>
-      <ProjectArtwork project={project} />
+    <article ref={card} className={`project-card${featured ? ' project-featured' : ''}`}>
+      <motion.div className="project-art-frame" style={{ y: reduced ? 0 : artY }}>
+        <ProjectArtwork project={project} />
+      </motion.div>
       <div className="project-details">
-        <span className="project-category">{projectGroups[project.id]}</span>
+        <div className="project-meta">
+          <span className="project-category">{projectGroups[project.id]}</span>
+          {featured && (
+            <span className="project-number">Selected / {String(index + 1).padStart(2, '0')}</span>
+          )}
+        </div>
         <h3>{title}</h3>
         <p>{project.description}</p>
         <ul className="project-tags" aria-label="Technologies">

@@ -11,7 +11,11 @@ export default function Experience() {
       <div className="section-heading">
         <div>
           <p className="eyebrow">Along the way</p>
-          <h2 id="experience-title">Built with good people.</h2>
+          <h2 id="experience-title">
+            Good people.
+            <br />
+            <em>Meaningful work.</em>
+          </h2>
         </div>
         <p className="section-aside">
           Different teams. Different challenges.

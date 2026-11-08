@@ -1,0 +1,233 @@
+{
+  "baseURL": "http://127.0.0.1:4174/my_portfolio/",
+  "accessibilityEngine": "axe-core 4.10.3",
+  "results": [
+    {
+      "name": "Home and lazy Three.js scene render",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "3D pause and resume",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Scroll action preserves hash-router route",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Experience expands with mouse and closes with keyboard",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Route navigation resets focus and shows all 9 projects",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Filter: AI systems",
+      "passed": true,
+      "details": "3 projects"
+    },
+    {
+      "name": "Filter: Full stack",
+      "passed": true,
+      "details": "3 projects"
+    },
+    {
+      "name": "Filter: Interactive web",
+      "passed": true,
+      "details": "3 projects"
+    },
+    {
+      "name": "All-work filter restores complete collection",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Grid/list layout switch preserves active category",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Résumé and favicon load under /my_portfolio/",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Accessibility home 1440px",
+      "passed": true,
+      "details": "40 checks passed"
+    },
+    {
+      "name": "Responsive home 1440px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Accessibility works 1440px",
+      "passed": true,
+      "details": "40 checks passed"
+    },
+    {
+      "name": "Responsive works 1440px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Accessibility about 1440px",
+      "passed": true,
+      "details": "36 checks passed"
+    },
+    {
+      "name": "Responsive about 1440px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Accessibility contact 1440px",
+      "passed": true,
+      "details": "41 checks passed"
+    },
+    {
+      "name": "Responsive contact 1440px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Responsive home 1024px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Responsive works 1024px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Responsive about 1024px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Responsive contact 1024px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Responsive home 768px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Responsive works 768px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Responsive about 768px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Responsive contact 768px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Accessibility home 390px",
+      "passed": true,
+      "details": "40 checks passed"
+    },
+    {
+      "name": "Responsive home 390px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Accessibility works 390px",
+      "passed": true,
+      "details": "40 checks passed"
+    },
+    {
+      "name": "Responsive works 390px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Accessibility about 390px",
+      "passed": true,
+      "details": "36 checks passed"
+    },
+    {
+      "name": "Responsive about 390px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Accessibility contact 390px",
+      "passed": true,
+      "details": "41 checks passed"
+    },
+    {
+      "name": "Responsive contact 390px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Responsive home 320px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Responsive works 320px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Responsive about 320px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Responsive contact 320px",
+      "passed": true,
+      "details": "one h1; no overflow or broken loaded images"
+    },
+    {
+      "name": "Contact fields validate and explain email-draft behavior",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Copy-email action writes the correct address",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Clipboard failure gives an honest fallback",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Reduced-motion preference pauses 3D",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "WebGL-unavailable fallback retains content and navigation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "No uncaught browser errors",
+      "passed": true,
+      "details": ""
+    }
+  ],
+  "errors": [],
+  "verdict": "PASS"
+}

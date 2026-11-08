@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Check, Copy, Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import { portfolioData } from '../../data/portfolio';
+import PageHeading from '../PageHeading';
 
 export default function Contact() {
   const { personal } = portfolioData;
@@ -26,19 +27,15 @@ export default function Contact() {
   }
   return (
     <section className="contact-page section container">
-      <div className="page-heading">
-        <p className="eyebrow">Let’s make something worthwhile</p>
-        <h1>
-          Your next idea.
-          <br />
-          Our next conversation.
-        </h1>
-        <p>
-          A project, a role, or just a good question.
-          <br />
-          I’d love to hear what you’re thinking.
-        </p>
-      </div>
+      <PageHeading
+        label="Good conversations lead to good things"
+        title="Something in mind?"
+        accent="Let’s make it happen."
+        aside="Open to projects & opportunities"
+      >
+        A big idea, a small question, or a new opportunity. There’s a good chance we can build
+        something great together.
+      </PageHeading>
       <div className="contact-grid">
         <div className="contact-information">
           <span className="availability">

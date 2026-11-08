@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { NavLink, Outlet, Link, useLocation } from 'react-router-dom';
 import { ArrowUpRight, Github, Linkedin } from 'lucide-react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useSpring } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
 
 const navigation = [
@@ -14,6 +14,8 @@ const navigation = [
 export default function Layout() {
   const { pathname } = useLocation();
   const reducedMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 160, damping: 32 });
   const previousPath = useRef(pathname);
   const mainRef = useRef(null);
   const { personal } = portfolioData;
@@ -30,6 +32,9 @@ export default function Layout() {
 
   return (
     <div className="site-shell">
+      {!reducedMotion && (
+        <motion.div className="reading-progress" style={{ scaleX: progress }} aria-hidden="true" />
+      )}
       <a
         href="#main-content"
         className="skip-link"
@@ -83,11 +88,18 @@ export default function Layout() {
         </Link>
       </header>
       <main id="main-content" ref={mainRef} tabIndex={-1}>
-        <Outlet />
+        <motion.div
+          key={pathname}
+          initial={{ y: reducedMotion ? 0 : 10 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <Outlet />
+        </motion.div>
       </main>
       <footer className="site-footer container">
         <Link to="/" className="footer-name">
-          Gangaprasad Boddawar<span>Full stack. Full of possibility.</span>
+          Gangaprasad Boddawar<span>Thoughtfully built. Always evolving.</span>
         </Link>
         <div className="footer-socials">
           <a href={personal.social.github} target="_blank" rel="noreferrer">

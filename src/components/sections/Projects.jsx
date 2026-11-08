@@ -2,28 +2,39 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../../data/portfolio';
 import ProjectCard from '../ProjectCard';
+import Reveal from '../motion/Reveal';
 
 export default function Projects() {
   const projects = portfolioData.projects.filter((project) => project.featured).slice(0, 3);
   return (
-    <section id="projects" className="section container">
-      <div className="section-heading">
-        <div>
-          <p className="eyebrow">Selected work</p>
-          <h2>Ideas made real.</h2>
+    <section id="projects" className="selected-work">
+      <div className="container section">
+        <Reveal className="section-heading">
+          <div>
+            <p className="eyebrow">A selection of what I do</p>
+            <h2>
+              Less talk.
+              <br />
+              <em>More shipped.</em>
+            </h2>
+          </div>
+          <p className="section-aside">
+            Different challenges. Thoughtful solutions.
+            <br />A few projects I’m happy to put my name on.
+          </p>
+        </Reveal>
+        <div className="project-stack">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} featured index={index} />
+          ))}
         </div>
-        <Link to="/works" className="text-link">
-          All projects{' '}
-          <span className="count-badge">
-            {portfolioData.projects.length.toString().padStart(2, '0')}
-          </span>
-          <ArrowUpRight size={18} aria-hidden="true" />
-        </Link>
-      </div>
-      <div className="project-grid">
-        {projects.map((project, index) => (
-          <ProjectCard key={project.id} project={project} featured={index === 0} />
-        ))}
+        <div className="work-footer">
+          <span>There’s more where these came from.</span>
+          <Link to="/works" className="button button-light">
+            Explore all {portfolioData.projects.length} projects{' '}
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </Link>
+        </div>
       </div>
     </section>
   );
