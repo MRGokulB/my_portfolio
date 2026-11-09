@@ -1,0 +1,20 @@
+{
+  "mode": "debug",
+  "planning": "compact",
+  "context_depth": "dependency",
+  "verification_depth": "impact",
+  "delegation": "none",
+  "reason_codes": ["user-reported-visual-selection-failure", "geometry-and-responsive-interaction"],
+  "baseline": "df1c4c4",
+  "allowed_write_scope": ["src/components/visuals/BuildStack.jsx", "src/styles/globals.css", ".gravitas/sessions/portfolio-v3/", "README.md"],
+  "diagnosis": "Selection only adds 27px of depth to each layer's original position, so AI and Cloud remain under Interface. Independent rectangular side faces protrude at rounded corners.",
+  "decision": "Place the selected layer in a consistent front slot, park the others behind, restore a readable viewing angle on selection, and form rounded thickness with matching depth contours.",
+  "acceptance_criteria": [
+    "Each selected layer exposes its name, legend, screenshot and tools, verified by actual browser hit testing",
+    "AI and Cloud visibly move to the front when selected; collapsed state preserves the visible selection",
+    "Rounded slab bodies have no protruding rectangular corner faces",
+    "Desktop and phone states stay within the viewport and above the hero divider",
+    "Keyboard, drag, touch, reset and reduced-motion behavior remain usable",
+    "Lint, build and focused production interaction checks pass; inspect all three states visually"
+  ]
+}

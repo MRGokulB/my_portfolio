@@ -1,0 +1,365 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "layer": "Interface",
+      "passed": true,
+      "inBounds": true,
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "layer": "Interface",
+      "state": "collapsed",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "layer": "Intelligence",
+      "passed": false,
+      "inBounds": true,
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": false
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": false
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": false
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "layer": "Intelligence",
+      "state": "collapsed",
+      "passed": false
+    },
+    {
+      "width": 1440,
+      "layer": "Infrastructure",
+      "passed": false,
+      "inBounds": true,
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": false
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": false
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": false
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "layer": "Infrastructure",
+      "state": "collapsed",
+      "passed": false
+    },
+    {
+      "width": 768,
+      "layer": "Interface",
+      "passed": true,
+      "inBounds": true,
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "layer": "Interface",
+      "state": "collapsed",
+      "passed": true
+    },
+    {
+      "width": 768,
+      "layer": "Intelligence",
+      "passed": false,
+      "inBounds": true,
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": false
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": false
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": false
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "layer": "Intelligence",
+      "state": "collapsed",
+      "passed": false
+    },
+    {
+      "width": 768,
+      "layer": "Infrastructure",
+      "passed": false,
+      "inBounds": true,
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": false
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": false
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": false
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "layer": "Infrastructure",
+      "state": "collapsed",
+      "passed": false
+    },
+    {
+      "width": 390,
+      "layer": "Interface",
+      "passed": true,
+      "inBounds": true,
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "layer": "Interface",
+      "state": "collapsed",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "layer": "Intelligence",
+      "passed": false,
+      "inBounds": true,
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": false
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": false
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": false
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "layer": "Intelligence",
+      "state": "collapsed",
+      "passed": false
+    },
+    {
+      "width": 390,
+      "layer": "Infrastructure",
+      "passed": false,
+      "inBounds": true,
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": false
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": false
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": false
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "layer": "Infrastructure",
+      "state": "collapsed",
+      "passed": false
+    },
+    {
+      "width": 320,
+      "layer": "Interface",
+      "passed": false,
+      "inBounds": false,
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "layer": "Interface",
+      "state": "collapsed",
+      "passed": true
+    },
+    {
+      "width": 320,
+      "layer": "Intelligence",
+      "passed": false,
+      "inBounds": true,
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": false
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": false
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": false
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "layer": "Intelligence",
+      "state": "collapsed",
+      "passed": false
+    },
+    {
+      "width": 320,
+      "layer": "Infrastructure",
+      "passed": false,
+      "inBounds": true,
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": false
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": false
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": false
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "layer": "Infrastructure",
+      "state": "collapsed",
+      "passed": false
+    }
+  ],
+  "verdict": "FAIL"
+}

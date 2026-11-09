@@ -1,0 +1,761 @@
+{
+  "results": [
+    {
+      "width": 1920,
+      "layer": "Interface",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 44.600921630859375,
+        "bottomGap": 13.2413330078125
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "layer": "Interface",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 934.1158447265625,
+        "y": 589.1256713867188,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "width": 1920,
+      "layer": "Intelligence",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 44.600921630859375,
+        "bottomGap": 13.2413330078125
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "layer": "Intelligence",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 934.1158447265625,
+        "y": 589.1256713867188,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "width": 1920,
+      "layer": "Infrastructure",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 44.600921630859375,
+        "bottomGap": 13.2413330078125
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "layer": "Infrastructure",
+      "state": "collapsed",
+      "passed": false,
+      "probe": {
+        "exposed": false,
+        "hit": "stack-fit",
+        "x": 931.3218994140625,
+        "y": 584.0119018554688,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "width": 1440,
+      "layer": "Interface",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 41.972503662109375,
+        "bottomGap": 15.893402099609375
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "layer": "Interface",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 699.7772827148438,
+        "y": 284.2183837890625,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "width": 1440,
+      "layer": "Intelligence",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 41.972503662109375,
+        "bottomGap": 15.893402099609375
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "layer": "Intelligence",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 699.7772827148438,
+        "y": 284.2183837890625,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "width": 1440,
+      "layer": "Infrastructure",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 41.972503662109375,
+        "bottomGap": 15.893402099609375
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "layer": "Infrastructure",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 696.987060546875,
+        "y": 279.0505065917969,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "width": 1280,
+      "layer": "Interface",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 41.972503662109375,
+        "bottomGap": 15.893402099609375
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "layer": "Interface",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 622.0585174560547,
+        "y": 284.6558837890625,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "width": 1280,
+      "layer": "Intelligence",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 41.972503662109375,
+        "bottomGap": 15.893402099609375
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "layer": "Intelligence",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 622.0585174560547,
+        "y": 284.6558837890625,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "width": 1280,
+      "layer": "Infrastructure",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 41.972503662109375,
+        "bottomGap": 15.893402099609375
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "layer": "Infrastructure",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 619.2682952880859,
+        "y": 279.4880065917969,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "width": 768,
+      "layer": "Interface",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 34.292572021484375,
+        "bottomGap": 12.64642333984375
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "layer": "Interface",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 372.3827667236328,
+        "y": 565.6313171386719,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "width": 768,
+      "layer": "Intelligence",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 34.292572021484375,
+        "bottomGap": 12.64642333984375
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "layer": "Intelligence",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 372.3827667236328,
+        "y": 565.6313171386719,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "width": 768,
+      "layer": "Infrastructure",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 34.292572021484375,
+        "bottomGap": 12.64642333984375
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "layer": "Infrastructure",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 370.0132598876953,
+        "y": 561.1791381835938,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "width": 390,
+      "layer": "Interface",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 15.864898681640625,
+        "bottomGap": 13.46099853515625
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "layer": "Interface",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 189.7387237548828,
+        "y": 306.59825134277344,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "width": 390,
+      "layer": "Intelligence",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 15.864898681640625,
+        "bottomGap": 13.46099853515625
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "layer": "Intelligence",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 189.7387237548828,
+        "y": 306.59825134277344,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "width": 390,
+      "layer": "Infrastructure",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 15.864898681640625,
+        "bottomGap": 13.46099853515625
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "layer": "Infrastructure",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 187.44253540039062,
+        "y": 302.292236328125,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "width": 320,
+      "layer": "Interface",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 13.390411376953125,
+        "bottomGap": 12.789794921875
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "layer": "Interface",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 156.17434692382812,
+        "y": 368.547119140625,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "width": 320,
+      "layer": "Intelligence",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 13.390411376953125,
+        "bottomGap": 12.789794921875
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "layer": "Intelligence",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 156.17434692382812,
+        "y": 345.547119140625,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "width": 320,
+      "layer": "Infrastructure",
+      "passed": true,
+      "inBounds": true,
+      "fitsStage": true,
+      "scene": {
+        "topGap": 13.390411376953125,
+        "bottomGap": 12.789794921875
+      },
+      "visible": [
+        {
+          "selector": ".module-header span",
+          "exposed": true
+        },
+        {
+          "selector": ".module-legend",
+          "exposed": true
+        },
+        {
+          "selector": ".module-screenshot",
+          "exposed": true
+        },
+        {
+          "selector": ".module-tools",
+          "exposed": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "layer": "Infrastructure",
+      "state": "collapsed",
+      "passed": true,
+      "probe": {
+        "exposed": true,
+        "hit": "module-legend",
+        "x": 154.17709350585938,
+        "y": 341.76060485839844,
+        "viewportHeight": 900
+      }
+    }
+  ],
+  "verdict": "FAIL"
+}

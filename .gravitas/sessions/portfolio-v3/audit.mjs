@@ -203,10 +203,10 @@ try {
   const pitch = Number(rotated.match(/rotateX\(([-\d.]+)deg\)/)?.[1]);
   const yaw = Number(rotated.match(/rotateZ\(([-\d.]+)deg\)/)?.[1] || 0);
   assert.ok(
-    Number.isFinite(pitch) && pitch >= 35 && pitch <= 68,
+    Number.isFinite(pitch) && pitch >= 32 && pitch <= 58,
     `Pitch outside safe bounds: ${rotated}`
   );
-  assert.ok(Number.isFinite(yaw) && yaw >= -52 && yaw <= 0, `Yaw outside safe bounds: ${rotated}`);
+  assert.ok(Number.isFinite(yaw) && yaw >= -38 && yaw <= -8, `Yaw outside safe bounds: ${rotated}`);
   await checkLayer(page, layers[1]);
   assert.equal(await page.locator('.stack-stage.is-dragging').count(), 0);
   pass('Mouse drag changes bounded orientation without selecting another layer');
