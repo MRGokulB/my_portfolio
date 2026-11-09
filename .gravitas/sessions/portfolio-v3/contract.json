@@ -1,0 +1,24 @@
+{
+  "mode": "implement",
+  "objective": "Preserve v2 and build an original interactive portfolio informed by the requested design skills and the user's resume",
+  "planning": "deep",
+  "context_depth": "dependency",
+  "verification_depth": "impact",
+  "delegation": "conditional",
+  "reason_codes": ["multiple-design-sources", "custom-interaction", "four-route-redesign", "independent-design-review"],
+  "baseline": "fbf2b30",
+  "snapshot_branch": "snapshot/portfolio-v2-2026-11-08",
+  "implementation_branch": "feat/portfolio-v3-interactive",
+  "allowed_write_scope": ["src/", "index.html", "public/", "README.md", ".hallmark/", ".gravitas/sessions/portfolio-v3/", ".gitignore", "D:/FreeLance/.agents/skills/shrut-uiux/"],
+  "acceptance_criteria": [
+    "Preserve the existing committed version on a new snapshot branch",
+    "Read and apply the named design skills; document sourcing and any conflicts",
+    "Create a bespoke concept grounded in real projects and resume content, distinct from the provided keycap ball",
+    "Preserve all four routes and working portfolio/contact/resume interactions",
+    "Provide accessible keyboard and touch interaction, reduced motion, responsive layouts and meaningful motion",
+    "Pass lint, production build, applicable Hallmark checks, browser interaction and accessibility audits",
+    "Commit the completed implementation on its separate local branch",
+    "Update the local default UI/UX skill to select immersive, standard, clean, professional, or minimal design based on the brief"
+  ],
+  "non_goals": ["Remote publishing", "Invented credentials or client results", "Paid asset services", "Global skill installation"]
+}

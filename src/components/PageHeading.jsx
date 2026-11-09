@@ -2,17 +2,21 @@ import Reveal from './motion/Reveal';
 
 export default function PageHeading({ label, title, accent, children, aside }) {
   return (
-    <div className="page-heading">
+    <header className="page-heading">
       <Reveal>
-        <p className="eyebrow">{label}</p>
         <h1>
-          {title}
-          <br />
-          <em>{accent}</em>
+          <span>{title}</span>
+          {accent && (
+            <>
+              <br />
+              <span>{accent}</span>
+            </>
+          )}
         </h1>
         {children && <p className="page-description">{children}</p>}
+        {label && <p className="page-context">{label}</p>}
       </Reveal>
       {aside && <span className="page-heading-aside">{aside}</span>}
-    </div>
+    </header>
   );
 }

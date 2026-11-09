@@ -1,0 +1,59 @@
+{
+  "policy": {
+    "planning": "direct",
+    "context_depth": "dependency",
+    "verification_depth": "impact",
+    "delegation": "none",
+    "reason_codes": [
+      "scoped-public-screenshots"
+    ]
+  },
+  "results": [
+    {
+      "id": 6,
+      "name": "Herbs Magic",
+      "source": "https://www.theherbsmagic.com/",
+      "output": "public/assets/herbs-magic-v3.png",
+      "capturedAt": "2026-11-09T00:33:33.455Z",
+      "attempts": [],
+      "httpStatus": 200,
+      "finalUrl": "https://www.theherbsmagic.com/",
+      "title": "The Herbs Magic – Natural Ayurvedic Skincare & Haircare",
+      "bodyExcerpt": "Login\nBEST SELLERS\nNEW LAUNCHES\nAI SCAN\nBLOGS\nSKIN CARE\nFACE CARE\nHAIR CARE\nHERBS\nHELP & SETTINGS\nThe Herbs Magic – Premium Ayurvedic Skincare, Haircare & Natural Wellness\n• Ayurvedic Formulation  \n• Organic  \n• No Silicones \n• No Sulphates  \n• No Parabens  \n• Not Tested On Animals \n• No Harsh Chemicals \n•  \nBest Sellers\nView All\nHerbs Magic Organic Ashwagandha Root Powder | Organic, Non-GMO, Vegan, Gluten-Free | Stress Relief & Sleep Support | A",
+      "images": {
+        "loaded": 41,
+        "total": 63
+      },
+      "status": "usable",
+      "visualReview": "Viewed captured PNG: credible rendered homepage, header and hero assets visible; no blocking overlay.",
+      "dimensions": {
+        "height": 900,
+        "width": 1280
+      },
+      "bytes": 920736
+    },
+    {
+      "id": 8,
+      "name": "GCON Nanded",
+      "source": "https://gconnanded.in",
+      "output": "public/assets/gcon-nanded-v3.png",
+      "capturedAt": "2026-11-09T00:33:33.487Z",
+      "attempts": [],
+      "httpStatus": 200,
+      "finalUrl": "https://gconnanded.in/",
+      "title": "GCON Nanded",
+      "bodyExcerpt": "Government College of Nursing (B.Sc.),Vishnupuri, Nanded\n\nशासकीय परिचर्या महाविद्यालय (बी. एस्सी.), विष्णुपुरी, नांदेड\n\nHome\nHome\nFaculty\nFaculty\nAnnexure\nAnnexure\nEvents\nEvents\nStudents\nStudents\nAdmin Portal\nExcellence in Nursing Education\n\nEmpowering future healthcare leaders through compassionate care and evidence-based practice\n\nLearn More\nExcellence in Nursing Education\n\nEmpowering future healthcare leaders through compassionate care and evi",
+      "images": {
+        "loaded": 14,
+        "total": 14
+      },
+      "status": "usable",
+      "visualReview": "Viewed captured PNG: credible rendered homepage, header and hero assets visible; no blocking overlay.",
+      "dimensions": {
+        "height": 900,
+        "width": 1280
+      },
+      "bytes": 908761
+    }
+  ]
+}

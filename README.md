@@ -1,8 +1,8 @@
-# Gangaprasad Boddawar — Portfolio
+# Gangaprasad Boddawar — Build Stack portfolio
 
-A responsive React portfolio with a scroll-reactive Three.js ribbon, Framer Motion reveals and project parallax, grid/list project views, an experience accordion, and an email-draft contact form. Version 2 pairs a warm light canvas and lilac accents with large dark project spreads and editorial typography.
+Version 3 is a responsive, four-page React portfolio built around an interactive CSS 3D stack. Interface, intelligence, and infrastructure layers connect to JavaScript Universe, the Proposal Capture Engine, and Enclavia. Framer Motion animates selection and restrained page transitions; real project screenshots and career information carry the rest of the site.
 
-The original design is preserved at `b68ba47` on `snapshot/portfolio-v1-2026-11-08`. Version 2 lives on `feat/portfolio-v2-spatial`.
+Version 2 is preserved at `fbf2b30` on `snapshot/portfolio-v2-2026-11-08`. This version lives on `feat/portfolio-v3-interactive`. Version 1 remains on `snapshot/portfolio-v1-2026-11-08`.
 
 ## Run locally
 
@@ -11,44 +11,52 @@ npm install
 npm run dev
 ```
 
-Open the URL printed by Vite, normally **http://localhost:3000/my_portfolio/**. The app preserves the existing hash routes: Home, Work, About, and Contact.
+Open the URL printed by Vite, normally **http://localhost:3000/my_portfolio/**. Home, Work, About, and Contact retain their existing hash routes.
 
 ## Checks
 
 ```powershell
 npm run lint
-npm run build
+node node_modules/vite/bin/vite.js build --outDir .gravitas/sessions/portfolio-v3/build
 ```
 
-The repository already tracks `dist/`. To verify a build without changing that deployment snapshot:
+The custom output directory avoids overwriting the repository's tracked `dist/` deployment snapshot. `npm run build` still produces the normal deployment build when intended.
+
+The Chromium audit accepts an installed Playwright module path:
 
 ```powershell
-node node_modules/vite/bin/vite.js build --outDir .gravitas/sessions/portfolio-v2/build
+node .gravitas/sessions/portfolio-v3/production-smoke.mjs C:/path/to/playwright/index.mjs
 ```
 
-Repeatable Chromium audits live in `.gravitas/sessions/portfolio-v2/`. They use an existing Playwright installation; pass its absolute `index.mjs` path as the first argument. For example, after building:
+It starts a temporary production preview on port 4174, checks routes, keyboard and pointer interactions, project filters, grid/list layouts, contact behavior, responsive widths, reduced motion, touch scrolling, and axe accessibility, then closes the preview. It downloads pinned axe-core 4.10.3 and fails explicitly if that engine cannot load. Evidence JSON is saved beside the scripts; screenshots and builds are ignored.
 
-```powershell
-node .gravitas/sessions/portfolio-v2/production-smoke.mjs C:/path/to/playwright/index.mjs
-```
+To check a running development server, use `audit.mjs` with the same Playwright argument. It defaults to `http://127.0.0.1:3000/my_portfolio/`; override with `PORTFOLIO_URL`.
 
-This starts a temporary preview on port 4174, runs the route, interaction, responsive, axe accessibility, WebGL lifecycle, and touch checks against the production output, then closes the server. The accessibility audit downloads pinned axe-core 4.10.3; it fails explicitly if the engine cannot be loaded. Evidence JSON is saved alongside the scripts; screenshots are ignored. To check an existing dev server instead, run `audit.mjs` or `scene-audit.mjs` with the same Playwright argument (default URL: port 3000; override with `PORTFOLIO_URL`).
+## Editing the portfolio
 
-## Content and design
+- `src/data/portfolio.js`: identity, projects, links, career history, and education.
+- `src/data/projectGroups.js`: project filter categories.
+- `src/data/buildLayers.js`: the hero's three layers and their project mappings.
+- `src/components/visuals/BuildStack.jsx`: rotation, layer selection, collapse, and reset.
+- `src/styles/tokens.css`: color, typography, spacing, and motion roles.
+- `src/styles/globals.css`: layouts, responsive rules, and component styling.
 
-- Edit identity, projects, links, skills, experience, and education in `src/data/portfolio.js`.
-- Project filter categories live in `src/data/projectGroups.js`.
-- Typography, color tokens, responsive rules, and component styles live in `src/styles/globals.css`.
-- The WebGL hero lives in `src/components/visuals/OrbitalScene.jsx`. Its Möbius ribbon is generated locally, with no model downloads. It loads separately and renders on demand: scroll/pointer input starts a short damped movement, then rendering stops. Pixel density is capped at 1 on phones and 1.5 on larger screens. It pauses outside the viewport and on hidden tabs, respects reduced motion, and has a visitor pause control. A CSS illustration remains when WebGL is unavailable or its context is lost.
-- Motion uses native scrolling. Section reveals run once; project artwork moves only 32px across a full viewport passage. Reduced motion disables the translated effects and progress indicator.
-- Original project screenshots and the portrait are retained. JavaScript and algorithm artwork is illustrative, not a claim to be a live application screenshot.
-- The form opens a prefilled draft in the visitor's email app. It does not transmit or store messages. The visitor must send the draft.
-- Fonts use Google Fonts with system fallbacks. No paid visual service, API key, remote 3D model, or generated video is required.
+The hero uses actual CSS perspective, extruded faces, depth translation, and bounded pointer rotation. Its parallel native buttons provide keyboard access. Touch keeps vertical scrolling available, and reduced motion removes spring travel and drag rotation. No autonomous animation loop or WebGL context is required. The earlier Three.js implementation and dependencies remain available, but v3 does not import them into its production bundle.
 
-Design guidance reviewed: [Claude frontend design](https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md), [3D web experience](https://github.com/sickn33/antigravity-awesome-skills/blob/main/skills/3d-web-experience/SKILL.md), [Three.js animation](https://github.com/CloudAI-X/threejs-skills/blob/main/skills/threejs-animation/SKILL.md), [UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill), and the workspace's Shrut UI/UX, Sites local-preview, and Gravitas skills. The implementation uses the repository's existing React/Three.js/Motion packages and requires no paid visual provider.
+Scrolling remains native. Section movement runs once and stays visible throughout; reduced motion removes translated effects. All essential routes remain available without interacting with the 3D object. A basic name, contact, and résumé fallback remains when JavaScript is disabled.
 
-See [the v2 audit](.gravitas/sessions/portfolio-v2/AUDIT.md) for verification and remaining limits.
+Seven projects have real website captures. The two projects without a public URL use explicitly labeled system overviews. Screenshots show the available public sites at capture time, not a claim that every current detail was authored by this portfolio's owner.
 
-## Deployment behavior
+The contact form validates its fields and opens a prefilled draft in the visitor's email app. The visitor must send the draft; the site does not transmit or store messages. Fonts load from Fontshare and Google Fonts with system fallbacks. No paid visual provider, API key, model download, or generated video is needed.
 
-The existing Vite configuration uses `/my_portfolio/` by default and `/` when `VERCEL` is set. Résumé, favicon, and local image paths respect that base. This redesign is local only; no deployment or remote push is performed.
+## Design sources and local skill
+
+The custom direction applies selected guidance from [Impeccable](https://impeccable.style/), [Taste Skill](https://www.tasteskill.dev/), [Hallmark](https://usehallmark.com/), [Hue](https://hueapp.io/), and [AI Design Skills](https://github.com/elayadesign/ai-design-skills). [ThreeUI's recent gallery](https://threeui.com/browse?sort=recent) informed the balance between a spatial focal point and quiet navigation. No ThreeUI package, paid source, or template was copied into this implementation.
+
+The workspace skill at `D:/FreeLance/.agents/skills/shrut-uiux/SKILL.md` was updated to version 2.0.0. It now chooses standard, clean, professional, minimal, or immersive treatment from the actual brief and preserves an existing design system for scoped edits. Before/after copies are retained with the v3 design references; the active skill is outside this repository.
+
+See [the design specification](.gravitas/sessions/portfolio-v3/DESIGN.md), [source provenance](.gravitas/sessions/portfolio-v3/references/sources.json), and [the audit](.gravitas/sessions/portfolio-v3/AUDIT.md) for decisions, verification, and limitations.
+
+## Deployment
+
+The existing Vite configuration uses `/my_portfolio/` by default and `/` when `VERCEL` is set. Local assets and résumé links respect that base. This redesign is local only; no deployment or remote push was performed.

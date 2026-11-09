@@ -4,3 +4,4 @@ referenceUI/
 .gravitas/sessions/*/build/
 .gravitas/sessions/*/screenshots/
 .gravitas/sessions/*/*.log
+.gravitas/sessions/portfolio-v3/references/*.png

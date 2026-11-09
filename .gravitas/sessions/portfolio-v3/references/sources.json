@@ -1,0 +1,82 @@
+{
+  "checked_on": "2026-11-08",
+  "purpose": "Primary-source design guidance for the custom Build Stack portfolio. Downloaded Markdown was read as reference material; no remote executable or global installation was run.",
+  "sources": [
+    {
+      "name": "Impeccable",
+      "version_in_skill": "4.8.1",
+      "website": "https://impeccable.style/",
+      "repository": "https://github.com/pbakaus/impeccable",
+      "observed_main_commit": "924bbd194d02e5e15a227e75b5901fb0d7a4ecad",
+      "skill": "https://github.com/pbakaus/impeccable/blob/main/.agents/skills/impeccable/SKILL.md",
+      "local_skill": "impeccable-SKILL.md",
+      "references": [
+        "https://github.com/pbakaus/impeccable/blob/main/.agents/skills/impeccable/reference/craft-floor.md",
+        "https://github.com/pbakaus/impeccable/blob/main/.agents/skills/impeccable/reference/animate.md",
+        "https://github.com/pbakaus/impeccable/blob/main/.agents/skills/impeccable/reference/new-work.md"
+      ],
+      "read_scope": "Skill, craft floor, animate, and relevant new-work direction/code-led/review guidance.",
+      "application": "Experience-mode portfolio, visible artifact first, one authored interaction, meaningful states, no eyebrow, contrast and real-render review.",
+      "runtime": "CLI not installed or executed; use local context and existing browser verification."
+    },
+    {
+      "name": "Taste Skill",
+      "version_in_skill": "2.5.1",
+      "website": "https://www.tasteskill.dev/",
+      "repository": "https://github.com/Leonxlnx/taste-skill",
+      "observed_main_commit": "f6b76575f949707b4e3c37cd86cb44b0b98643e8",
+      "skill": "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/SKILL.md",
+      "local_skill": "taste-SKILL.md",
+      "references": [
+        "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/motion.md",
+        "https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/references/perf.md"
+      ],
+      "read_scope": "Skill direction and runtime rules, motion layers and state timings, performance budget.",
+      "application": "Equal edges, real material, meaningful focal interaction, quiet hover/press, bounded graphics and reduced motion.",
+      "runtime": "Kit, random dealers, and its CLI gate not installed or executed; conflicting template mandates documented in DESIGN.md."
+    },
+    {
+      "name": "Hue",
+      "version_in_skill": "1.2.0",
+      "website": "https://hueapp.io/",
+      "repository": "https://github.com/dominikmartn/hue",
+      "observed_main_commit": "a910e31cd24b45b9455c0c3502150413aa5a3b32",
+      "skill": "https://github.com/dominikmartn/hue/blob/main/SKILL.md",
+      "local_skill": "hue-SKILL.md",
+      "references": [
+        "https://github.com/dominikmartn/hue/blob/main/references/hero-stage.md",
+        "https://github.com/dominikmartn/hue/blob/main/references/tokens-template.md"
+      ],
+      "read_scope": "Input analysis, system extraction, design model, quality standards, hero-stage model, semantic token template.",
+      "application": "Portable portfolio DESIGN.md with falsifiable principles, role colors, typography, hero subject/background/relation, component rules, motion and honest derivations.",
+      "runtime": "Applied as design-system methodology; full standalone multi-artifact skill generation is outside this website task."
+    },
+    {
+      "name": "AI Design Skills — landing-page-design",
+      "website": "https://github.com/elayadesign/ai-design-skills",
+      "repository": "https://github.com/elayadesign/ai-design-skills",
+      "observed_main_commit": "456d9e0d3e2d84c748bb143c6ca3d90c45e16213",
+      "skill": "https://github.com/elayadesign/ai-design-skills/blob/main/skills/landing-page-design/SKILL.md",
+      "local_skill": "ai-design-SKILL.md",
+      "read_scope": "Complete landing-page-design skill.",
+      "application": "Audience/action clarity, CTA hierarchy, content realism, named type and spacing roles, state coverage, validation, metadata and responsive checks.",
+      "runtime": "No scripts installed or executed; conflicting marketing-template and visual prescriptions documented in DESIGN.md."
+    },
+    {
+      "name": "Hallmark",
+      "website": "https://usehallmark.com/",
+      "version_in_skill": "2.0.0",
+      "local_skill": "D:/FreeLance/.agents/skills/hallmark/SKILL.md",
+      "application": "Custom direction, semantic tokens, material-first project evidence, hero and finish reviews, rendered sloplint sweep.",
+      "runtime": "Local scaffold, font collision check, before capture, sloplint renders and independent reviews were used."
+    },
+    {
+      "name": "ThreeUI",
+      "website": "https://threeui.com/browse?sort=recent",
+      "read_scope": "Recent gallery and public detail pages for Kage, Bestsellers Book Showcase, Structure Flow and Sign Up Button. Gallery and Structure Flow were visually inspected; Kage's captured preview remained a loader.",
+      "application": "One spatial focal subject, quiet surrounding chrome, readable content and restrained supporting interactions.",
+      "runtime": "Browser-only reference inspection. No ThreeUI package, paid source or template was installed or copied. Metadata is retained in threeui-page.json and threeui-previews.json."
+    }
+  ],
+  "precedence": "The user requests an original resume-grounded portfolio. The custom direction and applicable Hallmark floor govern conflicts among incompatible skill presets. No claim is made that the four external CLI validation suites were run."
+}

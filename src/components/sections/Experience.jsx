@@ -10,17 +10,10 @@ export default function Experience() {
     <section className="experience section container" aria-labelledby="experience-title">
       <div className="section-heading">
         <div>
-          <p className="eyebrow">Along the way</p>
-          <h2 id="experience-title">
-            Good people.
-            <br />
-            <em>Meaningful work.</em>
-          </h2>
+          <h2 id="experience-title">Where I’ve been building.</h2>
         </div>
         <p className="section-aside">
-          Different teams. Different challenges.
-          <br />
-          The same care for the details.
+          Product teams, independent projects, and the work in between.
         </p>
       </div>
       <div className="experience-list">

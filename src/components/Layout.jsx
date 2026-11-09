@@ -99,7 +99,7 @@ export default function Layout() {
       </main>
       <footer className="site-footer container">
         <Link to="/" className="footer-name">
-          Gangaprasad Boddawar<span>Thoughtfully built. Always evolving.</span>
+          Gangaprasad Boddawar<span>Interfaces, intelligence, and the systems underneath.</span>
         </Link>
         <div className="footer-socials">
           <a href={personal.social.github} target="_blank" rel="noreferrer">
@@ -111,7 +111,7 @@ export default function Layout() {
             <ArrowUpRight size={13} aria-hidden="true" />
           </a>
         </div>
-        <span className="copyright">© {new Date().getFullYear()} · Built with intention.</span>
+        <span className="copyright">© {new Date().getFullYear()} Gangaprasad Boddawar</span>
       </footer>
     </div>
   );

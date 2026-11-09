@@ -8,10 +8,9 @@ export default function About() {
   return (
     <section className="about-section section container">
       <PageHeading
-        label="A bit about me"
-        title="A builder’s mind."
-        accent="A human perspective."
-        aside="Gangaprasad Boddawar / Nanded, India"
+        title="The person behind"
+        accent="the pull requests."
+        aside="Gangaprasad Boddawar"
       />
       <div className="about-grid">
         <Reveal className="portrait-frame">
@@ -30,11 +29,14 @@ export default function About() {
             I’m Gangaprasad, a full stack engineer who cares as much about how a product feels as
             how it works.
           </p>
-          <p>{personal.bio}</p>
           <p>
-            My work connects the pieces: a thoughtful interface, a dependable backend, and AI that
-            has a useful job to do. I enjoy getting into the details and making complex systems
-            easier to use.
+            I build React and Next.js interfaces, Python and Node.js services, and AI workflows
+            backed by PostgreSQL. My work includes enterprise platforms, learning tools, and
+            everyday services.
+          </p>
+          <p>
+            I like understanding how the pieces fit, then making them work well together. From an
+            interaction in the browser to a job running in the cloud, the details matter.
           </p>
           <div className="about-facts">
             <div>

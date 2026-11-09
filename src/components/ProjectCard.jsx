@@ -1,121 +1,88 @@
-import { ArrowUpRight, Github, Workflow, Braces, Layers } from 'lucide-react';
-import { useRef } from 'react';
-import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { ArrowUpRight, Github, ChevronRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
-
 import { projectGroups } from '../data/projectGroups';
 
+const newScreenshots = {
+  9: 'js-universe-v3.png',
+  10: 'dsa-universe-v3.png',
+  7: 'mane-mess-v3.png',
+  6: 'herbs-magic-v3.png',
+  8: 'gcon-nanded-v3.png',
+};
+const diagrams = {
+  2: {
+    mark: 'Permissions,\nwithout friction.',
+    steps: ['Roles', 'Tasks', 'Updates'],
+    caption: 'Role-based collaboration and compliance tracking',
+  },
+  3: {
+    mark: 'Find the\nright match.',
+    steps: ['Documents', 'AI extraction', 'Matching'],
+    caption: 'Document processing and candidate matching',
+  },
+};
+
 function ProjectArtwork({ project }) {
-  if (project.id === 1 || project.id === 11) {
+  const src = newScreenshots[project.id]
+    ? `${import.meta.env.BASE_URL}assets/${newScreenshots[project.id]}`
+    : [1, 11].includes(project.id)
+      ? project.image
+      : null;
+  if (src)
     return (
-      <div className={`project-art screenshot-art ${project.id === 11 ? 'capture-art' : ''}`}>
-        <div className="browser-preview">
-          <div className="browser-bar">
-            <i />
-            <i />
-            <i />
-            <span>{project.id === 1 ? 'enclavia.ai' : 'Proposal capture & compliance'}</span>
-          </div>
-          <img
-            src={project.image}
-            alt={`${project.title} interface preview`}
-            loading="lazy"
-            width="1440"
-            height="900"
-          />
-        </div>
-        <span className="art-label">Product in focus</span>
-      </div>
+      <img
+        className="project-image"
+        src={src}
+        alt={`${project.title.split('(')[0].trim()} website screenshot`}
+        loading="lazy"
+        width="1280"
+        height="900"
+      />
     );
-  }
-  if (project.id === 9) {
-    return (
-      <div className="project-art javascript-art" aria-hidden="true">
-        <div className="js-orbit" />
-        <span className="js-symbol">JS</span>
-        <div className="code-window">
-          <div className="code-dots">
-            <i />
-            <i />
-            <i />
-            <span>under-the-hood.js</span>
-          </div>
-          <div className="code-body">
-            <span>
-              <b>const</b> curiosity = <em>Infinity</em>;
-            </span>
-            <span>
-              <b>function</b> explore() {'{'}
-            </span>
-            <span>
-              {' '}
-              <b>return</b> understand();
-            </span>
-            <span>{'}'}</span>
-            <span className="code-comment">// Beyond the syntax.</span>
-          </div>
-        </div>
-        <span className="art-label">JavaScript, from the inside out.</span>
-      </div>
-    );
-  }
-  if (project.id === 10) {
-    return (
-      <div className="project-art algorithm-art" aria-hidden="true">
-        <span className="diagram-label">A little structure. Infinite possibilities.</span>
-        <div className="node-tree">
-          <span className="tree-node root-node">08</span>
-          <div className="tree-branches">
-            <span className="tree-node">04</span>
-            <span className="tree-node">12</span>
-          </div>
-          <div className="tree-leaves">
-            <span>02</span>
-            <span>06</span>
-            <span>10</span>
-            <span>14</span>
-          </div>
-        </div>
-        <span className="art-label">DSA Universe / See how it works</span>
-      </div>
-    );
-  }
-  const Icon =
-    projectGroups[project.id] === 'AI systems'
-      ? Workflow
-      : projectGroups[project.id] === 'Full stack'
-        ? Layers
-        : Braces;
+  const data = diagrams[project.id];
+  const category = projectGroups[project.id];
   return (
-    <div className={`project-art abstract-art abstract-${project.id % 3}`} aria-hidden="true">
-      <div className="abstract-rings" />
-      <Icon size={76} strokeWidth={1} />
-      <span className="art-label">{project.title.split('(')[0].trim()}</span>
+    <div
+      className={`project-art project-spec spec-${category === 'AI systems' ? 'ai' : category === 'Full stack' ? 'full' : 'web'}`}
+      role="img"
+      aria-label={`Illustrative overview: ${data.caption}`}
+    >
+      <span className="spec-mark">
+        {data.mark.split('\n').map((line, index) => (
+          <span key={line}>
+            {index > 0 && <br />}
+            {line}
+          </span>
+        ))}
+      </span>
+      <div className="spec-route">
+        {data.steps.map((step, index) => (
+          <span key={step}>
+            {step}
+            {index < 2 && <ChevronRight size={13} aria-hidden="true" />}
+          </span>
+        ))}
+      </div>
+      <span className="spec-caption">System overview: {data.caption}</span>
     </div>
   );
 }
 
-export default function ProjectCard({ project, featured = false, index = 0 }) {
-  const card = useRef(null);
-  const reduced = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: card, offset: ['start end', 'end start'] });
-  const artY = useTransform(scrollYProgress, [0, 1], [16, -16]);
+export default function ProjectCard({ project, featured = false }) {
   const title = project.title.split('(')[0].trim();
   const hasRepository =
     project.githubUrl && project.githubUrl !== portfolioData.personal.social.github;
   return (
-    <article ref={card} className={`project-card${featured ? ' project-featured' : ''}`}>
-      <motion.div className="project-art-frame" style={{ y: reduced ? 0 : artY }}>
+    <article
+      className={`project-card${featured ? ' project-featured' : ''}`}
+      id={`project-${project.id}`}
+    >
+      <div className="project-art-frame">
         <ProjectArtwork project={project} />
-      </motion.div>
+      </div>
       <div className="project-details">
-        <div className="project-meta">
-          <span className="project-category">{projectGroups[project.id]}</span>
-          {featured && (
-            <span className="project-number">Selected / {String(index + 1).padStart(2, '0')}</span>
-          )}
-        </div>
         <h3>{title}</h3>
+        <span className="project-category">{projectGroups[project.id]}</span>
         <p>{project.description}</p>
         <ul className="project-tags" aria-label="Technologies">
           {project.tags.slice(0, featured ? 4 : 3).map((tag) => (
@@ -131,14 +98,16 @@ export default function ProjectCard({ project, featured = false, index = 0 }) {
               rel="noreferrer"
               aria-label={`View ${title} live`}
             >
-              View project <ArrowUpRight size={17} aria-hidden="true" />
+              View project
+              <ArrowUpRight size={17} aria-hidden="true" />
             </a>
           ) : (
             <a
               className="text-link"
-              href={`mailto:${portfolioData.personal.email}?subject=${encodeURIComponent(`Tell me about ${title}`)}`}
+              href={`mailto:${portfolioData.personal.email}?subject=${encodeURIComponent('Tell me about ' + title)}`}
             >
-              Discuss this project <ArrowUpRight size={17} aria-hidden="true" />
+              Discuss this project
+              <ArrowUpRight size={17} aria-hidden="true" />
             </a>
           )}
           {hasRepository && (

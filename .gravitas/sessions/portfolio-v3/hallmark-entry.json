@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-09",
+  "mode": "redesign",
+  "depth": "full",
+  "shape": "Build Stack",
+  "theme": "custom",
+  "axes": "light/grotesk-sans/chromatic-coral",
+  "hero": "Wide heading over selectable CSS 3D project layers",
+  "nav": "Edge brand, central route links, contact action",
+  "footer": "Personal name, social destinations and copyright",
+  "imagery": "Real project screenshots and supplied portrait; two labeled system overviews",
+  "photos": [],
+  "entry": "Explore real work through interface, intelligence and infrastructure",
+  "fingerprint": {
+    "opening": "wide heading above three-column interactive explorer",
+    "flow": "native scroll with four ordinary routes",
+    "proof": "large feature followed by project pairs",
+    "rhythm": "paper, mint, paper and charcoal surfaces",
+    "person": "asymmetric portrait plus collapsible career history",
+    "close": "product and team invitation"
+  },
+  "sections": ["Hero and stack", "Selected work", "Engineering layers", "Portrait", "Experience", "Contact invitation", "Footer"],
+  "signature": "Selectable lavender, yellow and mint stack connected to real projects",
+  "waived": ["44c", "59", "79"],
+  "prompt": "Original restrained 3D portfolio grounded in the owner's resume; apply named design references, preserve v2 on a separate branch, review all pages and adapt the default local UI/UX skill",
+  "hero_review": "4 findings resolved",
+  "finish_review": "3 findings resolved",
+  "sweep": "0 FAIL, 0 open REFLEX, 7 WARN reviewed, 11 instances of 3 documented waivers, 3 NOTE reviewed; 20 production captures"
+}

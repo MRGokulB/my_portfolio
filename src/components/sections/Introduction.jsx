@@ -1,30 +1,43 @@
-import { ArrowUpRight, Asterisk } from 'lucide-react';
+import { Braces, Cpu, Cloud, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Reveal from '../motion/Reveal';
 
 export default function Introduction() {
   return (
-    <section className="introduction container section">
-      <div className="intro-label">
-        <Asterisk size={30} strokeWidth={1.2} aria-hidden="true" />
-        <p className="eyebrow">A little about the way I build</p>
+    <section className="introduction container">
+      <div className="intro-statement">
+        <h2>The interface is just the beginning.</h2>
+        <p>
+          At Enclavia, my work connects React interfaces, AI workflows, and containerized services.
+          I like knowing how the whole thing fits together.
+        </p>
+        <Link className="text-link" to="/about">
+          Meet the engineer
+          <ArrowUpRight size={18} aria-hidden="true" />
+        </Link>
       </div>
-      <Reveal className="intro-statement">
-        <h2>
-          Complex under the hood.
-          <br />
-          <em>Effortless in your hands.</em>
-        </h2>
-        <div className="intro-bottom">
-          <p>
-            From the first interaction to the last API call, I connect the details that make a
-            product feel right.
-          </p>
-          <Link className="text-link" to="/about">
-            Meet the engineer <ArrowUpRight size={18} aria-hidden="true" />
-          </Link>
+      <div className="system-diagram" aria-label="Technologies used in my Enclavia work">
+        <div className="system-node">
+          <Braces size={28} aria-hidden="true" />
+          <div>
+            <strong>What people use</strong>
+            <span>React interfaces and product experiences</span>
+          </div>
         </div>
-      </Reveal>
+        <div className="system-node">
+          <Cpu size={28} aria-hidden="true" />
+          <div>
+            <strong>What makes it useful</strong>
+            <span>FastAPI, retrieval, and structured AI outputs</span>
+          </div>
+        </div>
+        <div className="system-node">
+          <Cloud size={28} aria-hidden="true" />
+          <div>
+            <strong>What keeps it running</strong>
+            <span>Docker, Cloud Run, and deployment pipelines</span>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

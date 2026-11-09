@@ -28,21 +28,16 @@ export default function Contact() {
   return (
     <section className="contact-page section container">
       <PageHeading
-        label="Good conversations lead to good things"
-        title="Something in mind?"
-        accent="Let’s make it happen."
+        title="Let’s build"
+        accent="something worth using."
         aside="Open to projects & opportunities"
       >
-        A big idea, a small question, or a new opportunity. There’s a good chance we can build
-        something great together.
+        A web product, an AI workflow, or a place on your team. Tell me what you’re working on.
       </PageHeading>
       <div className="contact-grid">
         <div className="contact-information">
-          <span className="availability">
-            <span className="status-dot" /> Open to projects & opportunities
-          </span>
           <div className="direct-email">
-            <span>Drop me a line</span>
+            <span>Email me directly</span>
             <a href={`mailto:${personal.email}`}>
               {personal.email}
               <ArrowUpRight size={21} aria-hidden="true" />
@@ -80,13 +75,13 @@ export default function Contact() {
           </div>
         </div>
         <form className="contact-form" onSubmit={composeEmail}>
-          <h2>A little about your idea.</h2>
+          <h2>Tell me about your project.</h2>
           <div className="form-row">
             <label>
               Your name
               <input
                 name="name"
-                placeholder="Alex Morgan"
+                placeholder="Your full name"
                 autoComplete="name"
                 required
                 maxLength={100}
@@ -97,7 +92,7 @@ export default function Contact() {
               <input
                 type="email"
                 name="email"
-                placeholder="alex@company.com"
+                placeholder="you@company.com"
                 autoComplete="email"
                 required
                 maxLength={200}

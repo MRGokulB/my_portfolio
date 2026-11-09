@@ -1,0 +1,19 @@
+{
+  "scope": "Full custom redesign; four existing portfolio routes",
+  "date": "2026-11-09",
+  "baseline": "fbf2b30",
+  "inputs": [
+    "package.json:1 — React 19, Vite, Framer Motion, existing Three.js dependencies",
+    "src/data/portfolio.js:1 — supplied identity, career, projects and links",
+    "src/components/Layout.jsx:7 — existing Home, Work, About and Contact routes",
+    "public/assets/ — supplied portrait, résumé, Enclavia and proposal images",
+    ".gravitas/sessions/portfolio-v3/references/sources.json — primary design references"
+  ],
+  "preserved": ["Existing route destinations", "Portfolio data and résumé", "Contact form field names, validation and email-draft behavior", "All nine projects", "Version 2 snapshot branch"],
+  "introduced": ["Build Stack CSS 3D explorer", "Clash Grotesk and Figtree token system", "Real public project captures", "Responsive editorial layouts", "Adaptive local UI/UX skill version 2"],
+  "material": "Actual project screenshots, existing portrait, résumé and career content; no invented metrics or endorsements",
+  "job": "Hire or start a project conversation",
+  "audience": "Hiring managers, technical leads and clients",
+  "direction": "Immersive focal interaction with quieter professional content and forms",
+  "before_capture": ".hallmark/before/"
+}

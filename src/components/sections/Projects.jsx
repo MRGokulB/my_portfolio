@@ -2,36 +2,33 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../../data/portfolio';
 import ProjectCard from '../ProjectCard';
-import Reveal from '../motion/Reveal';
 
 export default function Projects() {
-  const projects = portfolioData.projects.filter((project) => project.featured).slice(0, 3);
+  const projects = [1, 9, 11].map((id) =>
+    portfolioData.projects.find((project) => project.id === id)
+  );
   return (
     <section id="projects" className="selected-work">
       <div className="container section">
-        <Reveal className="section-heading">
-          <div>
-            <p className="eyebrow">A selection of what I do</p>
-            <h2>
-              Less talk.
-              <br />
-              <em>More shipped.</em>
-            </h2>
-          </div>
+        <div className="section-heading">
+          <h2>
+            Different problems.
+            <br />
+            Built all the way through.
+          </h2>
           <p className="section-aside">
-            Different challenges. Thoughtful solutions.
-            <br />A few projects I’m happy to put my name on.
+            A closer look at the interfaces, intelligence, and infrastructure I’ve shipped.
           </p>
-        </Reveal>
+        </div>
         <div className="project-stack">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} featured index={index} />
           ))}
         </div>
         <div className="work-footer">
-          <span>There’s more where these came from.</span>
+          <span>Platforms, experiments, and a few things closer to home.</span>
           <Link to="/works" className="button button-light">
-            Explore all {portfolioData.projects.length} projects{' '}
+            Explore all {portfolioData.projects.length} projects
             <ArrowUpRight size={18} aria-hidden="true" />
           </Link>
         </div>

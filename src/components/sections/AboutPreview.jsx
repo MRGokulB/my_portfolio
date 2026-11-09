@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, MapPin } from 'lucide-react';
-import Reveal from '../motion/Reveal';
-import { portfolioData } from '../../data/portfolio';
 
 export default function AboutPreview() {
   return (
-    <section className="about-preview container section">
-      <Reveal className="about-preview-portrait">
+    <section className="about-preview container">
+      <div className="about-preview-portrait">
         <img
           src={`${import.meta.env.BASE_URL}profile.jpg`}
           alt="Gangaprasad Boddawar"
@@ -15,38 +13,30 @@ export default function AboutPreview() {
           loading="lazy"
         />
         <span>
-          <MapPin size={15} aria-hidden="true" /> Nanded, India
+          <MapPin size={15} aria-hidden="true" />
+          Nanded, India
         </span>
-      </Reveal>
-      <Reveal className="about-preview-copy">
-        <p className="eyebrow">The human behind the code</p>
+      </div>
+      <div className="about-preview-copy">
         <h2>
-          Engineer by trade.
+          The human
           <br />
-          <em>Curious by default.</em>
+          in the loop.
         </h2>
         <p>
-          I’m Gangaprasad, a full stack engineer working at the intersection of thoughtful
-          interfaces, dependable infrastructure, and AI that earns its place.
+          I’m Gangaprasad. I enjoy the space between how something feels and how it works, whether
+          that’s an AI platform or a tool for everyday life.
         </p>
-        <div className="about-preview-facts">
-          <div>
-            <strong>2+</strong>
-            <span>Years in production</span>
-          </div>
-          <div>
-            <strong>{portfolioData.projects.length.toString().padStart(2, '0')}</strong>
-            <span>Projects to explore</span>
-          </div>
-          <div>
-            <strong>∞</strong>
-            <span>Things left to learn</span>
-          </div>
+        <div className="about-tools">
+          <span>Interfaces</span>
+          <span>AI systems</span>
+          <span>Cloud engineering</span>
         </div>
         <Link className="text-link" to="/about">
-          A little more about me <ArrowUpRight size={18} aria-hidden="true" />
+          A little more about me
+          <ArrowUpRight size={18} aria-hidden="true" />
         </Link>
-      </Reveal>
+      </div>
     </section>
   );
 }

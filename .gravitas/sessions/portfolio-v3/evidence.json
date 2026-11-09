@@ -1,0 +1,405 @@
+{
+  "baseURL": "http://127.0.0.1:4174/my_portfolio/",
+  "testedAt": "2026-11-09T12:02:07.203Z",
+  "accessibilityEngine": "axe-core 4.10.3",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 740
+    }
+  ],
+  "accessibility": [
+    {
+      "route": "home",
+      "width": 1440,
+      "passedRules": 43,
+      "violations": []
+    },
+    {
+      "route": "works",
+      "width": 1440,
+      "passedRules": 42,
+      "violations": []
+    },
+    {
+      "route": "about",
+      "width": 1440,
+      "passedRules": 36,
+      "violations": []
+    },
+    {
+      "route": "contact",
+      "width": 1440,
+      "passedRules": 41,
+      "violations": []
+    },
+    {
+      "route": "home",
+      "width": 390,
+      "passedRules": 43,
+      "violations": []
+    },
+    {
+      "route": "works",
+      "width": 390,
+      "passedRules": 42,
+      "violations": []
+    },
+    {
+      "route": "about",
+      "width": 390,
+      "passedRules": 36,
+      "violations": []
+    },
+    {
+      "route": "contact",
+      "width": 390,
+      "passedRules": 41,
+      "violations": []
+    }
+  ],
+  "results": [
+    {
+      "name": "Home exposes three accessible layer controls and real default project",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Layer selection: Interface",
+      "passed": true,
+      "details": "JavaScript Universe"
+    },
+    {
+      "name": "Layer selection: Intelligence",
+      "passed": true,
+      "details": "Proposal Capture Engine"
+    },
+    {
+      "name": "Layer selection: Infrastructure",
+      "passed": true,
+      "details": "Enclavia.ai"
+    },
+    {
+      "name": "Collapse and reopen preserve the selected project and announce state",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Layer selection works with Tab, Space, and Enter",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Mouse drag changes bounded orientation without selecting another layer",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Reset restores the initial angle, default project, and expanded stack",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Visible 3D faces select each real project without focusing hidden content",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Home scroll action preserves the hash-router route",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Experience details work with pointer and keyboard",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Route navigation resets focus and opens all nine projects",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Project filter: AI systems",
+      "passed": true,
+      "details": "3 projects"
+    },
+    {
+      "name": "Project filter: Full stack",
+      "passed": true,
+      "details": "3 projects"
+    },
+    {
+      "name": "Project filter: Interactive web",
+      "passed": true,
+      "details": "3 projects"
+    },
+    {
+      "name": "All work restores nine projects; grid/list switching preserves filters",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Résumé PDF and SVG favicon resolve under the deployment base",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Accessibility home 1440px",
+      "passed": true,
+      "details": "43 rules passed"
+    },
+    {
+      "name": "Responsive home 1440px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Accessibility works 1440px",
+      "passed": true,
+      "details": "42 rules passed"
+    },
+    {
+      "name": "Responsive works 1440px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Accessibility about 1440px",
+      "passed": true,
+      "details": "36 rules passed"
+    },
+    {
+      "name": "Responsive about 1440px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Accessibility contact 1440px",
+      "passed": true,
+      "details": "41 rules passed"
+    },
+    {
+      "name": "Responsive contact 1440px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Hero heading, description, and primary action fit 1280×800",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Responsive home 1280px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Responsive works 1280px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Responsive about 1280px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Responsive contact 1280px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Responsive home 1024px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Responsive works 1024px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Responsive about 1024px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Responsive contact 1024px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Responsive home 768px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Responsive works 768px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Responsive about 768px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Responsive contact 768px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Uncropped project screenshots: home 390px",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Accessibility home 390px",
+      "passed": true,
+      "details": "43 rules passed"
+    },
+    {
+      "name": "Responsive home 390px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Uncropped project screenshots: works 390px",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Accessibility works 390px",
+      "passed": true,
+      "details": "42 rules passed"
+    },
+    {
+      "name": "Responsive works 390px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Accessibility about 390px",
+      "passed": true,
+      "details": "36 rules passed"
+    },
+    {
+      "name": "Responsive about 390px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Accessibility contact 390px",
+      "passed": true,
+      "details": "41 rules passed"
+    },
+    {
+      "name": "Responsive contact 390px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Uncropped project screenshots: home 320px",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Responsive home 320px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Uncropped project screenshots: works 320px",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Responsive works 320px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Responsive about 320px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Responsive contact 320px",
+      "passed": true,
+      "details": "one h1; no overflow; all images loaded"
+    },
+    {
+      "name": "Contact validates required fields and email format, and explains draft behavior",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Compose email requests a correctly addressed and encoded draft without sending",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Copy-email action writes the correct address",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Clipboard rejection offers an honest recovery path",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Reduced motion preserves selection without travel, drag rotation, or progress animation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Stack interaction works without requesting a WebGL context",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Touch gesture scrolls across the stack without selection; tapping controls still works",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "Mobile list view retains all projects without horizontal overflow",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "JavaScript-disabled fallback exposes identity, contact, and résumé",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "No uncaught browser errors across all contexts",
+      "passed": true,
+      "details": ""
+    }
+  ],
+  "errors": [],
+  "verdict": "PASS"
+}

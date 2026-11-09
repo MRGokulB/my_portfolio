@@ -18,13 +18,12 @@ export default function WorksDirectory() {
   return (
     <section className="directory section container">
       <PageHeading
-        label="The project collection"
-        title="Built with purpose."
-        accent="Made with care."
-        aside={`${portfolioData.projects.length} projects / Web, AI & cloud`}
+        title="Things I’ve"
+        accent="made work."
+        aside={`${portfolioData.projects.length} projects across web, AI & cloud`}
       >
-        A collection of platforms, experiments, and everyday experiences. Each one a different
-        problem worth solving.
+        Enterprise AI, learning tools, and everyday services. Different problems, built from the
+        interface down to the infrastructure.
       </PageHeading>
       <div className="filter-toolbar">
         <div className="project-filters" aria-label="Filter projects">
