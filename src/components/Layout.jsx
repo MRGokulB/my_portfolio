@@ -22,7 +22,10 @@ export default function Layout() {
 
   useEffect(() => {
     const page = navigation.find((item) => item.path === pathname)?.name || 'Home';
-    document.title = `${page === 'Home' ? 'Full Stack & AI Engineer' : page} — ${personal.name}`;
+    document.title =
+      page === 'Home'
+        ? `${personal.name} · Full Stack & AI Systems Engineer`
+        : `${page} · ${personal.name}`;
     if (previousPath.current !== pathname) {
       window.scrollTo({ top: 0, behavior: 'instant' });
       mainRef.current?.focus({ preventScroll: true });

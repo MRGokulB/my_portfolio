@@ -66,24 +66,22 @@ export const portfolioData = {
     },
     {
       id: 9,
-      title: "JavaScript Universe (V8 Engine & Memory Visualizer)",
+      title: "JavaScript Universe",
       description:
         "An engine-level, hardware-conscious interactive learning platform modeling V8 runtime internals, execution context stacks, heap memory allocations, and closures with cinematic scroll storytelling.",
-      image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop",
-      tags: ["Next.js", "TypeScript", "GSAP ScrollTrigger", "Tailwind CSS", "V8 Internals", "Micro-Frontends"],
+      image: `${import.meta.env.BASE_URL}assets/js-universe-v3.png`,
+      tags: ["Next.js 16", "TypeScript", "GSAP ScrollTrigger", "Tailwind CSS", "V8 Internals", "Micro-Frontends"],
       liveUrl: "https://hub-bay-six-16.vercel.app/",
       githubUrl: "https://github.com/MRGokulB/js-mastery",
       featured: true
     },
     {
       id: 10,
-      title: "DSA Universe (Hardware-Level Algorithm Visualizer)",
+      title: "DSA Universe",
       description:
         "A decoupled micro-frontend monorepo presenting algorithmic mechanics through reactive animations, silicon-level contiguous memory allocation, pointer arithmetic, and cycle detection.",
-      image:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
-      tags: ["Next.js", "TypeScript", "GSAP Animations", "Tailwind CSS", "Data Structures", "Micro-Frontends"],
+      image: `${import.meta.env.BASE_URL}assets/dsa-universe-v3.png`,
+      tags: ["Next.js 16", "TypeScript", "GSAP Animations", "Tailwind CSS", "Data Structures", "Micro-Frontends"],
       liveUrl: "https://home-two-rust.vercel.app",
       githubUrl: "https://github.com/MRGokulB/dsa-universe",
       featured: true
